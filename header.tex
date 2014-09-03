@@ -1,0 +1,135 @@
+% not needed with polyglossia
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%\usepackage{polyglossia}
+%\setdefaultlanguage{icelandic}
+
+
+\usepackage{graphics,amsmath,amsfonts,amsbsy,amssymb,amsthm}
+\usepackage{fancyvrb}
+\usepackage[a4paper]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{datatool}
+\usepackage{float}
+\usepackage{mdframed}
+\usepackage{listingsutf8}
+\usepackage{enumerate}
+\usepackage{comment}
+\usepackage{epstopdf}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{tabu}
+
+\usepackage{accents}
+
+\setlength{\parskip}{8pt plus 1pt minus 1pt}
+%Verdur ad vera her, sumir pakkar dependa a thetta.
+\usepackage[icelandic]{babel}
+
+%viljum ekki númeraða kafla á dæmum
+
+\newcommand{\nonums}{\setcounter{secnumdepth}{-1}}
+
+%flýtiskipanir
+\newcommand{\e}{\textbf}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+
+
+%\newcommand{\R}{\Real}
+%\newcommand{\C}{\Complex}
+%\newcommand{\Z}{\Integer}
+%\newcommand{\N}{\Natural}
+%\newcommand{\Q}{\Rational}
+
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Con}{\mathcal{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\f}{\frac}
+\newcommand{\1}{\frac{1}}
+\newcommand{\eps}{\f{\epsilon}}
+\newcommand{\Lra}{\Leftrightarrow}
+\newcommand{\Th}{\text{ þegar }}
+\newcommand{\Ef}{\text{ ef }}
+\newcommand{\Og}{\text{ og }}
+
+
+\newcommand{\inner}[1]{\accentset{\circ}{#1}}
+\newcommand{\eR}{\widetilde{\R}}
+
+\newcommand{\com}[1]{\set{\text{#1}}}
+\newcommand{\Com}[1]{\set{\text{Athsmd: \text{#1}}}}
+
+\newcommand{\ub}[2]{\underbrace{#1}_{\text{#2}}}
+\newcommand{\ubt}[2]{$\ub{\text{#1}}{#2}$}
+
+
+\newenvironment{inum}{\begin{enumerate}[label=(\roman*).]}{\end{enumerate}}
+\newenvironment{anum}{\begin{enumerate}[label=(\alph*).]}{\end{enumerate}}
+
+
+\newcommand{\bcondef}{\left\{ \begin{array}{l l}}
+\newcommand{\econdef}{\end{array} \right.}
+\DeclarePairedDelimiter{\condef}{\bcondef}{\econdef}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\set}{\{}{\}}
+\DeclarePairedDelimiter{\braket}{\langle}{\rangle}
+
+
+\newenvironment{lausn}{\begin{proof}[Lausn]}{\end{proof}}
+
+\newcommand{\sep}{\;|\;}
+
+\newcommand{\fig}[2]{
+\begin{figure}[H]
+  \centering
+  \includegraphics{#1}
+  \caption{#2}
+  \label{fig:#1}
+\end{figure}
+}
+
+
+\newtheorem*{setn}{Setning}
+\newtheorem*{hsetn}{Hjálparsetning}
+\lstset{  literate={á}{{\'a}}1
+                  {ó}{{\'o}}1
+                  {ú}{{\'u}}1
+                  {ð}{{\dh}}1
+                  {í}{{\'i}}1
+                  {é}{{\'e}}1
+                  {ö}{{\"o}}1
+                  {þ}{{\th}}1
+                  {æ}{{\ae}}1
+                  {ý}{{\'y}}1
+                  {Á}{{\'A}}1
+                  {Ó}{{\'O}}1
+                  {Ú}{{\'U}}1
+                  {Ð}{{\DH}}1
+                  {Í}{{\'I}}1
+                  {É}{{\'E}}1
+                  {Ö}{{\"O}}1
+                  {Þ}{{\TH}}1
+                  {Æ}{{\AE}}1
+                  {Ý}{{\'Y}}1}
+
+
+\theoremstyle{definition}
+\newtheorem*{skgr}{Skilgreining}
+\newtheorem*{daemi}{Dæmi}
+\newtheorem*{frumsenda}{Frumsenda}
+
+\theoremstyle{remark}
+\newtheorem*{ath}{Athugasemd}
