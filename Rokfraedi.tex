@@ -9,704 +9,7 @@
 \maketitle
 
 
-% \section{Rökfræði}\label{ruxf6kfruxe6uxf0i}
-
-% \subsection{Athugasemdir um texta}\label{athugasemdir-um-texta}
-
-% Stærðfræði jöfnur eru ritaðar á LaTeX mátann, umlukið hornklofum, þ.e.
-% {[} x + 2 = 4 {]}. Innskot í texta eru táknuð með pípum, þ.e. \textbar{}
-% innskot \textbar{}. Orð sem sérstök áhersla er lögð á er táknað með
-% stjörnum, þ.e. \emph{orð}. Feitletruð tákn og orð eru tvíundirstrikuð á
-% töflu, en táknuð með feitletrun hér, t.d. \textbf{breyta}. Texta sem
-% ætlað er til að sé lesinn beint í LaTeX er táknaður á milli tveggja
-% samsemdarmerkja með skástriki fyrir framan, þ.e. =
-
-% \begin{gather} 2 + x \end{gather}
-
-% =.
-
-% \subsection{Formáli um texta.}\label{formuxe1li-um-texta.}
-
-% \subsubsection{Breytur, rökbreytur og
-% stæður}\label{breytur-ruxf6kbreytur-og-stuxe6uxf0ur}
-
-% Við tölum um mál sem notuð eru í stærðfræði, sem við köllum
-% \emph{viðfangsmál} á máli sem við köllum \emph{yfirmál}. Viðfangsmálið
-% notar \emph{breytur}, þ.e. bókstafi sem eru notaðir sem heiti. Þurfum
-% nöfn yfir bókstafina. Nafn bókstafs fæst með því að setja hann í
-% einfaldar enskar gæsalappir. Þegar að við segjum að x sé talan þ.a. {[}2
-% + x = 4 {]}, þá er `x' heitið sem við gefum óþekktu stærðinni x í dæminu
-% `x' er þriðji síðasti stafurinn í latneska stafrófinu, en x er það ekki.
-
-% Búum til \emph{táknasamstæður}, stytt í \emph{stæður}, með því að skrifa
-% bókstafi og sérstök tákn hvert á eftir öðru, og nafn slíkrar stæðu fæst
-% með því að setja einfaldar enskar gæsalappir utan um stæðuna. Til dæmis
-% er `tala' orðið sem fæst með því að skrifa fyrst bókstafinn `t', næst
-% bókstafinn `a', svo bókstafinn `l' og loks bókstafinn `a'. \textbar{}
-% Þetta sýnir að bókstafur getur komið tvisvar fyrir í stæðu og röðin
-% skiptir máli \textbar{}. Líka er `x' heiti óþekktu stærðarinnar `x' í
-% jöfnunni `2 + x = 4', og í þeirri jöfnu eru notuð tvö sérstök tákn,
-% samlagningar merkið `+' og samasemmerkið `='; og í jöfnunni `4 - (3-1) =
-% 2' koma fyrir frádáttarmerkið `-' og vinstri sviginn `(' og hægri
-% sviginn `)'. Getum líka sagt að stæðan `)(+-()2++++' sé óskiljanlega
-% mynduð og merkingarlaus. \textbar{} Athugið að við notum hérna `' til að
-% bæta læsileika, en það er þó ekki tekið með í þessu. \textbar{}
-
-% Þutfum breytur á yfirmálinu, t.d. til að tala um almennar breytur (og
-% fleira) í viðfangsmálinu. Breyta á yfirmálinu eru feitletraðir bókstafir
-% (undirstrikaðir á töflu). Getum sagt: Látum \textbf{a} og \textbf{b}
-% vera bókstafi. Þá er \textbf{ab} stæðan sem fæst með því að skrifa fyrst
-% stafinn \textbf{a} og svo stafinn \textbf{b}. Ef \textbf{a} er `a' og
-% \textbf{b} er `b', þá er \textbf{ab} stæðan `ab'. Ef \textbf{a} er `b'
-% og \textbf{b} er `a', þá er \textbf{ab} stæðan `ba'. Ef \textbf{a} er
-% `x' og \textbf{b} er `x', þá er stæðan \textbf{ab} stæðan `xx'.
-
-% Ef \textbf{A}, \textbf{B} eru stæður, þá er \textbf{AB} stæðan sem fæst
-% með því að skrifa stæðuna \textbf{A} og strax á eftir stæðuna
-% \textbf{B}. Notum sama tákn fyrir bókstaf \textbf{a} og stæðuna
-% \textbf{a} sem hefur bara einn bókstaf, nefnilega bókstafinn \textbf{a}.
-% Ef \textbf{a} er `a' og \textbf{B} er stæðan `bba', þá er \textbf{aB}
-% stæðan `abba' en \textbf{Ba} stæðan `bbaa'. Ef \textbf{a} er `a', þá
-% skrifum við ``a\textbf{B}'' í stað ``\textbf{aB}'', frekar en
-% ``\,`a'\textbf{B}''. \textbar{} Nafn stæðu á viðfangsmálinu táknað með
-% tvöföldum gæsalöppum á yfirmálinu, þ.e. ``a\textbf{B}'' er nafn
-% stæðunnar a\textbf{B}. \textbar{} Sama um stök tákn meðan stæðan hefur
-% a.m.k. eina breytu á yfirmálinu. T.d. er 2 + \textbf{x} = 4 stæðan sem
-% fæst með því að skrifa `2', `+', breytuna \textbf{x}, jafnaðarmerkið `='
-% og `4' í þessari röð, frekar en að segja að það sé stæðan `2+'x'=4'.
-
-% \subsection{Yrðingarökfræði}\label{yruxf0ingaruxf6kfruxe6uxf0i}
-
-% Yrðingarökfræði fjallar um samtengingar, næstum eingöngu um
-
-% \begin{itemize}
-% \item
-%   \ldots{} eða \ldots{},
-% \item
-%   \ldots{} og \ldots{},
-% \item
-%   ef \ldots{}, þá \ldots{},
-% \item
-%   \ldots{} þá og því aðeins að \ldots{} (ef og aðeins ef líka notað),
-% \end{itemize}
-
-% og neitunina
-
-% \begin{itemize}
-% \itemsep1pt\parskip0pt\parsep0pt
-% \item
-%   ekki.
-% \end{itemize}
-
-% Viðfangsefni hennar eru \emph{fullyrðingar}, þ.e. setningar sem eru
-% annaðhvort sannar eða ósannar. \textbar{} ``En'' þýðir það sama og
-% ``og'', eini munurinn eru blæbrigði. Eða er ekki útilokandi. \textbar{}
-
-% \begin{itemize}
-% \itemsep1pt\parskip0pt\parsep0pt
-% \item
-%   Ef yrðingin \textbf{A} er sönn, þá er yrðingin ``ekki \textbf{A}''
-%   ósönn, en ef yrðingin \textbf{A} er ósönn, þá er yrðingin " ekki
-%   \textbf{A}" sönn.
-% \item
-%   Ef yrðingin \textbf{A} og \textbf{B} eru báðar sannar, þá er
-%   ``\textbf{A} og \textbf{B}'' sönn, annars er hún ósönn.
-% \item
-%   Ef yrðingar \textbf{A} og \textbf{B} eru báðar ósannar, þá er yrðingin
-%   ``\textbf{A} eða \textbf{B}'' ósönn, annars er hún sönn.
-% \item
-%   Ef yrðingin \textbf{A} er sönn og \textbf{B} er ósönn, þá er yrðingin
-%   ``ef \textbf{A} þá \textbf{B}'' ósönn, annars er hún sönn.
-% \item
-%   Yrðingin ``\textbf{A} þþaa \textbf{B}'' er sönn ef \textbf{A} og
-%   \textbf{B} eru báðar sannar, eða báðar ósannar, annars eru hún ósönn.
-% \end{itemize}
-
-% Yrðingin ``\textbf{A} og \textbf{B}'' segir hið sama og ``ekki gildir
-% (ekki \textbf{A} eða ekki \textbf{B})''. Yrðingin ``ef \textbf{A}, þá
-% \textbf{B}'' segir hið sama og ``(ekki \textbf{A}) eða \textbf{B}''.
-% Yrðingin ``\textbf{A} þþaa \textbf{B}'' segir hið sama og ``(ef
-% \textbf{A}, þá \textbf{B}) og (ef \textbf{B}, þá \textbf{A})''.
-
-% \subsubsection{Formlegt mál fyrir yrðinga
-% rökfræði}\label{formlegt-muxe1l-fyrir-yruxf0inga-ruxf6kfruxe6uxf0i}
-
-% Almennt er formlegt mál gefið með því að tiltaka \emph{stafróf}
-% (bókstafi og tákn) fyrir málið og mengi af stæðum á málinu sem við
-% köllum \emph{segðir}. Venjulega viljum við að ganga megi í endanlega
-% mörgum skrefum úr skugga um hvort stæða er segð eða ekki. \textbar{} Röð
-% tákna í segðum skiptir máli \textbar{} Venjulega er segðir skilgreindar
-% með \emph{reglu}, svokölluðum \emph{myndunarreglum}.
-
-% \emph{Skilgreining}. Skilgreinum formlegt mál \emph{L}(\emph{P}) fyrir
-% yrðingarrökfræði þannig:
-
-% \begin{itemize}
-% \item
-%   \begin{enumerate}
-%   \def\labelenumi{(\Alph{enumi})}
-%   \itemsep1pt\parskip0pt\parsep0pt
-%   \item
-%     Táknin í \emph{L}(\emph{P}) eru
-%   \end{enumerate}
-
-%   \begin{itemize}
-%   \item
-%     \begin{enumerate}
-%     \def\labelenumi{(\roman{enumi})}
-%     \itemsep1pt\parskip0pt\parsep0pt
-%     \item
-%       fjögur sérstök tákn, nefnilega \emph{vinstri sviginn} `(',
-%       \emph{hægri sviginn} `)', \emph{neitunartáknið} $'\lnot'$
-%       \emph{eðunartáknið} $' \vee '$;
-%     \end{enumerate}
-%   \item
-%     \begin{enumerate}
-%     \def\labelenumi{(\roman{enumi})}
-%     \setcounter{enumi}{1}
-%     \itemsep1pt\parskip0pt\parsep0pt
-%     \item
-%       bókstafirnir `p', `q', `r', `s', `t', `{[} p\_1 {]}', `{[} q\_2
-%       {]}', `{[} r\_1 {]}', \ldots{} við leyfum alla stafi í latneska
-%       stafrófinu, hugsanlega tölusetta með með lágvísi sem er náttúruleg
-%       tala skrifuð í tugakerfi; köllum bókstafi \emph{yrðingabreytur}.
-%     \end{enumerate}
-%   \end{itemize}
-% \item
-%   \begin{enumerate}[<+->]
-%   \def\labelenumi{(\Alph{enumi})}
-%   \setcounter{enumi}{1}
-%   \itemsep1pt\parskip0pt\parsep0pt
-%   \item
-%     Úr táknunum má setja saman leyfilegar samsetningar (segðir formlega
-%     málsins) sem kallast \emph{yrðingasnið} með því að nota eftirfarandi
-%     myndunarreglur.
-%   \end{enumerate}
-
-%   \begin{itemize}
-%   \item
-%     \begin{enumerate}
-%     \def\labelenumi{(\roman{enumi})}
-%     \itemsep1pt\parskip0pt\parsep0pt
-%     \item
-%       Ef \textbf{x} er yrðingabreyta, þá er stæðan \textbf{x} sem hefur
-%       bara eitt tákn, nefnilega \textbf{x}, yrðingasnið
-%     \end{enumerate}
-%   \item
-%     \begin{enumerate}
-%     \def\labelenumi{(\roman{enumi})}
-%     \setcounter{enumi}{1}
-%     \itemsep1pt\parskip0pt\parsep0pt
-%     \item
-%       Ef \textbf{A} er yrðingasnið, þá er {[} \not **A** {]}
-%       yrðingasnið.
-%     \end{enumerate}
-%   \item
-%     \begin{enumerate}
-%     \def\labelenumi{(\roman{enumi})}
-%     \setcounter{enumi}{2}
-%     \itemsep1pt\parskip0pt\parsep0pt
-%     \item
-%       ef \textbf{A} og \textbf{B} er yrðingasnið, þá er ( \textbf{A} {[}
-%       \vee {]} \textbf{B}) yrðingasnið.
-%     \end{enumerate}
-%   \end{itemize}
-% \end{itemize}
-
-% Köllum ( {[} \vee {]} \textbf{A} ) \emph{neitun} yrðingasniðsins
-% \textbf{A} og lesum ``ekki \textbf{A}'', og (\textbf{A} {[} \vee {]}
-% \textbf{B}) \emph{eðun} yrðingasniðanna \textbf{A} og \textbf{B} og
-% lesum ``\textbf{A} eða \textbf{B}'' í töluðu máli.
-
-% \emph{Dæmi}. Skv. (i) eru `p' og `q' yrðingasnið, skv. (ii) eru þá `(
-% {[} \not p {]} )' og `( {[} \not q {]} )' yrðingasnið, skv. (iii) eru þá
-% `{[} (( \not p ) \vee (\not q)) {]}' yrðingasnið, skvi (ii) er `{[} (
-% \not ((\not p) \vee (\not q )))' yrðingasnið. Eins sést að
-
-% \begin{verbatim}
-% '((\not p) \vee q)' og  '(\not (( \not (( \not p) \vee q)) \vee ( \not ((\not q) \vee p))))'
-% \end{verbatim}
-
-% \emph{Skilgreining}. Tökum upp \emph{skammstafanir}: Ef \textbf{A} og
-% \textbf{B} eru yrðingasnið, þá er + (i) ({[} \textbf{A} \wedge **B** {]}
-% ) skammstöfun fyrir '{[} ( \not ((\not **A** ) \vee (\not **B\textbf{
-% ))); + (ii) {[} ( }A** \leftarrow **B**) skammstöfun fyrir '((
-% \not **A**) \vee **B\textbf{); + (iii) '{[} ( }A**
-% \leftrightarrow **B\textbf{ ) {]} skammstöfun fyrir '{[} (( }A**
-% \leftarrow **B\textbf{ ) \wedge (}B** \leftarrow **A**))' sem er
-% skammstöfun fyrir (\not (( \not (( \not **A** ) \vee **B** )) \vee (
-% \not ((\not **B** ) \vee **A**))))
-
-% \emph{Afleiddar myndunarreglur}. Ef \textbf{A}, \textbf{B} eru
-% yrðingasnið, þá eru {[} ( \textbf{A} \wedge **B\textbf{ ) {]}, {[} (
-% }A** \leftarrow **B\textbf{) {]} og {[} ( }A** \leftrightarrow **B** )
-% {]} yrðingasnið.
-
-% *Skilgr\textbf{. Látum {[} }x\_1\textbf{, \dotsc, }x\_n\textbf{ {]} vera
-% ólíkar yrðingabreytur og }A\textbf{ vera yrðingasnið, {[} }B\_1\textbf{,
-% \dotsc, }B\_n** {]} vera stæður á málinu \emph{L}(\emph{P}). Við táknum
-% með
-
-% \begin{verbatim}
-% \[ **A**_{ **x**_1, \dotsc, **x**_n} [ **B**_1, \dostc, **B**_n ] \]
-% \end{verbatim}
-
-% eða I\^{}\{ \textbf{B}\emph{1, \dotsc, \textbf{B}}n
-% \}\emph{\{\textbf{x}}1, \dotsc, \textbf{x}\_n\} \textbf{A}
-
-% stæðuna sem fæst úr \textbf{A} með því að setja \textbf{B}\emph{k inn í
-% stað \textbf{x}}k á hverjum þeim stað þar sem \textbf{x}\_k kemur fyrir
-% í \textbf{A} fyrir öll {[} k = 1, \dotsc, n {]}.
-
-% \emph{Viðvörun}. Þetta þarf að gerast samtímis.
-
-% \textbf{Dæmi}: Látum \textbf{x} vera `p', \textbf{y} vera `q',
-% \textbf{A} vera `{[} ((p \leftarrow q) \vee p) {]}', B vera `{[}( p
-% \leftarrow q ){]}', \textbf{C} vera `{[}( q \wedge p ) {]}'. þá er
-
-% \begin{verbatim}
-% \[ **I**^{**B**, **C**}_{**x**, **y**} **A** \] stæðan '\[((( p \leftarrow q) \leftarrow (q \wedge p)) \vee (q \leftarrow p)\]',
-
-% \[ I^{**B**}_{**x**} I^{**C**}_{**y**} **A** stæðan '((( p \leftarrow q) \leftarrow (q \wedge (p \leftarrow q))) \vee (q \leftarrow p))',
-
-
-% \[ I^{**C**}_{**y**} I^{**B**}_{**x**} **A** stæðan '((((q \wedge p) \leftarrow p) \leftarrow (q \wedge p) \vee ((q \vee p))',
-% \end{verbatim}
-
-% \emph{Setning} Ef {[} \textbf{x}\emph{1, \dotsc, \textbf{x}}n {]} eru
-% ólíkar breytur, {[} \textbf{A}, \textbf{B}\emph{1, \dotsc,
-% \textbf{B}}n\textbf{, eru yrðingasnið, þá er
-% }A\textbf{\emph{\{\textbf{x}}1, \dotsc, }x**\_n\} {[}\textbf{B}\emph{1,
-% \dotsc, \textbf{B}}n{]} yrðingasnið. Þetta má sanna með þrepun yfir
-% lengd \textbf{A}.
-
-% Getum notað: \emph{Þrepunarlögmál fyrir stæður í }L\emph{(}P\emph{)}
-
-% Látum \emph{E} vera eiginleika sem stæða í \emph{L}(\emph{P}) getur haft
-% eða ekki og g.r.f. að
-
-% \begin{itemize}
-% \item
-%   \begin{enumerate}[<+->]
-%   \def\labelenumi{(\roman{enumi})}
-%   \itemsep1pt\parskip0pt\parsep0pt
-%   \item
-%     ef \textbf{x} er yrðingarbreyta, þá hefur \textbf{x} eiginleika
-%     \emph{E};
-%   \end{enumerate}
-% \item
-%   \begin{enumerate}[<+->]
-%   \def\labelenumi{(\roman{enumi})}
-%   \setcounter{enumi}{1}
-%   \itemsep1pt\parskip0pt\parsep0pt
-%   \item
-%     ef \textbf{A} er yrðingasnið með eiginleikann \emph{E}, þá hefur {[}
-%     (\not A) {]} eiginleika \emph{E};
-%   \end{enumerate}
-% \item
-%   \begin{enumerate}[<+->]
-%   \def\labelenumi{(\roman{enumi})}
-%   \setcounter{enumi}{2}
-%   \itemsep1pt\parskip0pt\parsep0pt
-%   \item
-%     ef \textbf{A}, \textbf{B} eru yrðingasnið með eiginleika \emph{E},
-%     þá hefur {[}(\textbf{A} \vee **B**){]} eiginleikann \emph{E}
-%   \end{enumerate}
-% \end{itemize}
-
-% Þá hafa öll yrðingasnið eiginleikann \emph{E}.
-
-% \emph{Reglur um svigasetningu} Leyfum okkur að sleppa svigum ef við
-% getum sett þá einn aftur með því að fylgja eftirfarandi reglum: Alltaf
-% má sleppa yztu svigum.
-
-% Röðum röktáknunum í röð:
-
-% \begin{verbatim}
-% \[ '\not', '\vee', '\wedge', '\leftarrow', '\leftrightarrow' \]
-% \end{verbatim}
-
-% til að setja inn svia setjum við fyrst sviga utan um `\not', og sytzta
-% yrðungasnið sem kemur á eftir því í stæðunni. Setjum næst sviga utanum
-% `{[} \vee {]}' og styzta yrðingarsnið báðu megin. Ef það kemur oftar en
-% einu sinni fyrir, þá göngum við á röðina frá hægri til vinztri. Næst er
-% það sama fyrir {[}`\wedge'{]}, svo fyrir {[}`\leftarrow'{]} og svo loks
-% fyrir {[} `\leftrightarrow ' {]}. Síðast yzta sviga.
-
-% \emph{Dæmi}
-
-% \begin{itemize}
-% \itemsep1pt\parskip0pt\parsep0pt
-% \item
-%   `{[} p \wedge q \wedge r \leftarrow \not p \leftarrow r
-%   \leftrightarrow \not \not q {]}', verður fyrst
-% \item
-%   `{[} p \wedge q \wedge r \leftarrow \not p \leftarrow r
-%   \leftrightarrow \not (\not q) {]}', næst
-% \item
-%   `{[} p \wedge q \wedge r \leftarrow (\not p) \leftarrow r
-%   \leftrightarrow \not (\not q) {]}', næst
-% \item
-%   `{[} p \wedge q \wedge r \leftarrow (\not p) \leftarrow r
-%   \leftrightarrow ( \not (\not q)) {]}', næst
-% \item
-%   `{[} p \wedge (q \wedge r) \leftarrow (\not p) \leftarrow r
-%   \leftrightarrow ( \not (\not q)) {]}', næst
-% \item
-%   `{[} ( p \wedge (q \wedge r)) \leftarrow (\not p) \leftarrow r
-%   \leftrightarrow ( \not (\not q)) {]}', næst
-% \item
-%   `{[} ( p \wedge (q \wedge r)) \leftarrow ( (\not p) \leftarrow r )
-%   \leftrightarrow ( \not (\not q)) {]}', næst
-% \item
-%   `{[} (( p \wedge (q \wedge r)) \leftarrow ( (\not p) \leftarrow r ) )
-%   \leftrightarrow ( \not (\not q)) {]}', loks
-% \item
-%   `{[} (( p \wedge (q \wedge r)) \leftarrow ( (\not p) \leftarrow r )
-%   \leftrightarrow ( \not (\not q)) ){]}'.
-% \end{itemize}
-
-% Athugum sérstaklega að
-
-% \begin{verbatim}
-% \[ **A** \leftarrow **B** \leftarrow **C** \]
-% \end{verbatim}
-
-% þýðir
-
-% \begin{verbatim}
-% \[ **A** \leftarrow (**B** \leftarrow **C**) \]
-% \end{verbatim}
-
-% svo að í
-
-% \begin{verbatim}
-% \[ ( **A** \leftarrow **B** ) \leftarrow **C** \]
-% \end{verbatim}
-
-% má ekki sleppa svigum.
-
-% \subsubsection{Pólskur ritháttur}\label{puxf3lskur-rithuxe1ttur}
-
-% Búum til nýtt mál \emph{L}'(\emph{P}) með sama stafróf og
-% \emph{L}(\emph{P}) en nýjum myndunarreglum
-
-% \begin{itemize}
-% \item
-%   \begin{enumerate}[<+->]
-%   \def\labelenumi{(\roman{enumi})}
-%   \itemsep1pt\parskip0pt\parsep0pt
-%   \item
-%     ef \emph{x} er yrðingabreyta, þá er \emph{x} segð í
-%     \emph{L}'(\emph{P})
-%   \end{enumerate}
-% \item
-%   \begin{enumerate}[<+->]
-%   \def\labelenumi{(\roman{enumi})}
-%   \setcounter{enumi}{1}
-%   \itemsep1pt\parskip0pt\parsep0pt
-%   \item
-%     ef \emph{A} er segð í \emph{L}'(\emph{P}), þá er {[} \not **A** {]}
-%     segð í \emph{L}'(\emph{P})
-%   \end{enumerate}
-% \item
-%   \begin{enumerate}[<+->]
-%   \def\labelenumi{(\roman{enumi})}
-%   \setcounter{enumi}{2}
-%   \itemsep1pt\parskip0pt\parsep0pt
-%   \item
-%     Ef \emph{A}, \emph{B} er segð í \emph{L}`(\emph{P}), þá er {[}
-%     \vee *A* \emph{B} {]} segð í \emph{L}'(\emph{P}).
-%   \end{enumerate}
-% \end{itemize}
-
-% Til að sjá að það megi lesa \emph{A} og \emph{B} út úr {[} \vee *A*
-% \emph{B} {]}. Þurfum að sjá: Ef \emph{A}, \emph{B}, \emph{C}, \emph{D}
-% eru segðir og {[} \vee *A* \emph{B} {]} er sama stæða og {[} \vee *C*
-% \emph{D} {]}, þá er \emph{A} sama og \emph{C} og \emph{B} sama og
-% \emph{D}.
-
-% Ef {[} \vee *A* \emph{B} {]} er sama og {[} \vee *C* \emph{D} {]}, þá er
-% önnurstæðan \emph{A}, \emph{C} upphafskafli í hinni.
-
-% Það nægir að sýna:
-
-% Ef \emph{A}, \emph{C} eru segðir á \emph{L}'(\emph{P}) og önnur er
-% upphafskafli hinnar, þá eru þær sama segðin.
-
-% \emph{Sö}: Þrepum yfir lengd minni segðar. Ef lengdin er 1, þá er minni
-% stæðan breyta, en einu stæðurnar í \emph{L}`(\emph{P}) sem byrja á
-% breytu eru breytur. Ef lengdin er stærri en 1, þá byrja annaðvhort báðar
-% á'{[} \not {]}' eða báðar á {[} \vee {]}.
-
-% Í fyrra tilvikinu má skrifa \textbf{A} sem {[}~\not **A**\_1 {]} og
-% \textbf{C} sem {[}~\not **C\textbf{\emph{1 {]}, þar sem {[}
-% \textbf{A}}1, }C\_1\textbf{ {]} eru segðir og önnur upphafskafli hinnar,
-% svo að {[} }A\textbf{\emph{1 er \textbf{C}}1 {]} skv. þf. og þá
-% }A\textbf{ sama og }C\textbf{. Í seinna tilviki er }A** stæðan {[}
-% \vee **A\textbf{\emph{1 \textbf{A}}2 {]} og }C** er {[}
-% \vee **C\textbf{\emph{1, \textbf{C}}2 {]}, þar sem {[}
-% }A\textbf{\emph{1, \textbf{A}}2, }C\textbf{\emph{1, \textbf{C}}2 {]} eru
-% segðir í \emph{L}'(\emph{P}), og önnur af segð {[} }A\textbf{\emph{1,
-% \textbf{C}}1 {]} er upphafssegð hinnar. Skv. Þ.f. er {[}
-% }A\textbf{\emph{1{]} sama og {[} \textbf{C}}1 {]} og þá er {[}
-% }A\textbf{\emph{2 {]} sama og {[} \textbf{C}}2 {]} og þvi }A\textbf{
-% sama og }C**.
-
-% Látum \emph{p} vera mengi stæða í \emph{L}(\emph{P}) og \emph{p}`vera
-% mengi stæða í \emph{L}'(\emph{P}). Fáum varpanir
-
-% {[}
-
-% \begin{itemize}
-% \itemsep1pt\parskip0pt\parsep0pt
-% \item
-%   \theta: \emph{p} \leftarrow *p*'
-% \item
-%   \eta: \emph{p}' \leftarrow *p*
-% \end{itemize}
-
-% {]}
-
-% með þrepun þ.a.
-
-% {[} + \theta[x] er \textbf{x} ef x er breyta + \theta[(\not **A**)] er
-% \not \theta[**A**], + \theta[(**A** \vee **B**)] er
-% \vee \theta[**A**] \theta[**B**]
-% {]} og {[} + \eta[x] er \textbf{x} ef x er breyta + \eta[\not **A**] er
-% (\not \theta[**A**]), + \eta[ \vee **A** **B**] er (
-% \theta[**A**] \vee \theta[**B**]), {]} sem eru andhverfur hvor annarar.
-% Skammstafanir í \emph{L}'(\emph{P}) {[} + \wedge **A\textbf{ }B** fyrir
-% \not \vee \not **A** \not **B** + \leftarrow **A\textbf{ }B** fyrir
-% \vee \not **A\textbf{ }B** + \leftarrow **A\textbf{ }B** fyrir
-% \not \vee \not \vee \ot **A\textbf{ }B** \not \vee \not **B\textbf{
-% }A**. {]}
-
-% Segjum að yrðing hafi \emph{sanngildið} 0 ef hún er ósönn og
-% \emph{sanngildið} 1 ef hún er sönn.
-
-% \emph{Skilgreining}
-
-% \begin{enumerate}[<+->]
-% \def\labelenumi{\arabic{enumi}.}
-% \itemsep1pt\parskip0pt\parsep0pt
-% \item
-%   Látum $n \in \N, n \geq 1$. Vörpun {[} f: \set{0,1}\^{}n \to \set{0,1}
-%   kallast n-\emph{stætt sannfall} (\emph{Boole-fall}) 2. Látum \$
-%   \textbf{x}\_1, \dotsc **x**\_n \$ vera yrðingabreytur
-% \end{enumerate}
-
-% \ldots{}
-
-% \begin{verbatim}
-% \[ f_{**x**_1, \dotsc, x_n}^{**A**} : \set{0,1}^n \to \set{0,1} \]
-% þannig að
-
-% +   (i). Ef **A** er yrðingabreyta $ **x**_k $, og $ $ t = (t_1, \dotsc, t_n) \in \set{0,1}^n $, þá er
-%     \[ f_{**x**_1, \dotsc, x_n}^{**A**} (t) := t_k \].
-% +   (ii). Ef **A** er yrðingarsnið $ ( \not **t**)$, þá er
-%     \[ f_{**x**_1, \dotsc, x_n}^{**A**} (t) := \bcondef 1 & \ef f_{**x**_1, \dotsc, x_n}^{**C**} (t) = 0 \\ 0 & \annars \econdef \]
-% +   (iii). Ef **A** er yrðingarsnið $ ( **C** \vee **D**)$, þá er
-%     \[ f_{**x**_1, \dotsc, x_n}^{**A**} (t) = \bcondef 0 & \ef f_{**x**_1, \dotsc, x_n}^{**C**} = f_{**x**_1, \dotsc, x_n}^{**D**} (t) = 0 \\ 1 & \annars \econdef \]
-
-% Köllum $f_{**x**_1, \dotsc, x_n}^{**A**}$ sannfall yrðingarsniðsins **A** m.t.t. $ **x**_1 \dotsc, **x**_n $.
-% \end{verbatim}
-
-% Sannföllum yrðingasniða má lýsa með töflum, svokölluðum
-% \emph{sanntöflum}. Tafla fyrir n-stætt yrðingarsnið hefur $2^n$ reiti.
-% Einföldustu töflunar fyrir yrðingarsnið með aðeins einni breytu, t.d.
-% `p' og `$\not p $'; töflur fyrir þau eru =
-
-% \begin{tabular}[| c || c ]
-%         p & p \\
-%         \hline \\
-%         0 & 0   \\
-%         1 & 1 \\
-%         \hline
-%        \end{tabular}
-
-% \begin{tabular}[| c || c ]
-%         p & \not p \\
-%         \hline \\
-%         0 & 1   \\
-%         1 & 0 \\
-%         \hline
-%        \end{tabular}
-
-% það eru fleiri yrðinarsnið með aðeins eina breytu, t.d. `\$ p
-% \vee \not p $' og '$ p \wedge \not p \$' töflur fyrir þau eru
-
-% \begin{verbatim}
-% \begin{tabular}[| c || c ]
-%     p & p \\
-%     \hline \\
-%     0 & 0   \\
-%     1 & 1 \\
-%     \hline
-% \end{tabular}
-
-% \begin{tabular}[| c || c ]
-%     p & p \vee \not p \\
-%     \hline \\
-%     0 & 1   \\
-%     1 & 1 \\
-%     \hline
-% \end{tabular}
-
-% \begin{tabular}[| c || c ]
-%     p & p \wedge \not p \\
-%     \hline \\
-%     0 & 0   \\
-%     1 & 0 \\
-%     \hline
-% \end{tabular}
-% \end{verbatim}
-
-% sanntöflur fyrir ``samtengingarnar''
-
-% \begin{verbatim}
-% \begin{tabular}[| c  | c || c ]
-%     p & q & p \vee q \\
-%     \hline \\
-%     0 & 0 & 0 \\
-%     0 & 1 & 1 \\
-%     1 & 0 & 1 \\
-%     1 & 1 & 1 \\
-%     \hline
-% \end{tabular}
-
-% \begin{tabular}[| c  | c || c ]
-%     p & q & p \wedge q \\
-%     \hline \\
-%     0 & 0 & 0 \\
-%     0 & 1 & 0 \\
-%     1 & 0 & 0 \\
-%     1 & 1 & 1 \\
-%     \hline
-% \end{tabular}
-
-% \begin{tabular}[| c  | c || c ]
-%     p & q & p \leftarrow q \\
-%     \hline \\
-%     0 & 0 & 1 \\
-%     0 & 1 & 1 \\
-%     1 & 0 & 0 \\
-%     1 & 1 & 1 \\
-%     \hline
-% \end{tabular}
-
-% \begin{tabular}[| c  | c || c ]
-%     p & q & p \leftrightarrow q \\
-%     \hline \\
-%     0 & 0 & 1 \\
-%     0 & 1 & 0 \\
-%     1 & 0 & 0 \\
-%     1 & 1 & 1 \\
-%     \hline
-% \end{tabular}
-% \end{verbatim}
-
-% Finnum sanntöflu fyrir `((p \leftarrow q) \wedge p) \leftarrow q'
-
-% \begin{tabular}[| c  | c || c | c | c ]
-%         p & q & p \leftarrow q  & (p \leftarrow q) \wedge p & ((p \leftarrow q) \wedge ) \leftarrow q \\
-%         \hline \\
-%         0 & 0 & 1 & 0 & 1 \\
-%         0 & 1 & 1 & 0 & 1 \\
-%         1 & 0 & 0 & 0 & 1 \\
-%         1 & 1 & 1 & 1 & 1 \\
-%         \hline
-%     \end{tabular}
-
-% \emph{Skilgreining}
-
-% \begin{enumerate}[<+->]
-% \def\labelenumi{\arabic{enumi}.}
-% \itemsep1pt\parskip0pt\parsep0pt
-% \item
-%   Látum \textbf{A} vera yrðingasnið og \$ \textbf{x}\emph{1, \dotsc,
-%   \textbf{x}}n \$ vera upptalningu á breytunum í \textbf{A}. Við segjum
-%   að \textbf{A} sé sísanna \emph{sísanna} (tautology) ef sannfallið \$
-%   f\_\{\textbf{x}\emph{1, \dotsc, x}n\}\^{}\{\textbf{A}\} \$ er
-%   fastafallið 1. (Þetta er óháð hvernig við tölusetjum breyturnar). Við
-%   segjum að \textbf{A} sé \emph{mótsögn} ef sannfall þess er 0.
-% \item
-%   Segjum að yrðingarsnið \textbf{B} sé \emph{rökafleiða} yrðingarsniðs
-%   \textbf{A} ef $**A** \leftarrow **B** $ sé sísanna.
-% \item
-%   Segjum að yrðingarsnið \textbf{A} og \textbf{B} séu \emph{rökfræðilega
-%   jafngild} ef $(**A** \leftrightarrow **B**)$ er sísanna.
-% \end{enumerate}
-
-% \emph{Dæmi}: Yrðingarsniðin `$p \vee \not p$' og `\$ (( p \leftarrow q)
-% \wedge p) \leftarrow $' eru sísönnur. Því er 'q' rökafleiðing af '$(p
-% \leftarrow q) \wedge p $'. Auðvelt er að sjá að 'p' og '$ \not \not p
-% $' rökfræðilega jafngild, eins eru '$ p \leftarrow q $' og '$ \not q
-% \leftarrow \not p \$' rökfræðilega jafngild.
-
-% \emph{Setning}. Ef \textbf{A} og $**A** \to **B**$ eru sísönnur, þá er
-% \textbf{B} sísanna.
-
-% \emph{Sönnun}. Látum $**x**_1, \dotsc, **x**_n $ vera upptalningu
-% bretynanna sem koma fyrir í \textbf{A} eða \textbf{B}. G.r.f. að
-% \textbf{B} sé ekki sísanna. Þá er til stak \$ t = (t\_1, \dotsc, t\_n)
-% \in \set{0,1}\^{}n\$ þ.a. $f_{**x**_1, \dotsc, x_n}^{**B**} (t) = 0)$.
-% Nú er \textbf{A} sísanna, svo að \$ f\_\{\textbf{x}\emph{1, \dotsc,
-% x}n\}\^{}\{\textbf{A}\} (t) = 1\$ og þá \$ f\_\{\textbf{x}\emph{1,
-% \dotsc, x}n\}\^{}\{\not **A\textbf{\} = 0$. En þá er $
-% f\_\{}x\textbf{\emph{1, \dotsc, x}n\}\^{}\{}A** \leftarrow **B\textbf{\}
-% (t) = f\_\{}x**\emph{1, \dotsc, x}n\}\^{}\{ \not **A** \vee **B\textbf{
-% \} = 0$, í móstögn við að $}A** \to **B**\$ sé sísanna.
-
-% \emph{Setning}. Gr.r.f að \textbf{A} sé sísanna,
-% $**x**_1, \dotsc, **x**_n$ vera ólíkar yrðingabreytur og
-% $**B**_1, \dotsc, **B**_n$ vera yrðingarsnið. Þá er
-% $**A**_{**x**_1, \dotsc, **x**_n} [**B**_1, \dotsc, **B**_n]$ sísanna.
-
-% ``\emph{Sö}'': Sannfall fyrir
-% $**A**_{**x**_1, \dotsc, **x**_n} [**B**_1, \dotsc, **B**_n]$ er
-% samskeyting af $f_{**x**_1, \dotsc, x_n}^{**A**}$ og einhverju öðru, en
-% \$ f\_\{\textbf{x}\emph{1, \dotsc, x}n\}\^{}\{\textbf{A}\}\$ er
-% fastafallið, svo að útkoman er fastafallið 1.
-
-% \emph{Setning}. Látum $f: \set{0,1}^n \to \set{0,1}$ vera sannfall. Þá
-% er til yrðingarsnið \textbf{A} ásamt ólíkum breytum \$
-% \textbf{x}\emph{1, \dotsc, \textbf{x}}n\$, þ.a. {[} f =
-% f\_\{\textbf{x}\emph{1, \dotsc, x}n\}\^{}\{\textbf{A}\}. {]}
-
-% Geymum sönnun.
-
-% Tvístæð sannföll eru $2^{2^} = 2^4 = 16 $ talsins. Látum $*L*^{*}$ vera
-% mál, útvíkkun á \emph{L}(\emph{p}) með tvístæðum röktánum að auki fyrir
-% þau tvístæðu sannföll sem vantar.
-
-% Þar af tvö, `\$ \downarrow $' og '$ \textbar{} \$' með sanntöflu
-
-% \begin{verbatim}
-% \begin{tabular}[| c  | c || c ]
-%     p & q & p \downarrow q \\
-%     \hline \\
-%     0 & 0 & 1 \\
-%     0 & 1 & 0 \\
-%     1 & 0 & 0 \\
-%     1 & 1 & 0 \\
-%     \hline
-% \end{tabular}
-% \end{verbatim}
-
-% og
-
-% \begin{verbatim}
-% \begin{tabular}[| c  | c || c ]
-%     p & q & p | q \\
-%     \hline \\
-%     0 & 0 & 1 \\
-%     0 & 1 & 1 \\
-%     1 & 0 & 1 \\
-%     1 & 1 & 0 \\
-%     \hline
-% \end{tabular}
-% \end{verbatim}
+Sjá Rokfraedi.md fyrir byrjun.
 
 \begin{proof}
   $\hdots$ \\
@@ -1637,5 +940,94 @@ Ef kenning fyrstu stéttr hefur teljanlegt stafróf,
   hún hefur svo fasta 0 og 1 og tvö tvístæð fallatákn $+$ og $\cdot$, er samsemdar
   kenning og hefur eiginlegar frumsendur.
 \end{daemi}
+
+
+$\vdots$
+
+Sýnum að ekki er til einföld útvíkkun $\mathcal{T}$ á $\mc{F}$ þ.a.
+samsemdar líkön $\mc{T}$ séu nákvæmlega öll endanleg svið. G.r.f. að
+slík kenning sé til. Látum $\mb{B}_n$ vera yrðingin sem segir að til séu
+$n$ ólík stök, t.d. er $\mb{B}_{3}$ yrðingin
+\[\exists x \exists y \exists z ( x \neq y \wedge x \neq z \wedge y \neq z)\]
+
+ef við bætum öllum $\mb{B}_n$ við $\cT$ sem nýjum frumsendum, þá getur kenningin
+$\cT'$ sem þannig fæst ekki haft líkan. Þar með er til endanlega frumsendaður hluti
+$\cT''$ af $\cT'$ sem hefur ekkert líkan.
+
+Látum $n_0$ vera stærra en öll $n$ þ.a. $\mb{B}_n$ sé eiginleg frumsenda í
+$\cT''$ og K vera endanlegt svið þ.a. $\#K \geq n_0$. Þá er K líkan fyrir
+$\cT''$ sem er mótsögn.
+
+\begin{daemi}
+  Látum $\cL$ vera mál með jafnaðarmerki, föstum '0', '1',
+  falla táknum $'+'$ og $'\cdot'$ og tvístæðu umsagnartákni $<$.
+  Þá er rauntalnasviðið $\R$ mynstur fyri $\cL$ með augljósum hætti.
+  Látum $\cT$ vera mengi allra yrðinga á $\cL$ sem eru sannar í $\R$.
+  Þá er $\cT$ kenning sem hefur teljanlegt stafróf og því teljanlegt líkan.
+
+  Svo að $\cT$ gefur ekki fullkomna lýsingu á $\R$.
+
+  Látum nú $\cL^{*}$ vera málið sem fæst með því að bæta við $\cL$ fasta 
+  $\mb{r}_x$ fyrir sérhverja rauntölu $x$ og lítum á $\R$
+  sem mynstur fyrir $\cL^*$  með því að 
+  $(\mb{r}_x)_{\R} = x$. Látum $\cT^*$ vera mengi allra
+  yrðinga í $\cL^*$ sem eru sannar í $\R$.
+  Þá er $\R$ líkan fyrir $\cT^*$. Bætum fasta $\mb{c}$ við 
+  $\cL^*$ og frumsendunum $\mb{r}_x < \mb{c}$ f. öll
+  $x \in \R$; fáum þá kenningu $\cT^{**}$ sýnum að hún hefur líkan:
+  Látum $x_1, \dotsc, x_n \in \R$ veljum $y > x_1, \dotsc, x_n$
+  og setjum $\mb{c}_{\R} = y$
+
+
+  Þá fæst líkan fyrir $\cT^*$ að viðbættum fumsendu
+  $\mb{r}_{x_k} < r < \mb{c}$ fyrir $k = 1, \dotsc, n$; nefnilega 
+  $\R$ sjálft!
+
+  En þá hefur $\cT^{**}$ líkan ${}^* \R$ skv. þjöppunarsetningu. Þetta er 
+  svið þ.a. allar setningar í $\cT^*$ eru sannar í ${}^* \R$; það inniheldur
+  $\R$ sem hlutsvið (öllu heldur einsmóta eintak, nefninlega 
+  $\set{ (\mb{r}_x)_{{}^* \R}: x \in \R}$ og til er tala 
+  $y$ í ${}^* \R$, nefninlega $y := \mb{c}_{{}^* \R}$,
+  þ.a. $x < y$ fyrir öll $x$ úr $\R$, því ${}^* \R$ er
+  \emph{óarkímedískt raðsvið} (og þá er $0 < \1{y} < x$ f. öll $x \in R$
+\end{daemi}
+
+
+\begin{setn}[Tarski]
+  Látum $\cT$ vera samsemdarkenningu með stafrófi $\mc{S}$ 
+  og $\lambda$  vera fjöldatölu þ.a. $\lambda \geq \# \mc{S}$.
+  Ef $\cT$ hefur óendanlegt samsemdarlíkan, þá hefur það samsemdarlíkan með fjölda
+  tölu $\lambda$.
+\end{setn}
+
+\begin{proof}
+  Búum til nýja kenningu $\cT'$ með því að bæta mengi $C$ af nýjum
+  föstum við $\cT$, þar sem $\# C = \lambda$, og hverja tvo ólíka
+  fasta $\bc$ og $\bc'$ úr $C$ nýrri frumsendu $\bc \neq \bc'$.
+  Sýnum að $\cT'$ hafi samsemdarlíkan.
+
+  Skv. þjöppunarsetningu nægir að sýna að sérhver endanlega frumsendaður
+  hluti af $\cT'$ hafi samsemdarlíkan. Látum $\bc_1, \dotsc, \bc_n$ vera
+  fastana sem koma fyrir í nýjum
+  frumsendum í $\cT_1'$ og $M$ vera óendanlegt samsemdarlíkan fyri $\cT$
+  og $a_1, \dotsc, a_n$ 
+vera ólík stök í $|M|$; gerum $M$ að mynztri fyrir $\cT_1'$ með því að láta
+  $\bc_{k,M}$ vera $a_k$ og $\bc_M$ vera hvað sem er ef $\bc$ er í
+  $C \setminus \set{\bc_1, \dotsc, \bc_n}$. Þá er $M$ samsemdarlíkan fyrir
+  $\cT_1'$.
+
+  Fjöldatala stafrófs $\cT'$ er í hæsta $\lambda + \lambda = \lambda$,
+  svo að að getum valið $M$ með $\# |M| \leq \lambda$; en
+  $\bc_M \neq \bc_M'$ f. öll $\bc, \bc'$ ílík í $C$. Svo að 
+  $\# |M| \geq \lambda$ því er $\# |M| = \lambda$
+  
+  
+\end{proof}
+
+\begin{ath}
+  Fyrir fjöldatölur $\lambda, \mu$A þ.a. $\mu \leq \lambda$, $\lambda$ óendanlegt
+  $\mu \neq 0$, er 
+  \[ \mu + \lambda = \mu X = X \]
+\end{ath}
 
 \end{document}
