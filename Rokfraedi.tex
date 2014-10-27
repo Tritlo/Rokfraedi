@@ -1,6 +1,20 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{book}
 
 \input{header.tex}
+
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\mb}[1]{\mathbf{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\xxn}{x_1, \dotsc, x_n}
 
 \title{Rökfræði}
 \author{Matthías Páll Gissurarson}
@@ -9,8 +23,11 @@
 \maketitle
 
 
+\chapter{1}
+
 Sjá Rokfraedi.md fyrir byrjun.
 
+\chapter{2}
 \begin{proof}
   $\hdots$ \\
   $ \textbf{P}_{ij}$ vera yrðingabreytuna $\textbf{x}_j$ ef talan $1$ stendur í
@@ -489,7 +506,7 @@ $k = 1, \dotsc, n$. Þá er $\vdash \mathbf{A}' \leftrightarrow \mathbf{A}$
 \end{setn}
 
 
-\section{3. útvíkkanir með skilgreiningum}
+\section{Útvíkkanir með skilgreiningum}
 
 Höfðum kenningu $\mathcal{O}_1$ fyrir röðuð mengi;
 það var samsemdarsetning með tveimur tvístæðum umsagnartáknum,
@@ -580,9 +597,9 @@ $\mathbf{D}$. og $\mathbf{z}$ vera ólíka öllum í $\mathbf{D}$
 annars )
 
 
-\section{Kafli III. Líkön}
+\chapter{Kafli III. Líkön}
 
-\subsection{Mynztur og líkön}
+\section{Mynztur og líkön}
 
 \begin{skgr}
   \begin{enumerate}[(1)]
@@ -1029,5 +1046,235 @@ vera ólík stök í $|M|$; gerum $M$ að mynztri fyrir $\cT_1'$ með því að 
   $\mu \neq 0$, er 
   \[ \mu + \lambda = \mu X = X \]
 \end{ath}
+
+
+\chapter{IV}
+
+
+\section{Rakin föll}
+
+í þessum kafla er ``tala'' náttúruleg tala, ``fall'' er vörpun
+$\N^{n} \to \N$, ``venzl'' er hlutmengi í $\N^{n}$. Leyfum okkur að nota
+rökfræði tákn í yfirmálinu.
+
+Kennifall n-stæðra vensla $R$ er 
+$c_R: \N^n \to \N$,
+
+\[ c_R (x_1, \dotsc, x_n) := \bcondef 0 & \Ef R(x_1, \dotsc,x_n) \\ 1 & \Ef \lnot R(x_1,\dotsc,x_n).\\ \econdef \]
+
+(Skrifum $R(x_1,\dotsc, x_n)$ í stað $(x_1, \dotsc, x_n) \in R$.)
+
+\begin{skgr}
+  \emph{Rakin föll} eru skilgrein með þrepun þannig:
+
+  \begin{enumerate}[R\arabic*]
+  \item  Eftirfarandi föll eru rakin:
+    \begin{enumerate}[(a)]
+    \item \emph{Núllfallið} Z þ.a. $Z(x) = 0$
+    \item \emph{Eftirfarafallið} $N(x) = x+1$
+    \item Ofanvörpun $I_i^n(x_1, \dotsc, x_n) := x_i$
+    \end{enumerate}
+  \item Ef $G,H_1, \dotsc, H_n$ eru rakin föll, þ'er fallið
+    $F$ þ.a.
+    \[ F(x_1,\dotsc,x_n) = G(H_1(x_1,\dotsc,x_n), \dotsc, H_n(x_1,\dotsc,x_n))\]
+    rakið fall.
+  \item Ef $G,H$ eru rakin föll og $F$ er skilgreint
+    \begin{align*}
+      F(x_1, \dotsc, x_n,0) & := G(x_1, \dotsc,x_n),\\
+      F(x_1, \dotsc,x_n, yH) & := H(x_1, \dotsc, x_n, y, F(x_1, \dotsc, x_n, y))
+    \end{align*}
+    rakið fall.
+  \item Ef $G$ er rakið fall, þ.a. $\forall x_1, \dotsc, \forall x_n  \exists y (G(x_1, \dotsc, x_n,y) = 0)$
+    þá er fallið $F$ þ.a. 
+    \[ F(x_1, \dotsc, x_n) := \mu y G(x_1, \dotsc, x_n,y) = 0)\]
+    þar sem $\mu y(G(x_1,\dotsc,x_n,y) = 0)$ er minnsta $y$ þ.a.
+    $G(x_1,\dotsc,x_n,y) = 0$ er rakið.
+  \end{enumerate}
+
+ Fall sem fæst með því að nota eingöngu $R_1, R_2, R_3$ 
+ kallast \emph{frumstætt rakið fall}.
+
+ Við segjum að venzl $R$ séu rakin ef kennifallið 
+ $c_R$ er rakið. Ef \[\forall x_1, \dotsc, \forall x_n  \exists y R(x_1, \dotsc, x_n,y)\]
+ þá skrifum við
+ \[\mu y R (x_1, \dotsc, x_n,y) := \mu y (G_R(x_1,\dotsc,x_n,y) = 0)\]
+\end{skgr}
+
+
+\begin{setn}
+  \begin{enumerate}(1)
+  \item Ef $G: \N^n \to \N$ er [frumstætt9 rakið fall,
+    $i_1, \dotsc, i_k \in \set{1, \dotsc, n}$ og $F$ er gefið með
+    \[ F(x_1, \dotsc,x_n) = G(x_{i_1}, \dotsc x_{i_k})\]
+    þá er $F$ [frumstætt] rakið fall.
+  \item Núllfallið $Z^n(x_1,\dotsc,x_n) = 0)$ er frumstætt rakið fall.
+  \item Fyrir $k \in \N$ er fastafallið $K^n_k$ þ.a.
+    $K^n_k ( \xxn) = k$ frumstætt rakið fall.
+  \item í R4 má taka $n=0$ ef $H$ er [frumstætt] rakið fall,
+    $k \in \N$ og $F: \N \to \N$ er skilgreint með
+    \[ F(0) = k,\]
+    \[ F(y+1) = H(y,F(y)) \]
+    þá er $F$ [frumstætt] rakið fall.
+  \end{enumerate}
+\end{setn}
+
+
+\begin{proof}
+  \begin{enumerate}[(1)]
+  \item Höfum $F(\xxn) = G(I^n_{i_1} (\xxn), \dotsc, I^n_{i_k}(\xxn))$
+  \item $Z^n(\xxn) = Z(I^n_1 ( \xxn ))$.
+  \item $K^n_0 (\xxn) = Z^(\xxn)$ og
+    $K^n_{k+1} (\xxn) = N(K^n_k (\xxn))$.
+  \item Skv. R3 er $G: N^2 \to \N$ þ.a.
+    \[ G(x_1, 0) = K^1_k (x_1), \]
+    \[ G(x_1, y +1) = H(I^2_2 (x_1, y), G(x_1,y))\]
+  \end{enumerate}
+  [frumstætt] rakið fall, og $F(y) = G(y,y)$
+\end{proof}
+
+
+\begin{setn}[og skilgreining]
+  Eftirfarandi föll eru frumstæð rakin föll.
+  \begin{enumerate}[(1)]
+  \item $A(x,y) := x+y$.
+  \item $M(x,y) := x \cdot y$.
+  \item $V(x,y) := x ^ y$.
+  \item $ \delta (x) := \bcondef x-1 & \Ef x > 0, \\ 0 & \Ef x = 0. \econdef$
+  \item $ x-y := \bcondef x-y & \Ef x \geq y, \\ 0 & \Ef x < y. \econdef$
+  \item $ |x-y| := \bcondef x-y & \Ef x \geq y, \\ y - x & \Ef x < y. \econdef$
+  \item $ sg(x) := \bcondef 0 & \Ef x = 0 , \\ 1 & \Ef x > 0. \econdef$
+  \item $ \overline{sg}(x) := \bcondef 1 & \Ef x = 0 , \\ 0 &  \Ef x > 0. \econdef$
+  \item $x!$.
+  \item $\min(\xxn)$.
+  \item $\max(\xxn)$.
+  \item $rm(x,y) = \text{ afgangur þegar x er deilt í y}$.
+  \item $qf(x,y) = \text{ kvóti þegar x er deilt í y}$.
+  \end{enumerate}
+\end{setn}
+
+\begin{proof}
+  \begin{enumerate}[(1)]
+  \item 
+    \begin{gather*}
+    A(x,0) = I^1_1(x),\\
+    A(x,y+1) = N(A(x,y))
+    \end{gather*}
+  \item 
+    \begin{gather*}
+    M(x,0) = Z(x),\\
+    M(x,y+1) = A(M(x,y),x)
+    \end{gather*}
+  \item 
+    \begin{gather*}
+    V(x,0) = K^1_1(x),\\
+    V(x,y+1) = M(V(x,y),x)
+    \end{gather*}
+  \item 
+    \begin{gather*}
+    \delta(0) = 0,\\
+    \delta(y+1) = y
+    \end{gather*}
+  \item 
+    \begin{gather*}
+    x - 0 = x,\\
+    x - (y+1) = \delta(x-y)
+    \end{gather*}
+
+  \item 
+    \begin{gather*}
+    |x - y| = A(x-y,y-x),\\
+    \end{gather*}
+
+  \item 
+    \begin{gather*}
+    sg(0) = 0,\\
+    sg(y+1) = K^1_1(y)
+    \end{gather*}
+  \item 
+    \begin{gather*}
+    \overline{sg}(x) = 1 - sg(x)
+    \end{gather*}
+  \item
+    \begin{gather*}
+      0! = 1 = K^1_1(x),\\
+      (y+1)! = y! \cdot (y+1) = M(y!,y+1)
+    \end{gather*}
+  \item 
+    \begin{gather*}
+      \min(x,y) = x - (x-y), \\
+      \min(\xxn, x_{n+1}) = \min( \min( \xxn), x_{n+1})
+    \end{gather*}
+  \item 
+    \begin{gather*}
+      \max(x,y) = y + (x-y), \\
+      \max(\xxn, x_{n+1}) = \max( \max( \xxn), x_{n+1})
+    \end{gather*}
+  \item 
+    \begin{gather*}
+    rm(x,0) = 0,\\
+    rm(x,y+1) = N(rm(x,y)) \cdot sg(|x-N(rm(x,y))|)
+    \end{gather*}
+  \item 
+    \begin{gather*}
+    qf(x,0) = 0,\\
+    qf(x,y+1) = qf(x,y)) + \overline{sg}(|x-N(rm(x,y))|)
+    \end{gather*}
+  \end{enumerate}
+\end{proof}
+
+\begin{setn}
+  Ef $F$ er [frumstætt] rakið fall, þá eru eftirfarandi föll [frumstætt] rakin:
+  \begin{gather*}
+    \sum_{y < z} F(\xxn,y), ( =: G(\xxn,z)) \\
+    \sum_{y \leq z} F(\xxn,y),  \\
+    \prod_{y < z} F(\xxn,y),  \\
+    \prod_{y \leq z} F(\xxn,y),  \\
+  \end{gather*}
+\end{setn}
+
+\begin{proof}
+  \begin{gather*}
+    G(\xxn,0) = 0 \\
+    G(\xxn, z+1) = G(\xxn,z) + F(\xxn,z)\\
+    \vdots
+  \end{gather*}
+  o.s.frv.
+\end{proof}
+
+
+\begin{daemi}
+  Látum $t(0) = 1$ og $t(x)$ vera fjöldi deila
+  tölunnar $x$ ef $x \geq 1$. Þá er
+  $t$ frumstætt rakið, því að
+  \[t(x) = \sum_{y \leq x} \overline{sg}(rm(y,x))\]
+\end{daemi}
+
+\begin{skgr}
+  Setjum
+ \[\mu y_{y< z} R(\xxn,y) := \bcondef \text{ minnsta $y$ þ.a. $y < z$ og $R(\xxn,y)$} & \Ef \text{ slíkt y er til} \\ z & \text{ annars}. \econdef\]
+ \[ \forall y_{y<z} R(\xxn,y): \leftrightarrow \forall y ( y < z \rightarrow R(\xxn,y)),\]
+ \[ \forall y_{y<z} R(\xxn,y): \leftrightarrow \exists y ( y < z \wedge R(\xxn,y));\]
+ hliðstætt fyrir $\mu y_{y \leq z}, \forall y_{y\leq z}, \exists y _{y \leq z}$.
+\end{skgr}
+
+\begin{setn}
+  Venzl sem fást úr [frumstætt] röknum venzlum með því að nota rökvirkjana
+  '$\lnot$', '$\vee$' og takmarkaða magnara  eru [frumstætt] rakin.
+  Föll sem fást úr [frumstæðum] röknum föllum með virkjunum
+  $\mu y_{y < z}$ og $\mu y_{y \leq z}$ eru [frumstætt] rakin.
+\end{setn}
+
+\begin{proof}
+  \begin{gather*}
+    c_{\lnot R} (\xxn) = 1 - c_R(\xxn). \\
+    c_{R_1 \vee R_2} (\xxn) = c_{R_1} (\xxn) \cdot c_{R_2}(\xxn)
+  \end{gather*}
+  Ef $\theta(\xxn,y): \leftrightarrow \exists y_{y < z} R(\xxn,y)$ þá er
+  \[ c_R(\xxn) = \prod_{y<z} c_R(\xxn, y)\]
+  $\exists y_{y\leq z}$ er jafngilt $\exists y_{y <  z+1}$, $\forall y_{y\ < z}$
+  er jafngilt $\lnot \exists y_{y <  z}$ og
+  $\mu y_{y <  z} R(\xxn, y) = \sum_{y<z} (\prod_{u \leq y} c_R (\xxn, u))$
+  meria um það næst!
+\end{proof}
 
 \end{document}
