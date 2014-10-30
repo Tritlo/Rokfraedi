@@ -1266,15 +1266,156 @@ $c_R: \N^n \to \N$,
 
 \begin{proof}
   \begin{gather*}
-    c_{\lnot R} (\xxn) = 1 - c_R(\xxn). \\
-    c_{R_1 \vee R_2} (\xxn) = c_{R_1} (\xxn) \cdot c_{R_2}(\xxn)
+    C_{\lnot R} (\xxn) = 1 - C_R(\xxn). \\
+    C_{R_1 \vee R_2} (\xxn) = C_{R_1} (\xxn) \cdot C_{R_2}(\xxn)
   \end{gather*}
   Ef $\theta(\xxn,y): \leftrightarrow \exists y_{y < z} R(\xxn,y)$ þá er
-  \[ c_R(\xxn) = \prod_{y<z} c_R(\xxn, y)\]
+  \[ C_R(\xxn) = \prod_{y<z} C_R(\xxn, y)\]
   $\exists y_{y\leq z}$ er jafngilt $\exists y_{y <  z+1}$, $\forall y_{y\ < z}$
   er jafngilt $\lnot \exists y_{y <  z}$ og
-  $\mu y_{y <  z} R(\xxn, y) = \sum_{y<z} (\prod_{u \leq y} c_R (\xxn, u))$
-  meria um það næst!
+  \[\mu y_{y <  z} R(\xxn, y) = \sum_{y<z} (\prod_{u \leq y} C_R (\xxn, u))\]
+  Því að $ \prod_{u < y}C_R(\xxn,u)$ er 1 f. öll $y$ þ.a. $R(\xxn,u)$ sé rangt.
+
+  Fyrir öll $u$, en verður $0$ um leið og til er $u \leq y$ þ.a. $R(\xxn,u)$
+  sé rétt. Svo að $\sum_{y<z} \prod_{u \leq y} C_R(\xxn,u)$ er földi allra staka
+  frá $0$ upp í $y-1$
+  þar sem $y < z$ er fyrsta $y$ þ.a. $R(\xxn, y)$ sé rétt, ef slíkt $y$ er til 
+  en jafnt $z$ ef slíkst $y$ er ekki til.
 \end{proof}
 
+
+\begin{setn}
+  Venzlin $x = y$, $x < y$, $x \leq y$ , $x > y$, $x \geq y$, $x | y$, $x \equiv y (mod z)$.
+  og $Pr(x)$ eru frumstæði rakin, þar sem $Pr(x)$ þyðir að $x$ sé frumtala.
+  \begin{proof}
+    \begin{gather*}
+      C_=(x,y) = sg(|x-y|),\\
+      C_<(x,y) = \overline{sg}(y - x),\\
+      x \leq y \leftrightarrow x < y \vee x = y\\
+      C_|(x,y) = sg(rm(x,y)),\\
+      x \equiv y (mod z) \leftrightarrow z | |x-y|\\
+      C_{Pr} (x) = sg(|t(x)-2|)\\
+    \end{gather*}
+    því að $p$ er prímtala þþaa fjöldi talna sem gengur upp í $p$ sé $2$.
+  \end{proof}
+\end{setn}
+
+\begin{daemi}
+  \begin{enumerate}[(1)]
+  \item Látup $p_x$ vera $(x+1)$-stu frumtöluna í vaxandi röð. Þá
+    er $p_x$ frumstætt rakið fall, því að
+    \begin{gather*}
+      p_0 = 2,\\
+      p_{x+1} = \mu y_{y \leq (p_x)!+1} (p_x < y \wedge Pr(y)).
+    \end{gather*}
+    sérhverja nátt. tölu $x\geq 1$ má skrifa með
+    nákv. einum hætti sem margfeldi
+    \[ x = p_0^{v_0(x)} p_1^{v_1(x)} p_2^{v_2(x)} \dotsb \]
+    þar sem $v_k(x) \in \N$ o(g $v_k(x) = 0$ f. öll nógu stór k);
+    setjum til þæginda
+    $v_k(x) := 0$. Sérhvert fall $v_k(x)$ er frumstætt rakið, því að
+    \[ v_j(x) = \mu y_{y < x}(p_j^y | x \wedge \lnot p_j^{y+1} | x).\]
+  \end{enumerate}
+\end{daemi}
+
+\begin{setn}
+ Látum $G_1, \dotsc, G_k$ vera [frumstætt] rakin föll og $R_1, \dotsc, R_k$ vera
+ [frumstæð] rakin þ.a. fyrir sérhvert $(\xxn)$ sé nákvæmlega eitt
+ af $R_1(\xxn), \dotsc, R_k(\xxn)$ satt. Þá er fallið $F$ þ.a.
+ \[ F(\xxn) := \bcondef G_1(\xxn) & \Ef R_1(\xxn)\\ \vdots & \vdots \\ G_k(\xxn) & \Ef R_k(\xxn) \econdef \]
+ er frumstætt rakið fall.
+ \begin{proof}
+   \[F = G_1 \cdot C_{\lnot R_1} + \dotsb + G_k \cdot C_{\lnot R_k} \]
+ \end{proof}
+\end{setn}
+
+Oft eru föll $f$ skilgreind með þrepun þ.a.
+í skgr. á $f(y+1)$ eru öll gildi $f(0), \dotsc, f(y)$
+notuð. Setjum
+\[ f^{\#}(\xxn,y) = \prod_{u < y}p_n^{f(\xxn,u)} \]
+Getum reiknað $f$ útfrá $f^{\#}$ með
+\[ f(\xxn,y) = v_y (f^{\#}(\xxn,y+1)) \]
+
+\begin{setn}
+  Ef $H$ er [frumstætt] rakið fall og f fullnægi
+  \[ f(\xxn, y) = H(\xxn,y, f^{\#}(\xxn,y))\]
+  þá er f [frumstætt] rakið fall.
+\end{setn}
+
+\begin{proof}
+  $f^{\#}$ er [frumstætt] rakið, því að
+  \begin{align*}
+    f^{\#}(\xxn,0) = 1& ,\\
+    f^{\#}(\xxn,y+1) &= f^{\#}(\xxn,y) \cdot p_y^{f(\xxn,y)}\\
+    &= f^{\#}(\xxn,y) \cdot p_y^{H(\xxn,y,f^{\#}(\xxn,y)))}\\
+  \end{align*}
+  þar með er $f(\xxn,y) = v_y(f^{\#}(\xxn,y+1))$ það líka.
+\end{proof}
+
+\begin{daemi}
+  Fibonaci-runan er skilgreind með 
+  $f(0) = 1, f(1) = 1$ og \[f(k+2) = f(k)+ f(k+1)\].
+  Höfum:
+  \[f(k) = \overline{sg}(k) + \overline{sg}(|k-1|) + (v_{k-1}(f^{\#}(k))+v_{k-2}(f^{\#}(k))) \cdot sg(k-2) \]
+
+  þar sem  
+  \[ H(y,z) =  \overline{sg}(y) + \overline{sg}(|y-1|) + (v_{y-1}(z) + v_{y-2}(z))\cdot sg(y-1)\]
+  er frumstætt rakið fall, svo að $f$ er frumstætt.
+\end{daemi}
+
+\begin{setn}[Hjálparsetning]
+  Fallið $Q: \N^2 \to \N, Q(x,y) = (x+y)^2 +x + 1$ er eintækt.
+  \begin{proof}
+    G.r.f. að $Q(x,y) = Q(s,t)$. Ef $x+y < s+t$, þá er
+     \[ Q(x,y) \leq (x+y +1)^2 \leq (s+t)^2 < Q(s,t),\]
+     sem er mótsögn, eins ef $s+t < x+y$. Því er $x+y = s+t$,
+     en þá fæst að $x = s$ og þá $y = t$.
+  \end{proof}
+\end{setn}
+
+\begin{setn}
+  Til er ákveðið frumstætt rakið fall $\beta: \N^2 \to \N$
+  þ.a. $\beta (a,i) \leq a - 1$ og þ.a. fyrir öll $a_0, \dotsc, a_{n-1}$ er til
+  tala $a$ þ.a.
+  \[\beta(a,i) = a_i \]
+  fyrir öll $i$ þ.a. $0 \leq i < n$
+  \begin{proof}
+    Setjum $Q(x,y) := (x+y)^2 + x +1$ og
+    \[ \beta(a,i) = \mu x_{x \leq a - 1} \exists y_{y<a} \exists z_{z<a} (a = Q(y,z) \wedge 1 + (Q(x,i)+1) \cdot z | y ) \]
+    Látum $a_0, \dotsc, a_{n-1}$ vera fegin. Fáum
+    \[ c:= \max (Q(a_0,0) + 1, \dotsc, Q(a_{n-1},n-1) +1 ) \]
+    
+    Setjum $ z := c!$. Fyrir $j < l < c$ eru tölurnar
+    $1 +jz$ og $1 + lz$ ósamþátta, því að sameiginlegur frumþáttur
+    $p$ gengur upp í $(1+lz) - (1+jz) = (l-j)z$, en $l-j < c$, svo að
+    $l-j | z$ og því $p|z$, sem er fráleitt (þá fengist $p | 1$). Skv.
+    kínversku leifasetningunni er til tala $y$ þ.a. fyrir $j = =1, \dotsc, c-1$
+    gildi $1+jz|y$ þþaa $j$ sé ein af tölum $Q(a_i,i)+1, i \in \set{0,\dotsc,n-1}$.
+    Setjum $a := Q(y,z)$. Þá er $a_i < y < a$ og $ z < a$.
+
+    Skv. HS fæst: Til að sýna að $\beta(a,i) = a_i$ fyrir $i = 0, \dotsc, n-1$
+    nægir að sýna að $a_i$ sé minnsta tala $x$ þ.a.
+    $1+(Q(x,i)+1)\cdot z$ gangi upp í $y$. En ef $x < a_i$,
+    þá er $Q(x,i) < Q(a_i,1) < c$ og $Q(x,i)$ er
+    ekki ein af tölum $Q(a_j,i)$, þ.a. $1 + (Q(x,i)+1)\cdot z$
+    gengur ekki upp í $y$.
+  \end{proof}
+\end{setn}
+
+\begin{skgr}
+  Köllum $\beta$ Gödel-fallið.
+
+\end{skgr}
+
+\begin{ath}
+  
+  Vegna $\beta(a,i) \leq a - 1$ er 
+  \[\beta(0,i) = 0\]
+  og fyrir $a \neq 0$ er $\beta(a,i) < a$.
+\end{ath}
+
+\begin{ath}
+  Reynir notar í þessum kafla að ofan táknið $\dot{-}$,
+  en ég hef táknað það með $-$. Það ætti þó að laga þetta.
+\end{ath}
 \end{document}
