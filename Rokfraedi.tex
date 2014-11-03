@@ -4,6 +4,7 @@
 
 \newcommand{\cT}{\mathcal{T}}
 \newcommand{\cL}{\mathcal{L}}
+\newcommand{\cN}{\mathcal{N}}
 \newcommand{\mb}[1]{\mathbf{#1}}
 \newcommand{\mc}[1]{\mathcal{#1}}
 \newcommand{\bA}{\mathbf{A}}
@@ -14,7 +15,12 @@
 \newcommand{\bc}{\mathbf{c}}
 \newcommand{\bX}{\mathbf{X}}
 \newcommand{\bx}{\mathbf{x}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\by}{\mathbf{y}}
 \newcommand{\xxn}{x_1, \dotsc, x_n}
+\newcommand{\bxxn}{\bx_1, \dotsc, \bx_n}
+\newcommand{\aan}{a_1, \dotsc, a_n}
+\newcommand{\baan}{\ba_1, \dotsc, \ba_n}
 
 \title{Rökfræði}
 \author{Matthías Páll Gissurarson}
@@ -1418,4 +1424,158 @@ Getum reiknað $f$ útfrá $f^{\#}$ með
   Reynir notar í þessum kafla að ofan táknið $\dot{-}$,
   en ég hef táknað það með $-$. Það ætti þó að laga þetta.
 \end{ath}
+
+
+\section{Framsetning í $\mathcal{N}$}
+
+Rifjum upp að $\cN$ er samsemdarkenningin með fasta '$0$', einstætt
+fallatákn '$S$', tvö tvístæð fallatákn '$+$' og '$\cdot$' og
+eitt tvístætt umsagnartákn '$<$' (auk '$=$') og eftirfarandi eiginlegum
+frumsendum:
+
+\begin{enumerate}[label=\textbf{N}\arabic*]
+\item  \( Sx \neq 0\)
+\item  $ Sx = Sy \rightarrow x = y$.
+\item  $ x + 0 = x$.
+\item  $ x + Sy = S(x+y)$.
+\item  $ x \cdot 0 = 0$.
+\item  $ x \cdot Sy = (x \cdot y) + x$.
+\item  $ \lnot (x < 0)$.
+\item  $ x < Sy \leftrightarrow x < y \vee x = y$.
+\item  $ x < y \vee x = y \vee x > y$.
+\end{enumerate}
+
+Heitin '$0$', '$S0$', '$SS0$', $\dotsc$ o.s.frv. kallast
+tölutákn látum $\mb{k}_n$ vera tölutáknið sem hefur nkvl. $n$ '$S$'.
+
+\begin{skgr}
+  Látum $\cT$ vera kenningu með sama máli og $\cN$. Við segjum
+  að yrðingin $\bA$ ásamt ólíkum breytum 
+  $\bx_1, \dotsc, \bx_n ,\mathbf{y}$ sé framsetning á n-stæðu fallinu
+ $F$ í $\cT$ ef fyrir öll $a_1, \dotsc, a_n$ í $\N$ gildir
+ \[ \vdash_{\cT} \bA_{\bx_1, \dotsc, \bx_n} [ \bk_{a_1}, \dotsc, \bk_{a_n}] \leftrightarrow y = \bk_b \]
+ þar sem $ b = F( a_1, \dotsc, a_n)$. Segjum að $F$ sé framsetjanlegt í
+ $\cT$ ef slík framsetning er til.
+
+ Segjum að yrðing $\bA$ ásamt ólíkum breytum $\bxxn$ sé framsetning í $\cT$
+ á n-stæðum venzlum $P$ ef f. öll $\aan$ úr $\N$ gildi
+ \begin{enumerate}[(i)]
+ \item  ef $P(\aan)$, þá $\vdash_{\cT} \bA_{\bxxn}[\bk_{a_1}, \dotsc, \bk_{a_n}]$;
+ \item  ef $\lnot P(\aan)$, þá $\vdash_{\cT} \lnot \bA_{\bxxn}[\bk_{a_1}, \dotsc, \bk_{a_n}]$
+ \end{enumerate}
+ segum þá að $P$ sé \emph{framsetjanlegt} í $\cT$.
+
+ Segjum að heiti $\ba$ ásamt ólíkum breytum $\bxxn$ sé framsetning á 
+ n-stæðu falli $F$ í $\cT$ ef f. öll $\aan$ í $\N$
+ gildir:
+ \[ \vdash_{\cT} \ba_{\bxxn}[\bk_{a_1}, \dotsc, \bk_{a_n}] = \bk_b \]
+ þar sem $b = F(\aan)$
+\end{skgr}
+
+\begin{ath}
+  Ef heitið $\ba$ ásamt $\bxxn$ er framsetning á $F$ í $\cT$ og
+  $\by$ er ný breyta, þá er yrðingin $\by = \ba$ ásamt
+  $\bxxn, \by$ framsetning á $F$ í $\cT$.
+\end{ath}
+
+\begin{daemi}
+  \begin{enumerate}[(1)]
+  \item  Yrðingin '$ x = y$' ásamt '$x$', '$y$' er framsetning á 
+    venzlum $=$ í $\cN$. Til að sanna það þarf að sýna:
+    \begin{enumerate}[(i)]
+    \item  ef $m = n$, þá er $\bk_m = \bk_n$
+    \item  ef $m \neq n$, þá er $\bk_m \neq \bk_n$
+    \end{enumerate}
+
+    Staðhæfing (i) fæst úr $\mathbf{EQ}_1$ með innsetningu.
+    Til að sýna (ii) má gera ráð fyrir að $m > n$.
+    Notum þrepun yfir $n$. Ef $n = 0$, fæst þetta úr \textbf{N1}.
+    Látum þá $n > 0$. Með innsetningu í \textbf{N2} fæst
+    \[ \vdash_{\cN} \bk_m = \bk_n \rightarrow \bk_{m-1} = \bk_{n-1}.\]
+    Skv. þf. er $\vdash_{\cN} \bk_{m-1} \neq \bk_{n-1} $ og þá
+    $\vdash_{\cN} \bk_m \neq k_n$ skv. sís.
+  \item Heitið '$0$' ásamt '$x$' er framsetning á núllfallinu
+    $Z: \N \to \N$, því að $\vdash_{\cN} 0 = 0$ og
+    $0_x [\bk_a]$ er '$0$'.
+  \item Heitið '$Sx$' ásamt '$x$' er framsetning á eftrifara fallinu
+    $N(x) = x + 1$ í $\cN$; það þýðir að
+    \[ \vdash_{\cN} S \bk_n = \bk_{n+1}.\]
+    En $S\bk_n = \bk_{n+1}$, svo að þetta fæst úr
+    $\mathbf{EQ}_1$ með innsetningu.
+  \item Heitið '$x_i$' ásamt '$x_1$',$\dotsc$,'$x_n$' er
+    framsetning á ofanvarpinu $I^n_i$. Ef
+    $\bA$ er $'x_i'$, þá er $\bA_{\bxxn}[\bk_{a_1}, \dotsc, \bk_{a_n}]$
+    heitið $\bk_{a_i}$ og 
+    \[ \vdash_{\cN} \bk_{a_i} = \bk_{a_i} \]
+    skv. \textbf{EQ1}
+  \item Heitið $'x+y'$ ásamt $'x', 'y'$ er framsetning í $\cN$ á
+    samlagningunni $\N^2 \to \N$,
+    $(x,y) \mapsto x+y$. Til að sanna það þarf að sýna að
+    \[ \vdash_{\cN} \bk_m + \bk_n = \bk_{m+n} \]
+    Þrepum yfir $n$. Fyrir $ n =0$ er þetta
+    \[ \vdash_{\cN} \bk_m + 0 = \bk_{m} ,\]
+    sem fæst úr \textbf{N3} með innsetningu.
+    G.r.f. að $\vdash_{\cN} \bk_m + \bk_n = \bk_{m+n}$
+    Fyrir fast tiltekið $n$ (og öll $m$). Skv.
+    setningu um samsendarkenningar
+    \[ \vdash_{\cN} S(\bk_m + \bk_n) = S \bk_{m+n}\]
+    þ.e.
+
+    \[ \vdash_{\cN} S(\bk_m + \bk_n) = \bk_{m+n+1}\]
+    skv. N4 er
+    \[ \vdash_{\cN} S(\bk_m + \bk_n) = \bk_{m} + \bk_{n+1}\]
+    svo að
+    \[ \vdash_{\cN} \bk_m + \bk_{n+1} = \bk_{m+n+1}.\]
+    Eins sést að tilteki '$x\cdot y$' ásamt $'x'$, '$y$' er
+    framsetning  á margfölduninni $\N^2 \to \N$ í $\cN$.
+  \item  Yrðingin $'x < y'$ ásamt '$x$' og '$y$' er
+    framsetning í $\cN$ á venzlunum $<$ í $\N^2$. Sýna þarf:
+    \begin{enumerate}[(i)]
+    \item  Ef $m < n$ ,þá er $\vdash_{\cN} \bk_m < \bk_n$
+    \item  Ef $m \geq n$ ,þá er $\vdash_{\cN} \lnot (\bk_m < \bk_n)$ 
+    \end{enumerate}
+    Fyrir $n = 0$ gildir (i) sjálfkrafa og (ii) fæst úr \textbf{N7}.
+    G.r.f að (i) og (ii) gildi fyrir tiltekið $n$. skv. \textbf{N8}
+    fæst
+    \[ \vdash_{\cN} \bk_m < \bk_{n+1} \leftrightarrow (\bk_m < \bk_n \vee \bk_m = \bk_n) (^*) \]
+    Gerum fyrst ráð fyrir að $m < n+1$. Ef $m<n$ þá er $\vdash_{\cN} \bk_m < \bk_n$
+    skv. þf. en ef $ m = n$, þá er $\vdash_{\cN} \bk_m = \bk_n$.
+
+    Í báðum tilvikum gefur $(^*)$ okkur að $\vdash_{\cN} \bk_m < \bk_{n+1}$.
+    Gerum næst ráð fyrir að $m \geq n+1$. Þá er $m \geq n$
+    því $\vdash_{\cN} \lnot (\bk_m < \bk_n)$ skv. þf. og 
+    $m \neq n$ og því $\vdash_{\cN} \lnot (\bk_m < \bk_{n+1})$
+    skv. $(^*)$ og \emph{sís}.
+  \end{enumerate}
+\end{daemi}
+
+\begin{setn}
+  Venzl P eru framsetjanleg í $\cN$ þþaa kennifallið $C_P$ sé framsetjanlegt í $\cN$
+\end{setn}
+
+\begin{proof}
+  Gerum fyrst r.f. að $\bA$ ásamt $\bxxn$ sé framsetning á $P$ í $\cN$
+  látum $\bB$ vera yrðinguna
+  \[ ( \bA \wedge \by = \bk_0) \vee (\lnot \bA \wedge \by = \bk_1)\]
+  Þar sem $\by$ er ný breyta. sýnum að $\bB$
+  ásamt $\bxxn, \by$ er framsetning á $C_P$.
+  G.r.f. að $C_P (\aan) = 0$. Þá er $P(\aan)$
+  og því $\vdash_{\cN} \bA_{\bxxn} [\bk_{a_1}, \dotsc,\bk_{a_n}]$; af því og \emph{sís}
+  fæst
+  \[ \vdash_{\cN} \bB_{\bxxn} [ \bk_{a_1}, \dotsc,\bk_{a_n} ] \leftrightarrow \by = \bk_0 \]
+  Samskonar rök ef $C_P (\aan) = 1$.
+
+  Gerum næst r.f. að $\bA$ ásamt $\bxxn, y$ sé framsetning á $C_P$. Sýnum að
+  $\bA_{\by}[0]$ ásamt $\bxxn$ er framsetning á $P$.
+  \begin{enumerate}[(i)]
+  \item Ef $P(\aan)$, þá er $C_P(\aan) = 0$ og því
+    \[\vdash_{\cN} \bA_{\bxxn}[\bk_{a_1}, \dotsc,\bk_{a_n}] \leftrightarrow \by = \bk_0 \]
+    Setjum $\bk_0$ inn fyrir $\by$. Vegna $\vdash_{\cN} \bk_0 = \bk_0$
+    fæst \[\vdash_{\cN} ( \bA_{\by}[0] )_{\bxxn}[\bk_{a_1}, \dotsc,\bk_{a_n}]\]
+  \item Ef $\lnot P(\aan)$ þá er $C_P ( \aan) = 1$
+    og \[\vdash_{\cN} \bA_{\bxxn} [ \bk_{a_1}, \dotsc,\bk_{a_n}] \leftrightarrow \by = \bk_1.\]
+    Setjum $\bk_0$ inn fyrir $\by$, vegna $\vdash_{\cN} k_0 = k_1$, fæst
+    \[ \vdash_{\cN} \lnot (\bA_{\by}[0])_{\bxxn} [\bk_{a_1}, \dotsc,\bk_{a_n}]\]
+  \end{enumerate}
+\end{proof}
 \end{document}
