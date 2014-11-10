@@ -12,15 +12,23 @@
 \newcommand{\bB}{\mathbf{B}}
 \newcommand{\bb}{\mathbf{b}}
 \newcommand{\bC}{\mathbf{C}}
+\newcommand{\bD}{\mathbf{D}}
 \newcommand{\bc}{\mathbf{c}}
 \newcommand{\bX}{\mathbf{X}}
 \newcommand{\bx}{\mathbf{x}}
 \newcommand{\bk}{\mathbf{k}}
 \newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
 \newcommand{\xxn}{x_1, \dotsc, x_n}
 \newcommand{\bxxn}{\bx_1, \dotsc, \bx_n}
 \newcommand{\aan}{a_1, \dotsc, a_n}
 \newcommand{\baan}{\ba_1, \dotsc, \ba_n}
+\newcommand{\bkaan}{\bk_{a_1}, \dotsc,\bk_{a_n}}
+\newcommand{\dda}{\dot{-}}
+
+\DeclarePairedDelimiter{\god}{\ulcorner}{\urcorner}
 
 \title{Rökfræði}
 \author{Matthías Páll Gissurarson}
@@ -1578,4 +1586,201 @@ tölutákn látum $\mb{k}_n$ vera tölutáknið sem hefur nkvl. $n$ '$S$'.
     \[ \vdash_{\cN} \lnot (\bA_{\by}[0])_{\bxxn} [\bk_{a_1}, \dotsc,\bk_{a_n}]\]
   \end{enumerate}
 \end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+\[\vdots\]
+
+
+\begin{proof}
+  \[\vdash_{\cN} \bk_b < \bk_c \wedge \bA_{\bxxn} [ \bk_{a_1},
+  \dotsc,\bk_{a_n},\bk_b] .\] Af innsetningarsetningu leiðir að
+  \[\vdash_{\cN} \exists y ( y < \bk_b \wedge \bA_{\bxxn} [ \bk_{a_1},
+  \dotsc,\bk_{a_n}])\] þ.e.
+ 
+  \[\vdash_{\cN} \bB_{\bxxn,\mb{w}} [ \bk_{a_1},
+  \dotsc,\bk_{a_n},\bk_b] .\]
+
+  G.r.f. að $\lnot S(\aan,c)$. Þá gildir $\lnot R(\aan, i)$ fyrir öll
+  $i = 1, \dotsc, c-1$.
+
+  Og því að
+  \[\vdash_{\cN} \lnot \bA_{\bxxn,\by} [ \bk_{a_1},
+  \dotsc,\bk_{a_n},\bk_i]\] fyrir öll $i = 1, \dotsc, c-1$.  Ef $\bC$
+  er \(\vdash_{\cN}\bA_{\bxxn} [ \bk_{a_1}, \dotsc,\bk_{a_n}]\) má
+  skrifa þetta
+  \[\vdash_{\cN} \lnot \bC_{y} [ \bk_{i}] , i = 0, \dotsc, c-1 \]
+
+  skv. HS2 er
+
+  \[\vdash_{\cN} \lnot (y < \bk_c \wedge \bC)\]
+
+  Skv. \textbf{Ath} fæst
+
+  \[ \vdash_{\cN} \forall y \lnot (y < \bk_c \wedge \bC) \] þ.e.
+
+  \[ \vdash_{\cN} \lnot \exists y (y < \bk_c \wedge \bC) \]
+
+  og það þýðir:
+
+  \[ \vdash_{\cN} \lnot \bB_{\bxxn} [\bkaan, \bk_c] \]
+\end{proof}
+
+
+\begin{setn}[HS7]
+  Gödelfallið $\beta$ er framsetjanlegt í $\cN$.
+\end{setn}
+\begin{proof}
+  Munum að
+  \[ \beta(a,i) = \mu x_{\bx \leq \dot{-} 1} \exists y_{y<a} \exists z_{z < a}\]
+
+\[\vdots\]
+
+Ljóst er að $Q$.
+\[\vdots\]
+
+eru framsetjanleg í $\cN$ og þá er $\beta(a,i) = \mu x R(x,i)$
+framsetjanlegt í $\cN$.
+\end{proof}
+
+\begin{setn}[HS8]
+
+Látum $G,H$ vera framsetjanlegt í $\cN$, og $F$ vera skilgreint með
+\begin{gather*}
+  F(\xxn,0) = G( \xxn)\\
+  F(\xxn, y+1) = H(\xxn,F(\xxn,y))
+\end{gather*}
+þá er $F$ framsetjanlegt í $\cN$.
+\end{setn}
+
+\begin{proof}
+  Látum $\bA$ ásamt $\bxxn, \by$ vera framsetningu á $G$ í $\cN$
+  og $\bC$ ásamt $\bxxn,\by,\bz,\bv$ vera framsetningu á Gödelfallinnu $\beta$
+  í $\cN$. Látum $\bD$ vera
+
+  \begin{gather*}
+    \exists \mb{u} [ \exists \mb{w} ( \bB_{\mb{u},\mb{y},\mb{z}} [
+    \mb{u}, 0, \mb{w}] \wedge \bA_y [w]) \wedge
+    \bB_{\mb{u},\mb{y},\mb{z}}[\mb{u},\mb{y},\mb{z}]\\ \wedge
+    \exists \mb{w} (\mb{w} < \by \rightarrow \exists \mb{t} \exists \mb{s} ( \bB_{\mb{y},\mb{z}}[\mb{w};\mb{t}] \wedge \bB_{\mb{y},\mb{z}}[S\mb{w}, \mb{s}] \wedge C_{\mb{u},\mb{y},\mb{z}}[\mb{w}, \mb{t}, \mb{s}]]]]
+  \end{gather*}
+
+  Viljum sýna að $\bD$ ásamt $\bxxn, \by, \bz $ sé framsetning á $F$ í $\cN$
+  þ.e.: Ef $F(\aan,b) = c$ þá er
+  \[\vdash_{\cN} \bD_{\bxxn,\by} [\bkaan, \bk_b] \leftrightarrow \bz = \bk_c\]
+  Við gefum óformlega sönnun og látum lesanda eftir að þýða yfir í $\cN$.
+  Með því að nota $\bA, \bB$ og $\bC$ sem yrðingar um Föllin
+  $G, \beta, H$ og skrifa $'z'$ fyrir $\bz$ sést að 
+  yrðingin $\bD_{\bxxn,y}[\bkaan,\bk_b]$ þýðir að eftirfarandi skilyrðum sé fullnægt.
+  \begin{enumerate}[(i)]
+  \item Til er w þ.a. 
+    \[ \beta(u,0) = w \]
+    og \[G(\aan) = w\]
+  \item $\beta(u,b) = z$
+
+  \item fyrir öll $w < b$ eru til $t$ og $s$ þ.a.
+
+    \begin{gather*}
+      t = \beta(u,w), s = \beta(u,w+1)\\
+      s = H(\aan,w,t)
+    \end{gather*}
+  \end{enumerate}
+
+  Með þí að setja $d_i = \beta(u,i)$ sést að þetta segir eftirfarandi:
+
+  \[ (*) \bcondef d_0 = C(\aan) \\ d_{i+1} = H(\aan,i,d_i) \text{ fyrir } i < 0
+  \\ d_b = z \econdef \]
+  En af því sést að $d_i = F(\aan,i)$ og þá $z = F(\aan,b) = c$.
+  Öfugt ef $z := F(\aan,b)$ og skilgreinum $d_i := F(\aan,i)$,
+  þá fullnægja $k_i$-in $(*)$. Látum u vera
+  $\beta(u,i) = d_i$ fyrir $i = 0, \dotsc,b$, þá er skilyrði (i)-(iii) fullnægt.
+
+\end{proof}
+Þar með er aðal setningin sönnuð!
+
+\chapter{Ófullkomleikasetningar}
+
+\section{Gödel-tölusetning}
+
+Látum $\beta$ vera Gödel-fallið. Fyrir sérhverja 
+n-un ($\aan$) táknum við með
+\[< \aan > \]
+
+minnstu tölu $a$ þ.a. $\beta(a,0) = n$ og 
+$\beta(a,i) = a_i$ fyrir $i = 1, \dotsc, n$. Köllum
+$<\aan>$ runutölu $n$-undarinnar
+$(\aan)$. Leyfum $n=0$ og höfum $<> = 0$.
+
+Fyrir fast $n$ er 
+\[ F(\aan) := < \aan>\]
+rakið fallið því að
+\[< \aan> = \mu x(\beta(x,0) = n \wedge \beta(x,1) = a_1 \wedge \dotsb \wedge \beta(x,n) = a_n )\]
+
+Setjum líka
+
+\begin{gather*}
+  ln(a) = \beta(a,0)\\
+  (a)_i = \beta(a,i+1)
+\end{gather*}
+(Vegnn $\beta(a,i) \leq a \dda -1$ sést:
+Ef $a \neq < >$, þá er $ln(a) < a$ og $(a)_i < a$.)
+Ef $a = < a_0 \dotsc, a_{n-1}$, þá er
+\begin{gather*}
+  n = ln(a)\\
+  (a)_i = a_i \text{ fyrir } i = 0, \dotsc, n-1
+\end{gather*}
+
+Látum Seq vera mengi allra rauntalna. Það er rakin einstæð venzl vegna
+$Seq(a) \leftrightarrow \forall x_{x < a} ( ln(x) \neq ln(a) \vee \exists i_{i < ln(a)} ((x)_i = (a)_i))$.
+
+Látum nú $\cT$ vera kenningu fyrstu stéttar með mál $\cL$.
+
+Komum okkur saman um eftirfarandi:
+
+\begin{enumerate}[(1)]
+\item Breytunum í $\cL$ hefur verið raðað í ákveðna röð
+  \[ \bz_0, \bz_1, \bz_2, \dotsc\]
+  Úthlutum breytunni $\bz_i$ tölunni $2i$; köllum $2i$
+  \emph{tákntölu} breytunnar $\bz_i$ og skrifum
+  \[\tau(\bz_i) = 2i\]
+\item Sérhverju öðru táknu $\bv$ í $\cL$ hefur verið úthlutað
+  tiltekinni oddatölu $\tau(\bv)$ þ.a. ólík tákn fái ólíkar tölur.
+  Köllum $\tau(\bv)$ tákntölu táknsins $\bv$.
+\item Eftirfarandi föll eru rakin:
+  \begin{itemize}
+  \item \[\phi(x,n): \leftrightarrow x \text{ er tákntala n-stæðs fallatákns  í } \cL\]
+  \item \[\omega(x,n): \leftrightarrow x \text{ er tákntala n-stæðs umsagnartákns í } \cL\]
+  \end{itemize}
+
+  \begin{ath}
+   T.d. má setja 
+   \[ \tau{\lnot} := 3, \tau(v) := 5, \tau(\forall) := 7 \]
+   Ef við getum raðað fyrir hvert n n-stæða fallatáknunum í röði
+   \[\mb{f}_0^n, \mb{f}_1^n, \dotsc \]
+   (endanlega eða óendanlega), þá má setja
+   \[ \tau(\mb{f}_k^n) := 1 + 8\cdot 2^n 3^k \]
+   Eins ef raða má n-stæðu umsagnartáknum í röð
+   \[\mb{p}_0^n, \mb{p}_1^n, \dotsc \]
+   þá má setja
+   \[ \tau(\mb{p}_k^n) :=3 + 8\cdot 2^n 3^k \]
+
+   Næst úthlutum við sérhverju heiti eða
+   yrðingu $\bu$ úr $\cL$ náttúrulegri tölu
+   sem við skrifum:
+   \[ \god{\bu}, \]
+   sem við köllum \emph{Gödel-tölu} $\bu$
+   með þrepun.
+  \end{ath}
+\end{enumerate}
+
+
 \end{document}
