@@ -27,6 +27,7 @@
 \newcommand{\baan}{\ba_1, \dotsc, \ba_n}
 \newcommand{\bkaan}{\bk_{a_1}, \dotsc,\bk_{a_n}}
 \newcommand{\dda}{\dot{-}}
+\newcommand{\Thm}{{\mc{T}hm}}
 
 \DeclarePairedDelimiter{\god}{\ulcorner}{\urcorner}
 
@@ -1781,6 +1782,177 @@ Komum okkur saman um eftirfarandi:
    með þrepun.
   \end{ath}
 \end{enumerate}
+
+
+\begin{setn}[Gödel-tölusetning]
+  \begin{enumerate}[(1)]
+  \item  Ef $\bx$ er breyta, sem við lítum á sem heiti, þ.e.
+    runu af lengf 1, þá er Gödel-talan
+    \[ \god{\bx} =  \braket{\tau(\bx)} \]
+  \item Ef $\mb{f}$ er n-stætt fallatákn og
+    $\baan$ eru heiti, þá er
+    \[\god{\mb{f} \baan} = \braket{\tau(\mb{f}), \god{\ba_1}, \dotsc, \god{\ba_n}}\]
+  \item Ef $\mb{p}$ er n-stætt umsagnartákn, og $\baan$ eru heiti, þá er
+    \[\god{\mb{p} \baan} = \braket{\tau(\mb{p}), \god{\ba_1}, \dotsc, \god{\ba_n}}\]
+  \item 
+    Ef $\bA$ er yrðing, þá er
+    \[\god{\lnot \bA} = \braket{\tau(\lnot),\god{\bA}}\]
+  \item Ef $\bA$ og $\bB$ eru yrðingar, þá er
+    \[\god{\vee \bA \bB} = \braket{\tau(\vee),\god{\bA},\god{\bB}}\]
+  \item 
+    Ef $\bA$ er yrðing, þá er
+    \[\god{\forall \bx \bA} = \braket{\tau(\forall),\god{\bx},\god{\bA}}\]
+  \end{enumerate}
+  Þarsem föllin $\braket{\aan}$ eru reiknanleg getum við reiknað
+  $\god{\mb{n}}$ ef tákntölur allra tákna eru gefnar. Getum ákvarðað
+  hvort gefin tala $a$ er Gödel-talal heitis eða yrðingar. Þetta má sjá með
+  þrepun yfir $a$.
+  
+  Athugum fyrst hvort a er runu tala $\neq \braket{}$; það getum við, því að
+  $Seq$ er rakið og því reiknanlegt.
+
+  Ef a er ekki runutala, þá er a ekki Gödel-tala heitis né yrðingar.  Ef a er
+  runutala, þá
+  finnum við tölurnar $a_0, \aan$ þ.a. $a = \braket{a_0, \aan}$
+  sem við getum af því að $lh$ og $ a \vdash (a)$; [hérna gæti staðið 
+  $a \to (a)$, sé það ekki.] eru reiknanleg.
+  Athugum hvort eitt af eftirfarandi gildir:
+  \begin{enumerate}[(1)]
+  \item  $\ba_0$ er jöfn tala.
+  \item $\ba_0$ er tákntala n-stæðs fallatákns og $\aan$
+    Gödel-tölur heita; þetta er unnt skv. þf, því að
+    $a_T < a$ og fallið $\phi(x,n)$ er reiknanlegt.
+  \item $a_0$ er tákntala n-stæðs umsagnar tákns og
+    $\aan$ eru Gödel-tölur heita
+  \item $a_0 = \tau(\lnot)$, $n = 1$ og $a_n$ er Gödel-tala yrðingar.
+  \item $a_0 = \tau(\vee)$, $n=2$ og $a_1, a_2$ eru Gödel-tölur yrðinga.
+
+  \item $a_0 = \tau(\forall)$, $n = 2$, $a_1$ er jöfn tala og 
+    $a_2$ er Gödel-tala yrðingar.
+
+    
+  \end{enumerate}
+    Ef einu af þessum skilyrðum er fullnægt, þá er a Gödel-tala heitis eða
+    yrðingar, annars ekki.
+\end{setn}
+
+\begin{skgr}
+ 
+  Látum $\cT$ vera kenningu fyrstu stéttar á máli $\cL$. Táknum með
+ \[\Thm_{\cT}\]
+ megi allra Gödel-talna allara setninga í $\cT$.
+ Segjum að $\cT$ sé \emph{ákvarðanleg} ef $\Thm_{\cT}$
+ er rakið.
+\end{skgr}
+
+Skilgreinum nokkur venzl og föll; af skilgreiningunum sést
+að þau eru rakin.
+\begin{enumerate}
+\item \[Var(a) \leftrightarrow a = \braket{(a)_0} \wedge \exists y_{y \leq a} ((a)_0 = 2y)\]
+  \emph{Ath}. $Var(a)$ þýðir að $a = \god{\bx}$ fyrir einhverja
+  \emph{breytu} $\bx$
+\item \[Term(a) \leftrightarrow a = Var(a) \vee [Seq(a) \wedge \phi((a)_0, lh(a) \dda 1) \wedge \forall u_{u < lh(a) \dda 1} Term((a)_{n+1}) ]\]
+  \emph{Ath}. $Term(a)$ þýðir annaðhvort að  $a = \god{\bx}$ fyrir einhverja
+  \emph{breytu} $\bx$, eða að $a$ sé runu tala $a = \braket{x_0, \xxn}$
+  þar sem $x_0$ er tákntala n-stæðs fallatákns og $\xxn$ eru Göde-tölur heita;
+  m.ö.o. $Term(a)$ þýðir að til sé $\ba$ þ.a. $a = \god{\ba}$. Term er rakið,
+  því að í skilgr. koma aðeins fyrir $Term(b)$ með $b<a$.
+\item  \[Afor(a) \leftrightarrow Seq(a) \wedge \omega((a)_0, lh(a) \dda 1) \wedge \forall u_{u < lh(a) \dda 1} Term((a)_{n+1}) \]
+  \emph{Ath}. $Afor(a)$ þýðir að $a$ er Gödel-tala grunnyrðingar.
+
+\item 
+  \begin{gather*}
+    For(a) \leftrightarrow Afor(a) \vee [Seq(a) \wedge lh(a) = 2 \wedge (a)_0 = \tau(\lnot) \wedge For((a)_1) ]\\
+    \vee [Seq(a) \wedge lh(a) = 3 \wedge (a)_0 = \tau(\vee) \wedge For((a)_1) \wedge For((a)_2) ]\\
+    \vee [Seq(a) \wedge lh(a) = 3 \wedge (a)_0 = \tau(\forall) \wedge Var((a)_1) \wedge For((a)_2) ]\\
+  \end{gather*}
+  \emph{Ath}. $For(a)$ þýðir að að sé gödel tala yrðingar.
+\item 
+
+\[ Sub(a,b,c) \bcondef
+c & \Ef Var(a) = b\\
+\braket{(a)_0, Sub((a)_1,b,c)} & \Ef a = \braket{(a)_0,(a)_1}\\
+\braket{(a)_0, Sub((a)_1,b,c),Sub((a)_2,b,c)} & \Ef a = \braket{(a)_0,(a)_1,(a)_2} \Og (a)_0 \neq \tau(\forall)\\
+\braket{(a)_0,(a)_1,Sub((a)_2,b,c)} & \Ef a = \braket{\tau(\forall),(a)_1,(a)_2} \Og (a)_1 \neq b\\
+a & \text{annars}
+ \econdef \]
+
+\emph{Ath}. 
+$Sub(\god{\ba},\god{\bx},\god{\bb}) = \god{\ba_{\bX} [\bb]}$
+og
+$Sub(\god{\bA},\god{\bx},\god{\ba}) = \god{\bA_{\bX} [\ba]}$
+$\bx$ er bretya, $\ba, \bb$ eru heiti og $\bA$ yrðing.
+
+\item 
+\[Fr(a,b) \leftrightarrow \bcondef a = b & \Ef Var(a),\\
+Fr((a)_1,b) & \Ef a = \braket{(a)_0, (a)_1},\\
+Fr((a)_1,b) \vee Fr((a)_2,b) & \Ef a = \braket{(a)_0, (a)_1,(a)_2} \wedge (a)_0 \neq \tau(\forall),\\
+Fr((a)_2,b) \wedge (a)_1 = b & \text{annars}
+\econdef
+\]
+
+\emph{Ath.} $Fr(\god{\bA},\god{\bx})$ þýðir að $\bx$ komi fyrir frjálst í $\bA$.
+
+\item 
+
+\[
+Subtl(a,b,c) \leftrightarrow \bcondef
+Subtl((a)_1,b,c) & \Ef a = \braket{(a)_0, (a)_1}\\
+Subtl((a)_1,b,c) \wedge Subtl((a)_2,b,c) & \Ef a = \braket{(a)_0, (a)_1, (a)_2} \\
+& \wedge (a)_0 \neq \tau(\forall)\\
+Subtl((a)_2,b,c) \wedge  \lnot Fr((a)_2,b) \vee \lnot Fr(c,(a)_1) & \Ef a = \braket{\tau(\forall), (a)_1, (a)_2}\\
+& \wedge (a)_1 \neq b,\\
+0 = 0 & \text{annars}
+\econdef
+\]
+
+\emph{Ath}. $Subtl(\god{\bA}, \god{\bx}, \god{\ba})$ þýði að
+$\bA$ sé innsetjanlegt fyrir $\bx$ í $\bA$.
+
+\item 
+
+\[
+Ax_1(a) \leftrightarrow \exists x_{x < a} (For(x) \wedge a = \braket{\tau(\vee), \braket{\tau(\lnot),\braket{\tau(\vee),x,x}},x})
+\]
+
+\emph{Ath}. $Ax_1(a)$ þýðir að $a$ sé Gödel-tala frumsendu af gerðinni
+\[ \bA \vee \bA \to \bA\] í pólskum rithætti. $\vee \lnot \vee \bA \bA \bA$
+
+\item 
+\[
+Ax_2(a) \leftrightarrow \exists x_{x < a} \exists y_{y < a} (For(x) \wedge For(y) \wedge
+ a = \braket{\tau(\vee), \braket{\tau(\lnot),x} \braket{\tau(\vee),y,x}})
+\]
+
+\item 
+  \begin{gather*}
+    Ax_3(a) \leftrightarrow \exists x_{x < a} \exists y_{y < a} \exists z_{z < a} (For(x) \wedge For(y) \wedge For(z)\\
+    \wedge a = \braket{\tau(\vee), \braket{\tau(\lnot),\braket{\tau(\vee), \braket{\tau(\lnot),x},y}},\\
+      \braket{\tau(\vee), \braket{\tau(\lnot), \braket{\tau(\vee),z,a}}, \braket{\tau(\vee),y,z}}})
+\end{gather*}
+
+
+\item 
+  \begin{gather*}
+    Ax_4(a) \leftrightarrow \exists x_{x < a} \exists y_{y < a} \exists z_{z < a}\\
+    ( Var(x) \wedge For(y) \wedge Term(z) \wedge Subtl(y,x,z) \wedge\\
+    a = \braket{\tau(\vee),\braket{\tau(\lnot), \braket{ \tau(\forall),x,y}}, Sub(y,x,z)}
+    )
+\end{gather*}
+
+\item 
+  \begin{gather*}
+    Ax_5(a) \leftrightarrow \exists x_{x < a} \exists y_{y < a} \exists z_{z < a}\\
+    ( Var(x) \wedge For(y) \wedge For(z) \wedge \lnot Fr(y,x) 
+    \wedge a = \braket{\tau(\vee), \braket{\tau(\lnot),\\
+        \braket{\tau(\forall),x, \braket{\tau(\vee),y,z}}}, \braket{\tau(\vee),y, \braket{\tau(\forall),x,z}}}).
+\end{gather*}
+
+\item  
+\[ Eq_1(a) \leftrightarrow \exists_{x < a} (Var(x) \wedge a = \braket{\tau(=),x,x} \]
+
+\end{enumerate}
+
 
 
 \end{document}
