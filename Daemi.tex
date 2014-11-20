@@ -1,0 +1,238 @@
+\documentclass[12pt]{book}
+
+\input{header.tex}
+
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\mb}[1]{\mathbf{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\xxn}{x_1, \dotsc, x_n}
+\newcommand{\bxxn}{\bx_1, \dotsc, \bx_n}
+\newcommand{\aan}{a_1, \dotsc, a_n}
+\newcommand{\baan}{\ba_1, \dotsc, \ba_n}
+\nonums
+\title{Rökfræði}
+\author{Matthías Páll Gissurarson}
+
+\begin{document}
+\maketitle
+
+
+\chapter{2014-11-05}
+
+\section{37}
+
+\begin{daemi}
+  Sýnið að mengi allra rakinna falla er teljanlegt, en að upptalningin
+  $f_0,f_1,f_2, \dotsc$ á einstæðum röknum föllum er rekki rakin.
+
+  \begin{lausn}
+    Látum $R_0$ vera mengi þeirra rakinna falla sem fást með $R1$.
+    Þ.e.as.
+    \[ R_0 = \set{I_i^n | n \in \N^{*} \Og \i \in \set{1, \dotsc, n}} \cup \set{Z,N} \]
+    Þetta mengi er teljanlegt.
+
+    Látum $k \geq 1$ vera náttúrulega tölu.
+    \begin{enumerate}[(i)]
+    \item  Látum $R_{3k-2}$ vera mengið af þeim röktu föllum sem fást með því að 
+      beita $R2$ á föllin í $R_{3k-3}$, ásamt öllum föllum í
+      $R_{3k-3}$.
+
+      \emph{R2} Segir: Ef $G,H_1, \dotsc, H_n$ eru rakin föll,
+      á er $G(H_1(\xxn), \dotsc, H_n(\xxn))$ rakið fall.
+
+      Fyrir sérhvert endanlegt hlutmengi í $R_{3k-3}$
+      fáum við endanlega mörg ný föll í $R_{3k-2}$.
+      Ef $R_{3k-3}$ er teljanlegt eru þessi hlutmengi teljanlega mörg,
+      svo $R_{3k-2}$ er líka teljanlegt.
+    \item Skgr. $R_{3k-1}$ á sama hátt með $R_3$. Það verður líka
+      teljanlegt ef $R_{3k-2}$ er teljanlegt.
+    \item Skgr. $R_{3k}$ á sama hátt með $R4$....
+    \end{enumerate}
+    Það er því ljóst að $R_n$ er teljanlegt f. öll $n \in \N$
+    og þar með er mengi allra rakinna falla
+    \[ R = \bigcup_{n \in \N} R_n \] 
+    einnig teljanlegt.
+
+
+    Látum nú $f_0, f_1, \dotsc$ vera upptaliningu á öllum einstæðum röktum föllum.
+    og $F: \N^2 \to \N$ vera fallið þ.a.
+    \[ F(x,y) = f_x(y) \] fyrir öll $x,y \in \N$
+
+    Fallið $f: \N \to \N $,
+    \[ f(x) = F(x,x) + 1 \]
+    er rakið ef $F$ er rakið.
+
+    En fyrir $x \in \N$ er
+    \[ f_x(x) < f_x(x)+1 = F(x,x) +1 = f(x) \]
+    svo $F$ er ekkert fallana $f_0, f_1, \dotsc$
+    og það með ekki rakið.
+  \end{lausn}
+\end{daemi}
+
+\section{38}
+Sýnið að eftirfarandi föll og venzl eru rakin:
+
+\begin{enumerate}[(a)]
+\item 
+  \begin{gather*}
+    F(n) := \lfloor \sqrt{n} \rfloor \Og G(n) := \lfloor ne \rfloor\\
+    F(n) := \mu y_{y < n+1} (sg (n+1 - y \cdot y) = 0) -1
+  \end{gather*}
+  Sannað með upptalningu:
+  $F(N)$ er $F(0), \dotsc, F(9) = 0,1,1,1,2,2,2,3$
+  $H(N)$ er $H(0), \dotsc, H(9) = 0,1,1,1,2,2,2,3$
+
+\item $\pi(n)$ = fjöldi prímtala $\leq n$
+\[\pi(n) = \sum_{y \leq n} C_{\lnot Pr}(y)\]
+\end{enumerate}
+
+\section{39}
+
+\begin{daemi}
+  \begin{gather*}
+    F(\xxn,y+1) = N(\xxn,y,F(\xxn,y),G(\xxn,y)\\
+    G(\xxn,y+1) = P(\xxn,y,F(\xxn,y),G(\xxn,y)\\
+  \end{gather*}
+  \begin{lausn}
+  Skrifum $x$ í stað $(\xxn)$ og getum þá skrifað skilgreiningarnar á $F,G$
+  þannig:
+  \begin{gather*}
+    F(x,0) = L(x),\\
+    G(x,0) = M(x),\\
+    F(x,y+1) = N(x,y,F(x,y),G(x,y))\\
+    G(x,y+1) = P(x,y,F(x,y),G(x,y))
+  \end{gather*}
+  Viljum sjá að $F,G$ rakin ef $L,M,N,P$ eru rakin.
+  Skilgreinum $H$ með:
+  \[H(x,y) = 2^{F(x,y)} 3^{G(x,y)} \]
+  þá er 
+  \[ H(x,y+1) = 2^{N(x,y,v_0(H(x,y)),v_1(H(x,y))} 3^{P(x,y,v_0(H(x,y)),v_1(H(x,y))} \]
+  svo að $H$ er [frumstætt] rakið og $F(x,y) = v_0(H(x,y)), G(x,y) = v_1(H(x,y))$;
+  $v_k$ rakni skv. fyrirlestri.
+  \end{lausn}
+
+\end{daemi}
+
+\section{40}
+
+
+
+
+\chapter{2014-11-19 Dæmablað 12}
+
+\section{45}
+
+\begin{daemi}
+  Skilgreinum tvístætt fall $f: \N^2 \to \N$ með því að láta $f(x,y)$
+  ver töluna í menginu $\set{0,\dotsc,9}$ sem er táknuð með þeim
+  tölustaf sem er y sætum til vinstri frá aftasta staf þegar við
+  skrifum $x$ í tugakerfi þannig er t.d.
+  \begin{gather*}
+    f(6382,0) = 2,\\
+    f(6382,1) = 8,\\
+    f(6382,3) = 3,\\
+    \vdots
+  \end{gather*}
+\end{daemi}
+
+\begin{lausn}[Áslaug]
+  Sýnum fyrst að tvístæða fallið $g: \N^2 \to \N$
+  $(x,y) \mapsto x^y$ sé frumstætt rakið:
+  \[g(x,0) = 1, g(x,y+1) = g(x,y)x.\]
+  þá er $f(x,y) = rm(qt(x,10^y),10)$
+  frumstætt rakið.
+\end{lausn}
+
+\section{46}
+
+
+
+
+\section{47}
+
+\begin{daemi}
+  Látum $\cL$ vera mál kenningarinnar $\cN$ og
+látum $\cT(\N)$ sem hefur sem seningar nkvl. þær yrðingar sem eru sannar
+í $\N$. Látum $Q$ vera mengi af frumtölum. Sýnið að til er líkan $M$ f.
+kenninguna $\cT(\N)$ ásamt staki $a$ úr $M$ þ.a. frumtala $p$
+gangi upp í $a$ í líkaninu þþaa $p \in Q$
+\end{daemi}
+
+\begin{lausn}[Tandri]
+  Látum $\cL^*$ vera málið sem fæst með því að bæta við málið
+  $\cL$ fasta $\ba$ Fyrir náttúrulega tölu $n$ látum við
+  $\bA_n$ vera 
+  \[ \exists x ( x \cdot S \dotsc S 0= \ba) \]
+  Þar sem $S$ kemur fyrir $n$ sinnum.
+
+  Látum $\cT^+$ vera kenninguna á málinu $\cL^*$ sem fæst með því að bæta við
+  $\cT(\N)$ frumsenum $\bA_p$ fyrir sérhvert $p$ úr Q og frumsendunni
+  $\lnot \bA_p$ fyrir sérhverja frumtölu $p \not \in Q$. 
+  Ef $\cT^*$ er endanlega frumsendaður hluti kenningarinnar $\cT^*$,
+  þá hefu hann endanlega margar frumsendur af gerðinni $\bA_p$.
+  Segjum
+  $\bA_{p_1}, \dotsc, \bA_{p_n}$ en þá er $\N$ líkan fyrir
+  $\cT^*$ með $(\ba)_{\N} = \prod_{j=1}^k p_j$.
+
+  Skv. þjöppunarsetn hefur $\cT^*$ því líkan $M$, sem er þá sér í lagi líkan
+  fyrir $\cT(\N)$. Það er þá ljóst að frumtala $p$ gengur upp í $ a := (\ba)_n$
+  þþaa $p \in Q$.
+\end{lausn}
+
+
+
+
+\section{48}
+
+\begin{daemi}
+  Látum $\cL$ vera málið sem hefur jafnaðarmerki, fastana $'0'$ og $'1'$,
+  tvístæðu falltáknin $'+'$ og $'-'$ og tvístæða umsagnartáknið $'<'$;
+  og bætum auk þess við einstæðu falltákni $'f'$. Við lítum á rauntölurnar $\R$ 
+ sem mynztur fyrir þetta mál með eðlilegum hætti, þar sem túlkun falltáknsins 
+ $'f'$ er gefin með einhverju gefnu falli $f:\R \to  \R$
+ sem er þannig að $f(0) = 0$. Bætum nú við málið föstum fyrir allar rauntölur og látum
+ $\cT$ vera mengi allra yrðinga á nýja málinu sem eru sannar 
+ í líkaninu. Bætum við nýjum fasta og frumsendum sem segja að nýi fastinn sé 
+ stærri en allar rauntölur og fáum þannig líkt og í fyrirlestrum líkan fyrir nýju
+ kenninguna sem er óarkimedísktsvið ${}^*\R$; látum ${}^*f$
+ vera túlkun falltáknsins $'f'$ í þessu nýja líkani. Segjum að stak $x \in \R$
+ sé \emph{óendanlega lítið} ef $-y < x < y$fyrir sérhvert jákvætt stak í $\R$.
+
+ Sýnið: Fallið $f:\R \to \R$ er samfellt í punktinum $0$ 
+ þá og því aðeins að stærðin ${}^*f(x)$ sé óendanlega lítil fyrir
+ sérhverja óendanlega litla stærð $x$.
+\end{daemi}
+
+\begin{lausn}[Áslaug]
+G.r.f. að $f$ sé samfellt í $0$. G.r.f að til
+sé óendanlega lítil stærð $x$ þ.a. ${}^*f(x)$ sé ekki óendanlega líti. Þá er til
+
+tala $\epsilon > 0, \epsilon \in \R$ þ.a. $|{}^*f(x)| > \epsilon$. Þá er ekki
+
+
+til $\delta > 0, \delta \in \R$ þ.a. $|{}^*f(y)| < \epsilon$ fyrir öll
+$|y| < \delta$, því $|x| < \delta$. Því er $f$ ekki samfellt.
+  
+\end{lausn}
+
+\chapter{Dæmablað 13}
+
+\section{52}
+
+Reynir hefur ekki leyst það
+
+
+
+\end{document}
