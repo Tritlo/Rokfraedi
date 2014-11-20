@@ -6,6 +6,7 @@
 \newcommand{\cL}{\mathcal{L}}
 \newcommand{\cP}{\mathcal{P}}
 \newcommand{\cN}{\mathcal{N}}
+\newcommand{\cR}{\mathcal{R}}
 \newcommand{\mb}[1]{\mathbf{#1}}
 \newcommand{\mc}[1]{\mathcal{#1}}
 \newcommand{\bA}{\mathbf{A}}
@@ -16,6 +17,7 @@
 \newcommand{\bD}{\mathbf{D}}
 \newcommand{\bE}{\mathbf{E}}
 \newcommand{\bG}{\mathbf{G}}
+\newcommand{\bT}{\mathbf{T}}
 \newcommand{\bc}{\mathbf{c}}
 \newcommand{\bX}{\mathbf{X}}
 \newcommand{\bx}{\mathbf{x}}
@@ -31,6 +33,9 @@
 \newcommand{\bkaan}{\bk_{a_1}, \dotsc,\bk_{a_n}}
 \newcommand{\dda}{\dot{-}}
 \newcommand{\Thm}{{\mc{T}hm}}
+\newcommand{\vT}{\vdash_{\cT}}
+\newcommand{\vR}{\vdash_{\cR}}
+\newcommand{\thT}{Thm_{\cT}}
 
 \DeclarePairedDelimiter{\god}{\ulcorner}{\urcorner}
 
@@ -2185,6 +2190,110 @@ sé ekki sannanleg í $\cT$. Köllum $\bG$ Gödelyrðingu $\cT$.
 Þetta er lygara þversögnin. Hún segir að hún se ekki sannanleg.
 Ef hún er ekki sannanleg, þá er hún ekki sannanleg og því sannanleg, en
 ef hún er sannanleg þá er hún ekki sannanleg etc.
+
+
+%2014-11-20
+
+
+\begin{setn}[Fylgisetning]
+Frumsenduð $\omega$-samkvæm útvíkkun á $\cN$ er ekki fullkomin.
+\end{setn}
+
+\begin{skgr}
+  Köllum kenninguna $\cR$ með mál $\cL(\cN)$ þ.a. setningarnar í $\cR$
+  séu nákvæmlega þær yrðingar í $\cL(\cN)$ sem er sannar í $\N$
+  \emph{sannan reikning}.
+\end{skgr}
+
+\begin{skgr}
+  Segjum að kenning sé \emph{frumsendanleg} ef til er frumsenduð kenning sem
+  er jafngild henni.
+
+\end{skgr}
+
+\begin{setn}[Fylgisetning]
+ Sannur reikningur er ekki frumsendanlegur. 
+\end{setn}
+
+\begin{setn}[Hjálparsetning]
+Ef $\cT$ er samkvæm útvíkkun á $\cN$, þá er mengið $Thm_{\cT}$ (mengi allra Gödel-talna allra setninga í $\cT$)
+ekki framsetjanlegt í $\cT$.
+\end{setn}
+
+\begin{proof}
+  G.r.f. að $\bT$ ásamt $\bx$ sé framsetning á $Thm_{\cT}$ í $\cT$.
+  Látum $\bC$ vera yrðingu þ.a.
+  \[\vdash_{\cT} \bC \leftrightarrow \lnot \bT_{\bx}[\bk_{\god{\bC}}]. \]
+  Setjum $q:= \god{\bC}$. Nú er $\vdash_{\cT}$ annars væri
+  $q \not\in Thm_{\cT}$ og því $\vT \lnot \bT_{\bx}[\bk_q]$ af því að
+  $\bT$ ásamt $\bx$ er framsetning á $\thT$ í $\cT$,
+  og þá fæst $\vT \bC$. Þetta er í mótsögn við að
+  $\cT$ er samkvæm.
+
+\end{proof}
+Sér í lagi sést að $\thT$ er ekki rakið mengi.
+
+\begin{setn}[Church] Ef $\cT$ er samkvæm útvíkkun kenningarinnar $\cN$,
+  þá er $\cT$ ekki úrskurðanleg.
+\end{setn}
+\begin{skgr}
+  Kenning er fullkomin ef við getum sannað annað hvort
+ $A$ eða $\lnot A$.
+\end{skgr}
+
+\begin{skgr}
+  Að kenning $\cT$ sé \emph{úrskurðanleg} þýðir að
+  Fyrir sérhverja yrðingu getum við gengið úr skugga um hvort
+  hún sé setning eða ekki í endanlega mörgum skrefum.
+  
+  Þ.e. $\Thm_{\cT}$ er rakið mengi.
+
+  Að kenning sé \emph{Frumsendanleg} segir að við getum gengið úr skugga um í endanlega
+  mörgurm skrefum hvort e-ð sé frumsenda eða ekki.
+
+\end{skgr}
+\begin{setn}
+  Sannur reikningur er ekki úrskurðanlegur.
+\end{setn}
+
+Önnur afleiðing af HS:
+
+\begin{setn}[Óskilgreinanleikasetning Tarsky]
+  $Thm_{\cR}$ er ekki framsetjanlegt í $\cR$.
+  Þetta þýðir að ekki er til yrðing $\bA$ þ.a.
+  fyrir sérhverja yrðingu $\bB$ gildi:
+  \[ \models_{\cN} \bB \text{ þþaa } \vR \bA [\bk_{\god{\bB}}] \]
+\end{setn}
+
+þ.e. ``sannleika í reikningi er ekki unnt að skilgreina í reikningi.''
+
+Skyld setning, stundum kölluð Gödel-Tarsky setning:
+\begin{setn}[Gödel-Tarsky]
+ Í samkvæmri útvíkkun $\cT$ á $\cN$ er ekki til yrðing $\bT$
+ með nákvæmlega einni frjálsri breytu $\bx$ þ.a. fyrir allar
+ lokaðar yrðingar $\bA$ gildi:
+ \[ \vT \bA \leftrightarrow \bT_{\bx}[\bk_{\god{\bA}}]\]
+
+
+ því að skv. kyrrapunktssetningunni er til lokuð yrðing $\bA$ þ.a.
+ \[\vT \bA \leftrightarrow \lnot \bT_{\bx}[\bk_{\god{\bA}}]\]
+ og þá fengist $\bA \leftrightarrow \lnot \bA$
+ 
+\end{setn}
+
+\begin{ath}
+  
+ [$\bT_{\bx}[\bk_{\god{\bA}}]$ þýðir að $\bT$ gildi um Gödel-tölu $\bA$.]
+
+ [$\leftrightarrow$ er lesið ``jafngilt'' ]
+
+ [Í $\cN$ $\bk_n$ er skammstöfun fyri nafnið á tölunni  $SS..SS0$, þar sem $S$ kemur $n$ sinnum fyrir.
+ Þetta er s.s. bara nafn fyrir náttúrulegu töluna n.]
+
+ [$\cN$ er kenning um náttúrulegar tölur. Mjög einföld, notum ekki Peano-reikning.]
+
+ [$\bT_{\bx}[a]$ segir að við skiptum út $a$ fyrir $\bx$ í yrðingunni $\bx$.]
+\end{ath}
 
   
 \end{document}
