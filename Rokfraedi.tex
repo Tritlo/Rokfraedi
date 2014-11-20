@@ -18,6 +18,7 @@
 \newcommand{\bE}{\mathbf{E}}
 \newcommand{\bG}{\mathbf{G}}
 \newcommand{\bT}{\mathbf{T}}
+\newcommand{\bP}{\mathbf{P}}
 \newcommand{\bc}{\mathbf{c}}
 \newcommand{\bX}{\mathbf{X}}
 \newcommand{\bx}{\mathbf{x}}
@@ -2281,7 +2282,7 @@ Skyld setning, stundum kölluð Gödel-Tarsky setning:
  
 \end{setn}
 
-\begin{ath}
+\begin{innsk}
   
  [$\bT_{\bx}[\bk_{\god{\bA}}]$ þýðir að $\bT$ gildi um Gödel-tölu $\bA$.]
 
@@ -2293,7 +2294,73 @@ Skyld setning, stundum kölluð Gödel-Tarsky setning:
  [$\cN$ er kenning um náttúrulegar tölur. Mjög einföld, notum ekki Peano-reikning.]
 
  [$\bT_{\bx}[a]$ segir að við skiptum út $a$ fyrir $\bx$ í yrðingunni $\bx$.]
-\end{ath}
 
+ Gödel yrðingin, $\bP$ er yrðing sem segir hvort e-ð sé setning:
+ \[ \vT \bG \leftrightarrow \forall \by \lnot \bP_{\bx} [\bk_{\god{\bG}}] \]
+ Segir að ekki er til $y$ þ.a. $x$ sé sönnun á yrðingunni $\bG$.
+ S.s. setning sem segir að ekki sé til sönnun á henni.
+
+ Gödel-talan er reiknanleg.
+
+ %$\bP_{\bx}[\bk_n]$ segir að $n$ sé Gödel-tala yrðingar $\by$
+
+ $Pr_{\cT}(x,y)$ segir að $y$ sé gödel tala sönnunar á $x$.
+\end{innsk}
+
+
+Af Church-setningu leiðir að  hrein rökfræði er ekki úrskurðanleg.
+
+\begin{setn}
+  Látum $\cT$ vera  vera hreina rökfræði (bara rökfrumsendur)
+  á máli $\cL(\cN)$ þ.e.
+  $\cT$ er kenning fyrstu stétta á málinu $\cL(\cN)$ sem hefur engar
+  eiginlegar frumsendur. Þá er $\cT$ ekki úrskurðanleg.
+\end{setn}
+
+\begin{innsk}
+  Getum það þó í Yrðingarökfræði. Við getum úrskurðað hvort e-ð sé
+  sísanna.
+  Getum það ekki þegar við bætum rökfræðinni við.
+  Ef við höfum yrðingu sem við vitum ekki hvort að sé setning eða
+  ekki.  Ef við getum sannað hana, þá vitum við að hún er setning, en
+  ef við getum ekki sannað hana, þá vitum við það ekki.
+\end{innsk}
+
+\begin{proof}
+  Látum $\mb{N}_k$ vera lokun frumsendunnar
+  $Nk$ í $\cN$, $k = 1, \dotsc, g$ og $\bC$ vera
+  $\N_1 \wedge \dotsb \wedge N_g$.
+  Þá hefur $\cN$ sömu setningar og $T[\bC]$.
+
+
+  Yrðinng $\bA$ er skv. afleiðslusetningu setning í
+  $T[\bC]$ þþaa $\vT \bC \to \bA$.
+  Setjum $q := \god{\bC}$ og skilgreinum rakið fall $f$ með:
+
+  \[ f(a) := \braket{\tau{\vee},\braket{\tau{\lnot},q},a} \]
+
+  þá er 
+  \[ Thm_{T[\bC]} (a) \leftrightarrow For(a) \wedge \thT(f(a)) \]
+  Ef $\thT$ væri rakið, þá væri $Thm_{T[\bC]}$ rakið og því
+  $\cN$ úrskurðanlegt í mótsögn við Church.
+
+\end{proof}
+
+\begin{skgr}
+  Skgr. á \emph{úrskurðanleg} frá Reyni.
+  $Thm_{\cT}$ er mengi allra Gödel-talna allra setninga í $\cT$
+  $\cT$ er \emph{úrskurðanleg} þþaa mengið $Thm_{\cT}$ sé rakið.
+  Getum s.s. úrskurðað hvort gefin yrðing sé setning eða ekki.
+\end{skgr}
+
+
+\begin{setn}
+  Venzl $P$ eru rakin þþaa  $P$ og $\lnot P$ séu uppteljanleg á
+  rakinn hátt.
+\end{setn}
+
+\begin{proof}
+  Næst.
+\end{proof}
   
 \end{document}
