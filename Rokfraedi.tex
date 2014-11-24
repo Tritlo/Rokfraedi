@@ -5,6 +5,8 @@
 \newcommand{\cT}{\mathcal{T}}
 \newcommand{\cL}{\mathcal{L}}
 \newcommand{\cP}{\mathcal{P}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\PA}{\mathcal{PA}}
 \newcommand{\cN}{\mathcal{N}}
 \newcommand{\cR}{\mathcal{R}}
 \newcommand{\mb}[1]{\mathbf{#1}}
@@ -17,6 +19,7 @@
 \newcommand{\bD}{\mathbf{D}}
 \newcommand{\bE}{\mathbf{E}}
 \newcommand{\bG}{\mathbf{G}}
+\newcommand{\bR}{\mathbf{R}}
 \newcommand{\bT}{\mathbf{T}}
 \newcommand{\bP}{\mathbf{P}}
 \newcommand{\bc}{\mathbf{c}}
@@ -36,9 +39,11 @@
 \newcommand{\Thm}{{\mc{T}hm}}
 \newcommand{\vT}{\vdash_{\cT}}
 \newcommand{\vR}{\vdash_{\cR}}
+\newcommand{\vP}{\vdash_{\PA}}
 \newcommand{\thT}{Thm_{\cT}}
 
 \DeclarePairedDelimiter{\god}{\ulcorner}{\urcorner}
+\DeclarePairedDelimiter{\pg}{\llcorner}{\lrcorner}
 
 \title{Rökfræði}
 \author{Matthías Páll Gissurarson}
@@ -2038,10 +2043,10 @@ $\braket{\god{\bA_1}, \dotsc,\god{\bA_n}}$.
   \end{gather*}
 
 \item  
-\[Pr_{\cT} (a,b) \leftrightarrow Prf_{\cT}(b) \wedge a = (b)_{lh \dda 1} \]
+\[\cP r_{\cT} (a,b) \leftrightarrow Prf_{\cT}(b) \wedge a = (b)_{lh \dda 1} \]
  
 \begin{ath}
-  $Pr_{\cT}(\god{\bA},b)$ þýðir að $b$ sé Gödel-tala sönnunar á $\bA$ í $\cT$.
+  $\cP r_{\cT}(\god{\bA},b)$ þýðir að $b$ sé Gödel-tala sönnunar á $\bA$ í $\cT$.
 \end{ath}
 
 Höfum þá:
@@ -2360,7 +2365,157 @@ Af Church-setningu leiðir að  hrein rökfræði er ekki úrskurðanleg.
 \end{setn}
 
 \begin{proof}
-  Næst.
-\end{proof}
+  Ef venzlin $P$ eru rakin, þá  eru venzlin $P$ og $\lnot P$ bæði rakin
+  og þá eru þau uppteljanleg á rakinn hátt. Gerum þá ráð fyrir að
+  $P$ og $\lnot P$ séu bæði uppteljanleg. Þá eru til rakin venzl $Q$ og $R$ þ.a.
+  \begin{gather*}
+    P(\aan) \leftrightarrow \exists Q(\aan,x)\\
+    \lnot P(\aan) \leftrightarrow \exists R(\aan,x)
+  \end{gather*}
+  Fyrir $(\aan)$ er $P(\aan) \vee \lnot P(\aan)$
+  svo til er $x$ þ.a. $Q(\aan,x)\vee R(\aan,x)$
+
+  Þá má skilgreina rakið fall $F$ með
+  \begin{gather*}
+    F(\aan) := \mu x(Q(\aan,x)\vee R(\aan,x))
+  \end{gather*}
+  en þá er
+  \[ P(\aan) \leftrightarrow Q(\aan,F(\aan))\]
+
+  Ef $ Q(\aan,F(\aan))$ þá $\exists Q(\aan,x)$
   
+  og þá $P(\aan)$; en ef $\lnot Q(\aan,F(\aan))$
+
+  þá $R(\aan,F(\aan))$ svo að $\exists x R(\aan,x)$
+
+  og þá $\lnot P(\aan)$
+\end{proof}
+
+\begin{setn}
+  Ef $\cT$ er frumsenduð og fullkomin útvíkkun á $\cN$, þá er $\cT$ úrskurðanleg.
+\end{setn}
+
+\begin{proof}
+  Skilgreinum rakin föll $F$ og $K$ með
+  \begin{gather*}
+    F(0,a) = a\\
+    F(n+1,a) = \braket{\tau(\forall),\god{\bz_n},F(n,a)}\\
+    K(a) = F(a+1, a)
+  \end{gather*}
+
+  Ef $a = \god{\bA}$, þá er
+  \[K(a) = \god{\forall \bz_a \forall\bz_{a-1} \dotsb \forall \bz_0 A }\]
+  Ef $\bz_i$ kemur fyrir í $\bA$, þá er
+  \[ i < \god{\bz_i} < \god{A} = a \]
+  svo að $\forall \bz_a \forall\bz_{a-1} \dotsb \forall \bz_0 A $ er 
+  lokuð yrðing, Skv. alhæfingu er hún setning þþaa $\bA$ sé setning.
+  Nú er $\cT$ fullkomin, svo að $\bA$ er \emph{ekki} setning
+  þþaa $ \vT \lnot \forall \bz_a \forall\bz_{a-1} \dotsb \forall \bz_0 A $
+  þess vegna gildir:
+  \[ \lnot Thm_{\cT}(a) \leftrightarrow \lnot For(a) \vee Thm_{\cT} (\braket{ \tau(\lnot), K(a)}) \]
+  þ.e 
+  \[ \lnot Thm_{\cT}(a) \leftrightarrow \exists y( \lnot For(a) \vee Pr_{\cT} (\braket{ \tau(\lnot), K(a)},y)). \]
+  svo að $\lnot Thm_{\cT} (a)$ er uppteljanlegt á rakinn hátt og
+  $Thm_{\cT} (a)$ er það líka; skv. setn. er $Thm_{\cT}$ rakið.
+\end{proof}
+
+\begin{setn}[Gödel-Rosser]
+Ef $\cT$ er frumsendanleg og samkvæm útvíkkun á $\cN$, þá er $\cT$ ekki fullkomin.
+\end{setn}
+
+\begin{proof}
+  Ef hún væri fullkomin, þá væri hún skv. síðustu setningu úrskurðanleg í mótsögn
+ við setningu Church.
+\end{proof}
+
+\begin{ath}
+  Höfum ekki beint á eina setningu sem er hvort sannanleg né afsannanleg.
+  En það má gera: Látum $\bE$ vera
+  \[\forall \by (\bP \rightarrow \bz (\mb{N} \rightarrow \exists \bu (\bu < \by \wedge \bP_{\bx,\by}[\bz,\bu])))\]
+  þar sem $\bP$ ásamt $\bx,\by$ er framsetning í $\cN$ á $Pr_{\cT}$
+
+  [$Pr_{\cT}(a,n)$ segir að $a$ sé gödel tala sönnunar á yrðingunni $n$.]
+
+  og $\mb{N}$  ásamt $\bx, \by$ er framsetning fallsins
+  \[ Neg(a) = \braket{\tau(\lnot),a}. \]
+
+  Skv. kyrrapunktssetningu er til lokuð yrðing $\bR$ þ.a.
+  \[ \vT \bR \leftrightarrow \bE_x [\bk_{\god{\bR}}] \]
+  sem við köllum \emph{Rosser-yrðingu} fyrir $\cT$.
+  Í venjulegri túlkun segir hún:
+  
+  Ef $\bR$  hefur sönnun með Gödel-tölu $y$, þá hefur 
+  $\lnot \bR$  sönnun með Gödel-tölu minni en $y$. 
+  Sýna má að hvorki er unnt að sanna eða afsanna $\bR$ í $\cT$.
+\end{ath}
+
+[Ath $\cP\cA$ stendur fyrir Peano reikning.]
+
+Látum $\bP$ ásamt $\bx,\by$ vera framsetningu á 
+$Pr_{\cP\cA}$ í $\cN$ og þá líka á $\PA$.
+ og látum $\bT$ vera
+ \[ \exists \by \bP \]
+
+Við höfum $\vdash_{\PA} \bP_{\bx,\by} [\bk_a, \bk_b]$ ef $\cP r_{\PA}(a,b)$ og
+$\vdash_{\PA} \lnot \bP_{\bx,\by} [\bk_a, \bk_b]$ ef $\cP r_{\PA}(a,b)$.
+Skrifum til þæginda $\pg{\bA}$ í stað $\bk_{\god{\bA}}$
+
+[$\pg{\bA}$ er Gödeltala $\bA$ skrifuð  í $\PA$] 
+
+\begin{setn}[Hilbert-Bernays-Löb-afleiðsluskilyrði]
+  Höfum:
+\begin{enumerate}[label=\textbf{HBL\arabic*}]
+  \item Ef $\vdash_{\PA} \bA$, þá $\vP \bT_{x} [\pg{\bA}]$.
+  \item $\vP \bT_x [\pg{\bA \to \bB}] \to (\bT_x[\pg{\bA}] \to \bT_x[\pg{\bB}])$.
+  
+  \item $\vP \bT_{\bx}[\pg{\bA}] \to \bT_{\bx}[ \pg{\bT_x[\pg{\bA}]}]$.
+  \end{enumerate}
+\end{setn}
+
+\begin{ath}
+  Flestar bækur sanna ekki þessa setningu, en sleppa sönnuninni. Síðan hefur
+  reynst erfitt að finna sönnun á þessari setningu í neinni bók, og ein bók
+ segir ``erfitt er að finna sönnun á þessu, fremur en upprunalegu sönnunina''.
+\end{ath}
+
+\begin{proof}
+  Sönnum \textbf{HBL1}, \textbf{HBL2}, en ekki \textbf{HBL3}
+
+  Fyrir \textbf{HBL1} athugum við:  Ef $\vP \bA$, þá er
+  til sönnun á $\bA$ í $\PA$. Látum $m$ vera Gödel-tölu
+  þeirrar sönnunar. Þá $\cP r_{\PA}(\god{\bA},m)$ og því
+  $\vP \bP_{\bx,\by} [\bk_{\god{\bA}},\bk_m]$
+  En þá fæst $\vP \exists \by \bP_{\bx}[\bk_{\god{A}}]$, en þetta er akkúrat
+  $\bT[\pg{\bA}]$
+
+ [T af gödel-tölunni $\bA$, skrifaðri í $\PA$]
+ [HBL2 er e-rskonar modus ponens]
+
+ Fyrir \textbf{HBL2}. Það má skrifa
+ \[\vP \bT_x[\pg{\bA \to \bB}] \wedge \bT_{\bx}[\pg{\bA}] \to \bT_{\bx}[\pg{\bB}]\]
+
+
+ Gefum okkur að $\vP \bT_x[\pg{\bA \to \bB}]$ og
+ $\vP \bT_x[\pg{\bA}]$. Það þýðir að til eru sannanir á 
+ $\bA \to \bB$ og $\bA$ í $\PA$;
+ Látum $c,a$ vera Gödel-tölu þeirra sannana;
+ $c$ er Gödel-tala sönnunar $\bC_1, \dotsc, \bC_n$ á
+ $\bA \to \bB$ og $a$ er Gödel-tala sönnunar
+ $\bA_1, \dotsc, \bA_m$ á $\bA$. Þá er
+ $\bC_1, \dotsc, \bC_n,\bA_1, \dotsc, \bA_m, \bB$ sönnun á $\bB$ í $\PA$
+ svo að $c * a * \braket{\god{\bB}}$ er Gödel-tala sönnunar á $\bB$ í $\PA$,
+ Þar sem 
+ \begin{gather*}
+   a*b := \mu x (lh(x) = lh(a) + lh(b) \wedge\\
+   \forall i_{i < lh(a)} ((x_i) = (a_i)) \wedge i_{j< lh(b)} ((x)_{lh(a)+j} = (b)_i))
+ \end{gather*}
+
+þannig að 
+
+\[\braket{\aan} *  \braket{b_1, \dotsc, b_n} = \braket{\aan, b_1, \dotsc,b_n}.\]
+
+Svo að $(a,b) \mapsto a*b$ er rakið. Höfum
+\[ \cP r_{\PA} (\god{\bB}, c * a * \braket{\god{\bB}})\]
+svo að $\vP \exists \by \bP_{\bx}[\bk_{\god{\bB}}]$, þ.e. $\vP \bT_{\bx} [\pg{\bB}]$.
+\end{proof}
 \end{document}
