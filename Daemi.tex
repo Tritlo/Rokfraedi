@@ -10,17 +10,28 @@
 \newcommand{\bA}{\mathbf{A}}
 \newcommand{\ba}{\mathbf{a}}
 \newcommand{\bB}{\mathbf{B}}
+\newcommand{\bS}{\mathbf{S}}
 \newcommand{\bb}{\mathbf{b}}
 \newcommand{\bC}{\mathbf{C}}
+\newcommand{\bG}{\mathbf{G}}
+\newcommand{\vT}{\vdash_{\cT}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\bF}{\mathbf{F}}
+\newcommand{\bP}{\mathbf{P}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\bH}{\mathbf{H}}
 \newcommand{\bc}{\mathbf{c}}
 \newcommand{\bX}{\mathbf{X}}
 \newcommand{\bx}{\mathbf{x}}
+\newcommand{\bz}{\mathbf{z}}
 \newcommand{\bk}{\mathbf{k}}
 \newcommand{\by}{\mathbf{y}}
 \newcommand{\xxn}{x_1, \dotsc, x_n}
 \newcommand{\bxxn}{\bx_1, \dotsc, \bx_n}
 \newcommand{\aan}{a_1, \dotsc, a_n}
 \newcommand{\baan}{\ba_1, \dotsc, \ba_n}
+\DeclarePairedDelimiter{\god}{\ulcorner}{\urcorner}
 \nonums
 \title{Rökfræði}
 \author{Matthías Páll Gissurarson}
@@ -231,7 +242,144 @@ $|y| < \delta$, því $|x| < \delta$. Því er $f$ ekki samfellt.
 
 \section{52}
 
-Reynir hefur ekki leyst það
+[Reynir hefur ekki leyst það almennilega ennþá]
+
+\begin{daemi}
+  \begin{enumerate}[(a)]
+  \item 
+    \begin{gather*}
+      \text{Fullyrðingin hér að neðan er ósönn}\\
+      \text{Fullyrðingin hér að ofan er sönn}
+    \end{gather*}
+    Hvað er hæft í þessu?
+  \item Látum $\cT$ vera útvíkkun á $\cN$, $\bB$ og $\bC$ vera tvær yrðingar á
+    máli $\cT$. Sem hafa hvor um sig nákvæmlega  eina frjálsa breytu $\bx$.
+    Til eru lokaðar yrðingar $\bE$ og $\bT$ þ.a.
+    \[ \vT \bE \leftrightarrow \bB_{\bx}[\bk_{\god{\bF}}] \text{ og } \vT \bF \leftrightarrow \bC_{\bx}[\bk_{\god{\bE}}]\]
+  \end{enumerate}
+\end{daemi}
+
+\begin{proof}
+  Setjum 
+  \[ D(u,v) = sub(sub(v,\god{\bx},Num(v)), \god{\bz},Num(u)) \]
+  Þar sem $\bz$ er ný breyta sem kemur hvergi fyrir í $\bB$ og $\bC$.
+  Ef $\bS$ og $\bT$ eru yrðingar er
+  \[ D(\god{\bS},\god{\bT}) = sub(\bT_{\bx}[\bk_{\god{\bT}}], \god{\bz},\bk_{\god{\bS}}) = \god{\bT_{\bx,\bz}[\bk_{\god{\bT}}, \bk_{\god{\bS}}] } .\]
+ Þar sem $D$ er rakið fall, hefur það framsetningu $\bD$ ásamt $\bx, \bz$ og $\by$ í $\cT$.
+ Það þýðir að fyrir $n,m \in \N$ er
+ \[ \vT \bD_{\bx,\by}[\bk_n, \bk_m] \leftrightarrow \by = \bk_l \]
+ þar sem $l = D(n,m)$.
+ 
+ Látum $\bG$ vera yrðinguna $\forall \by (\bD \to \bB_{\bx}[\by])$,
+ og $\bH$ vera $\forall \by ( \bD \to \bC_{\bx}[\by] ) $
+ og látum $m = \god{\bG}$ og $n = \god{\bH}$.
+
+ Látum einnig $\bE$ vera $\bG_{\bx, \bz}[\bk_m, \bk_n]$ og $\bF$ vera
+ $\bH_{\bx,\bz}[\bk_n, \bk_m]$. Setjum $p:= \god{\bE}$ og $q:= \god{\bF}$.
+
+ Þá fæst:
+ \[ D(m,n) = D(\god{\bG}, \god{\bH}) = \god{\bH_{\bx,\bz} [\bk_n,\bk_m]} = \god{\bF} = q \]
+ og $D(n,m) = p$,
+ svo
+
+ \begin{gather*}
+   \vT \bD_{\bx,\bz}[\bk_m,\bk_n] \leftrightarrow \by = \bk_q \text{ og } \\
+   \vT \bD_{\bx,\bz}[\bk_n,\bk_m] \leftrightarrow \by = \bk_p
+ \end{gather*}
+
+ Fáum nú
+ \begin{align*}
+   & \vT \bE & \\
+ \text{ \textbf{þþaa} } & \bG_{\bx,\bz}[\bk_m,\bk_n] & \\
+\text{ \textbf{þþaa} } & \vT \forall \by (\bD_{\bx,\bz}[\bk_m, \bk_n] \to \bB_{\bx}[\by]) & \\
+\text{ \textbf{þþaa} } & \vT \forall (\by = \bk_q \to \bB_{\bx}[\by]  & \\
+\text{ \textbf{þþaa} } & \vT \bB_{\bx}[\bk_q]  & \text{ skv. afleiðslusetn. } \\
+\text{ \textbf{þþaa} } & \vT \bB_{\bx}[\bk_{\god{\bF}}] & \\
+ \end{align*}
+svo $\vT \bE \leftrightarrow \bB_{\bx}[\bk_{\god{\bF}}]$.
+Á sama hátt fæst
+$\vT \bF \leftrightarrow \bC_{\bx}[\bk_{\god{\bE}}]$.
+
+(c) Látum $\cT$ vera frumsendanlega útvíkkun á $\cN$, þá eru venslin $Pr_{\cT}$ rakin
+og því framsetjanleg. ($Pr_{\cT}(a,b)$ þþaa  $b$ sé Gödel-tala sönnunar á yrðingu sem hefur Gödel-tölu $a$).
+
+Látum $\bP$  ásamt $\bx,\by$ vera framsetningu á $Pr_{\cT}$,
+látum $\bB$ $\forall \by \lnot \bP$ og $\bC$ vera $\exists \by \bP$.
+
+Skv. (b)-lið eru til lokaðar yrðingar $\bE$ og $\bF$ þ.a.
+\[ \vT \bE \leftrightarrow \forall \by \lnot \bP_{\bx}[\bk_{\god{\bF}}]\]
+\[ \vT \bF \leftrightarrow \exists \by \bP_{\bx}[\bk_{\god{\bE}}] \]
+
+\begin{ath}
+  Að $\bE$ er jafngilt þeirri fullyrðingu að $\bF$ sé ekki sannanleg
+  í $\cT$ og $\bF$ jafngilt fulllyrðingunni að $\bE$ sé sannanlegt í $\cT$
+  
+\end{ath}
+
+
+Við getum sýnt:
+
+\begin{enumerate}[(1)]
+\item  Ef $\cT$ er samvkæm, þá er $\vT \bE$
+\item  Ef $\cT$ er samvkæm, þá er hvorki $\vT \lnot \bE$, né $\vT \bF$.
+\end{enumerate}
+
+Gerum það í fjórum skrefum.
+
+Látum fyrst 
+$p := \god{\bE}, q := \god{\bF}$
+
+\begin{enumerate}[(i)]
+\item  (Ef $\vT \bE$, þá $\vT \bF$).
+G.r.f. að $\vT \bE$ og látum r vera Gödel-tölu sönnunar á $\bE$ í $\bT$.
+Þá er $Pr_{\cT}(p,r,)$, svo
+$\vT \bP_{\bx,\by}[\bk_p, \bk_r]$ og því $\vT \exists \bP_{\bx}[\bk_p]$
+og þá $\vT \bF$.
+
+\item  (Ef $\vT \bF$, þá $\vT \lnot \bE$).
+
+G.r.f. að $\vT \bF$, og látum s vera Gödel-tölu sönnunar á $\bF$ í
+$\cT$. Þá er $Pr_{\cT}(q,s)$, svo $\vT \bP_{\bx,\by}[\bk_q,\bk_s$, og því
+$\vT \exists \by \bP_{\bx}[\bk_q]$ þ.e.a.s
+$\vT \lnot \forall \by \lnot \bP_{\bx} [\bk_q]$, svo $\vT \lnot \bE$.
+
+Af (i) og (ii) leiðir (1).
+
+\item (Ef $\cT$ $\omega$-skv. og $\vT \lnot \bE$, þá ekki $\vT  \bF$)
+G.r.f. að $\cT$ sé $\omega$-skv. og $\vT \lnot \bE$.
+Þá gildir ekki $\vT \bE$, því $\cT$ er sér í lagi samkvæm.
+
+En þá er $\lnot Pr_{\cT}(p,n)$ fyrir öll $n$ úr $\N$ og því
+$\vT \lnot \bP_{\bx,\by}[\bk_p,\bk_n]$ fyrir öll $n$ úr $\N$.
+Því fæst að ekki gildir $\vT \exists \by P_{\bx}[\bk_p]$,
+þar sem $\cT$ er $\omega$-samvkvæm.
+
+En þá gildir ekki $\vT \bF$.
+\item (Ef $\cT$ er $\omega$-samkvæm. og ekki $\vT \bF$, þá er ekki $\vT \lnot \bE$)
+G.r.f. að $\cT$ sé $\omega$-samvkæm og ekki gildi $\vT \bF$.
+Þá er $\lnot Pr_{\cT}(q,n)$ fyrir öll $n$ úr $\N$,
+og því $\vT \lnot \bP_{\bx,\by}[\bk_q,\bk_y]$ fyrir öll $n$ úr $\N$.
+
+Því fæst með $\omega$-samvkæmni að ekki gildi
+\[ \vT \exists \by \bP_{\bx}[\bk_q] \]
+þ.e.a.s að ekki gildi 
+\[\vT  \lnot \forall \by \lnot \bP_{\bx}[\bk_q], \]
+
+en þá gildir ekki $\vT \lnot \bE$
+Fáum nú (2):
+
+G.r.f að $\cT$ sé $\omega$-samkvæm:
+\begin{itemize}
+\item  Ef $\vT \lnot \bE$, þá er ekki $\vT \bF$ skv. (iii) 
+  og þá ekki $\vT \lnot \bE$ skv. (iv). Mótsögn.
+\item Ef $\vT \bF$, þá er $\vT \lnot \bE$ skv. (iii) og þá
+ekki $\vT \bF$ skv. (iii). Mótsögn.
+\end{itemize}
+\end{enumerate}
+
+\emph{Niðurstaða}: $\omega$-samkvæm, frumsendanleg útvíkkun á $\cN$ er ekki fullkomin.
+
+\end{proof}
 
 
 
