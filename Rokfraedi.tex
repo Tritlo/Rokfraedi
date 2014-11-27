@@ -20,7 +20,9 @@
 \newcommand{\bE}{\mathbf{E}}
 \newcommand{\bG}{\mathbf{G}}
 \newcommand{\bR}{\mathbf{R}}
+\newcommand{\bS}{\mathbf{S}}
 \newcommand{\bT}{\mathbf{T}}
+\newcommand{\bL}{\mathbf{L}}
 \newcommand{\bP}{\mathbf{P}}
 \newcommand{\bc}{\mathbf{c}}
 \newcommand{\bX}{\mathbf{X}}
@@ -40,6 +42,7 @@
 \newcommand{\vT}{\vdash_{\cT}}
 \newcommand{\vR}{\vdash_{\cR}}
 \newcommand{\vP}{\vdash_{\PA}}
+\newcommand{\bTx}{\bT_{\bx}}
 \newcommand{\thT}{Thm_{\cT}}
 
 \DeclarePairedDelimiter{\god}{\ulcorner}{\urcorner}
@@ -2518,4 +2521,127 @@ Svo að $(a,b) \mapsto a*b$ er rakið. Höfum
 \[ \cP r_{\PA} (\god{\bB}, c * a * \braket{\god{\bB}})\]
 svo að $\vP \exists \by \bP_{\bx}[\bk_{\god{\bB}}]$, þ.e. $\vP \bT_{\bx} [\pg{\bB}]$.
 \end{proof}
+
+
+Höfum aftur:
+
+Látum $\bP$ ásamt $\bx,\by$ vera framsetningu á 
+$Pr_{\cP\cA}$ í $\cN$ og þá líka á $\PA$.
+ og látum $\bT$ vera
+ \[ \exists \by \bP \]
+
+Skrifum til þæginda $\pg{\bA}$ í stað $\bk_{\god{\bA}}$
+
+\begin{setn}[Hilbert-Bernays-Löb-afleiðsluskilyrði]
+  Höfum:
+\begin{enumerate}[label=\textbf{HBL\arabic*}]
+  \item Ef $\vdash_{\PA} \bA$, þá $\vP \bT_{x} [\pg{\bA}]$.
+  \item $\vP \bT_x [\pg{\bA \to \bB}] \to (\bT_x[\pg{\bA}] \to \bT_x[\pg{\bB}])$.
+  
+  \item $\vP \bT_{\bx}[\pg{\bA}] \to \bT_{\bx}[ \pg{\bT_x[\pg{\bA}]}]$.
+  \end{enumerate}
+\end{setn}
+
+\begin{setn}[Löb]
+  Ef $ \vP \bT_{\bx}[\pg{\bA}] \to \bA$, þá $\vP \bA$
+  
+(þ.e. ef $\bA$ er afleiðing af því að hægt sé að sanna $\bA$, þá gildir $\bA$).
+\end{setn}
+
+\begin{proof}
+Skv. kyrrapunktssetningu er til lokuð yrðing $\bL$ þ.a.
+
+\begin{enumerate}[(1)]
+\item  $\vP \bL \leftrightarrow (\bT_{\bx} [\pg{\bL}] \to \bA).$
+
+þá er
+\item $\vP \bL \to (\bT_{\bx}[\pg{\bL} \to \bA)$.
+
+Skv. \emph{HBL1} er þá
+\item $\vP \bT_{\bx}[\pg{\bL \to (\bT_{\bx}[\pg{\bL}]\to \bA)}]$
+
+og skv. \emph{HBL2} er
+\item $\vP \bT_{\bx}[\bL] \to \bT_{\bx}[\pg{\bT_{\bx} [\pg{\bL}] \to \bA}]$
+
+Með \emph{HBL2} er
+\item $\vP \bT_{\bx}[\pg{\bT_{\bx}[\pg{\bL}] \to \bA}] \to (\bT_{\bx}[\pg{\bTx[\pg{\bL}]}] \to \bTx[\pg{\bA}])$
+
+af (4) og (5) fæst með gegnvirkni að
+
+\item  $\vP \bTx[\pg{\bL}] \to (\bTx[\pg{\bTx[\pg{\bL}]}] \to \bTx[\pg{\bA}])$
+
+Skv. \emph{HBL3}
+\item 
+ $\vP \bTx [\pg{\bL}] \to \bTx [\pg{\bTx[\pg{\bL}]}]$
+
+af (6) og (7) leiðir
+
+\item $\vP \bTx[\pg{\bL}] \to \bTx[\pg{\bA}]$
+
+Forsenda setningarinnar er
+
+\item $\vP \bTx[\pg{\bA}] \to \bA$
+
+af (8) og (9) fæst
+\item $\vP \bTx [\pg{\bL}] \to \bA$
+
+Af (1) og (10) leiðir
+\item $\vP \bL$
+
+með \emph{HBL1} fæst
+\item 
+ $\vP \bTx[\pg{\bL}]$
+\end{enumerate}
+Af (10) og (12) fæst:
+$\vP \bA$ með \textbf{MP}
+\end{proof}
+
+\begin{ath}
+  Þetta minnir á eftirfarandi röksemdarfærslu:
+  Löb-setningin segir eitthvað á þá leið:
+  ``Ef $\bA$ er sannanlegt þá A'' leiðir til $\bA$.
+
+  Látum $\bS$ vera
+
+  ``Ef þessi setning er sönn, þá er jólasveinninn til''.
+
+  m.ö.o er S
+
+  ``Ef S er sönn, þá er jólasveinninn til''.
+
+  Gefum okkur nú sem forsendu:
+
+  \begin{enumerate}[(1)]
+  \item  S er sönn
+
+    Þetta þýðir 
+
+
+  \item ``Ef S er sönn, þá er jólasveinninn til'' er sönn.
+
+    Af (2) leiðir:
+
+  \item Ef S er sönn, þá er jólasveininn til.
+
+    Af (1) og (2) leiðir
+  \item  Jólasveinninn er til
+
+   Hef sýnt að  (1) leiðir til (4), þ.e.
+
+ \item Ef S er sönn, þá er jólasveinninn til.
+
+   Úr því það sannað, þá er það satt, svo að
+ \item  ``Ef S er sönn, þá er jólasveinninn til'' er sönn
+
+   Því gildir
+ \item S er sönn.
+
+ Af (5) og (7) fæst með \textbf{MP}:
+ \item  Jólasveininn er til.
+  \end{enumerate}
+\end{ath}
+
+
+
+
 \end{document}
