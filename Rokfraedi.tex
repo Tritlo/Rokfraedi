@@ -23,6 +23,7 @@
 \newcommand{\bS}{\mathbf{S}}
 \newcommand{\bT}{\mathbf{T}}
 \newcommand{\bL}{\mathbf{L}}
+\newcommand{\bN}{\mathbf{N}}
 \newcommand{\bP}{\mathbf{P}}
 \newcommand{\bc}{\mathbf{c}}
 \newcommand{\bX}{\mathbf{X}}
@@ -31,6 +32,7 @@
 \newcommand{\by}{\mathbf{y}}
 \newcommand{\bz}{\mathbf{z}}
 \newcommand{\bu}{\mathbf{u}}
+\newcommand{\bt}{\mathbf{t}}
 \newcommand{\bv}{\mathbf{v}}
 \newcommand{\xxn}{x_1, \dotsc, x_n}
 \newcommand{\bxxn}{\bx_1, \dotsc, \bx_n}
@@ -2640,6 +2642,57 @@ $\vP \bA$ með \textbf{MP}
  \item  Jólasveininn er til.
   \end{enumerate}
 \end{ath}
+
+
+
+\section{Seinni ófullkomleikasetning Gödels}
+
+[$\vP$ þýðir eiginlega að hægt sé að sanna í $\PA$]
+
+
+\begin{setn}[Seinni ófullkomleikasetning Gödels]
+  Að því gefnu að $\PA$ sé samkvæm, þá er ekki
+
+  \[\vP \lnot \bTx[\pg{0 = S0}]\]
+\end{setn}
+\begin{proof}
+G.r.f. að við getum sannað það, þ.e.
+$\vP \lnot \bTx[\pg{0 = S0}]$
+
+Þá fæst $\vP \bTx[\pg{0 = S0}] \to 0 = S0$. [Því að þá er $\bTx[\pg{0 = S0}]$,
+og af rangri yrðing leiðir hvað sem er].
+
+Skv. setningu Löbs er þá $\vP 0 = S0$. En 
+nú er $\vP 0 \neq S0$, svo að þetta er í mótsögn
+við að $\PA$ sé samkvæm.
+  
+\end{proof}
+
+\begin{ath}
+  Líta má svo á að yrðingin $\lnot \bTx[\pg{0 = S0}]$ segir (í $\PA$) að $\PA$ sé samkvæm.
+  [Þetta er þýðing yfir í $\PA$ að $\PA$ sé samkvæm]. Seinni Gödel-setningin
+ segir þá að ef $\PA$ er samkvæm, þá getum við ekki sannað í $\PA$ að
+ $\PA$ sé samkvæm.
+\end{ath}
+
+Getum búið til yrðinguna \textbf{Con}
+
+\[ \forall \bx \forall \by \forall \bz \forall \bt \lnot (\bP \wedge \bP_{\bx,\by}[\bz,\bt] \wedge \bN_{\bx,\by}[\by,\bt]), \]
+
+$\by$ sö á $\bx$, $\bt$ sö á $\bz$
+%[Þetta þýðir að $\bP$ þýðir að $\by$ er gödel-tala sönnunar á $\bx$]
+
+$\bN$ ásamt $\bx,\by$ er framsetning á  
+\[ Neg(a) = \braket{\tau(\lnot),a} \]
+
+og $P$ er framsetning á Pr.
+
+þetta segir að ekki sé til sönnun í $\PA$ á yrðingu og neitun hennar. Þá er ljóst að
+\[ \vP \mathbf{Con} \to \lnot \bTx[\pg{0 = S0}] \]
+
+Svo af því leiðir að ekki gildir $\vP \mathbf{Con}$.
+
+
 
 
 
