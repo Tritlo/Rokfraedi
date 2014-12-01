@@ -1,0 +1,2200 @@
+\documentclass[12pt]{book}
+
+\input{header.tex}
+
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\PA}{\mathcal{PA}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\mb}[1]{\mathbf{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\bG}{\mathbf{G}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\bL}{\mathbf{L}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bP}{\mathbf{P}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bt}{\mathbf{t}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\xxn}{x_1, \dotsc, x_n}
+\newcommand{\bxxn}{\bx_1, \dotsc, \bx_n}
+\newcommand{\byyk}{\by_1, \dotsc, \by_k}
+\newcommand{\aan}{a_1, \dotsc, a_n}
+\newcommand{\baan}{\ba_1, \dotsc, \ba_n}
+\newcommand{\bkaan}{\bk_{a_1}, \dotsc,\bk_{a_n}}
+\newcommand{\dda}{\dot{-}}
+\newcommand{\Thm}{{\mc{T}hm}}
+\newcommand{\vT}{\vdash_{\cT}}
+\newcommand{\vR}{\vdash_{\cR}}
+\newcommand{\vN}{\vdash_{\cN}}
+\newcommand{\vP}{\vdash_{\PA}}
+\newcommand{\bTx}{\bT_{\bx}}
+\newcommand{\thT}{Thm_{\cT}}
+\newcommand{\emphs}[1]{\textbf{\emph{#1}}}
+\newcommand{\demphs}[1]{\textbf{#1}}
+
+\DeclarePairedDelimiter{\god}{\ulcorner}{\urcorner}
+\DeclarePairedDelimiter{\pg}{\llcorner}{\lrcorner}
+
+\title{Rökfræði}
+\author{Matthías Páll Gissurarson}
+
+\begin{document}
+\maketitle
+
+
+\chapter{Yrðingarökfræði}
+
+Sjá hjá Reyni
+\chapter{Umsagnarökfræði}
+
+Sjá hjá Reyni
+
+\chapter{Líkön}
+
+\section{Mynztur og líkön}
+
+\begin{proof}[Sönnun á Fullkomleikasetningu Gödels]
+  G.r.f. að $\mathbf{A}$ sé ekki setning í $\mathcal{T}$ og látum $\mathbf{A}'$
+  vera lokun $\mathbf{A}$. Þá er $\mathbf{A}'$ ekki heldur seting í
+  $\mathcal{T}$. Þá er $\mathcal{T}[\lnot \mathbf{A}']$ samkvæm skv. HS og hefur
+  þá líkan M skv. meginsetningu.
+
+  En þá er M líkan fyrir $\mathcal{T}$ þ.a. $\lnot \mathbf{A}'$ sé sönn í M
+  og þá er $\mathbf{A}'$ ósönn í M.
+  
+\end{proof}
+
+\vdots
+
+\begin{skgr}[Viðbót]
+ Útvíkkun $\cT'$ kenningar $\cT$ er \emphs{einföld} ef kenningarnar hafa
+sama mál. 
+\end{skgr}
+
+
+\begin{setn}[Hjálparsetn]
+ Ef $\cT'$ er útvíkkun kenningar $\cT$ og $M'$ er líkan fyrir $\cT'$,
+þá fæst líkan $M$ fyrir $\cT$ með því að sleppa þeim föllum og venzlum
+sem ekki eru nefnd í $\cT$. Til að búa til líkan fyrir $\cT$, þá nægir að
+búa til líkan fyrir útvíkkun á $\cT$. 
+\end{setn}
+
+\begin{skgr}
+  \emphs{Henkin-kenning} er kenning $\cT$ þ.a. fyrir sérhverja lokaða yrðingu af
+gerðinnni \( \exists \mathbf{x}\mathbf{A}\) á málinu $\cL(\cT)$, þá
+  er til fasti \(\mathbf{c}\) í $\mathcal{T}$ þ.a. $\vdash  \exists \mathbf{x}\mathbf{A} \rightarrow  \mathbf{A}_{\mathbf{x}}[\mathbf{c}]$
+\end{skgr}
+
+
+Látum $\cL$ vera kenningu fytrstu stéttar á máli $\cL_0: \cL(\cT) = \cL$.
+Útvíkkum $\cL_0$ í mál $\cL$ þannig: Fyrir sérhverja lokaða yrðingu
+$\exists \bx \bA$ á $\cL$ bætum við við nýjum fasta '$\bc_{\exists \bx \bA}$'
+við málið $\cL$ með því að skrifa bókstafinni '$c$' og setja '${\exists \bx \bA}$'
+í lágvísi. Ef $\cL_n$ hefur verið skilgrein, $n \geq 1$, þá fáum við mál $\cL_{n+1}$
+með því að bæta við fasta $c_{\exists \bx \bA}$ fyrir sérhverja lokaða yrðingu
+$\exists \bx \bA$ í $\cL_n$ sem er ekki í $\cL_{n+1}$. Látum $\cL^* = \bigcup_{n \in \N} \cL_n$
+
+vera málið með öllum föstunum úr $\cL_n$. Búum til útvíkkun $\cT^*$ á $\cT$ með
+mál $\cL^*$ og nýjum frumsendum 
+\[ \exists \bx \bA \to \bA_{\bx}[c_{\exists \bx \bA}]\]
+
+Við $\cT$ fyrir allar lokaðar yrðingar $\exists \bx \bA$ á $\cL^*$. Köllum
+þessar nýjar frumsendur sérstakar.
+
+\begin{ath}
+  Tungumálið $\cL^*$ hefur sömu fjöldatölu og $\cL$. Látum $\cL$ vera mál
+fyrstu stéttar með stafróf $\cS$. Stafrófið er endanleg, því að við höfum teljanlega óendanlega
+margar breytur, svo að $\#\cS \geq \aleph_0 := \# \N$. Athugum: Ef $A$ er 
+óendanlegt mengi, þá er fjöldatala mengis allra endnlegra runa af stökum A jöfn $\# A$.
+
+\[ \# A \leq \# \bigcup_{n \in \N} A^n \leq \sum_{n \in \N} ( \# A)^n = \sum_{n \in \N} \#A = \aleph_0 \cdot \# A = \# A.\]
+
+því fyrir fjöldatölur $\alpha, \beta$ þ.a. önnur þeirra er óendanleg er $\alpha + \beta = \alpha \cdot \beta = \max \set{\alpha,\beta}$
+\end{ath}
+
+Fjöldi yrðinga í málinu $\cL$ er $\# \cS$; getum kallað $\# \cS$ fjöldatölu $\cL$.
+Fjöldi fasta sem við bætum við $\cL_0$ til að fá $\cL$ er ekki stærri en fjöldi
+yrðinga í $\cL_0$, svo að $\# \cS (\cL_1) = \# \cS (\cL_0)$ og
+$\# \cL^* \leq \sum_{n \in \N} \# \cL_n \leq \aleph_0 \cdot \# \cL_0 = \# \cL_0$.
+
+\begin{setn}
+ Kenning $\cT^*$ er Henkin-kenning og íhaldsöm útvíkkun á $\cT$. 
+\end{setn}
+
+\begin{proof}
+  Ljóst er að $\cT^*$ er Henkin-kenning: Látum $\cT'$ vera kenninguna með mál
+$\cL^*$ en sömu frumsendur og $\cT$. Sk.v fastasetningu er $\cT'$ íhaldsöm útvíkkun
+á $\cT$. Það nægir að sýna að yrðing á málinu $\cL$ sem er setning í $\cT^*$ er setning
+í $\cT'$. Látumm $\bA$ vera slíka yrðingu. Skv. heimadæmi 28 eru til ólíkar sérstakar frumsendur
+$\bB_1, \dots, \bB_m$ þ.a.
+\[ \vdash_{\cT'} \bB_1 \wedge \dotsb \wedge \bB_m \to \bA, \text{ þ.e. } \vT \bB_1 \to \bB_2 \to \dotsb \to \bB_m \to \bA \]
+Látum $\bc_i$ vera fastann í $\bB_j$, $n_j$ vera lægstu tölu þ.e. $\bc_j$ sé í $\cL_{n_j}$.
+Getum raðað $\bB_1, \dots, \bB_n$ þ.a. $n_1 \geq n_2 \geq \dotsb \geq n_m$. Þá kemur $\bc_j$
+ekki fyrior í $\bB_2, \dotsc, \bB_m$ og alls ekki í $\bA$. Skrifum $\bB_1$ sem $\exists \bx \bC \to \bC_{\bx}[\bc_j]$
+og látum $\by$ vera breytu sem kemur ekki fyrir í $\bA$, $\bB_1, \dotsc, \bB_m$.
+
+Skv. fastasetningu er $\vdash_{\cT'} (\exists \bx \bC \to \bC_{\bx}[\by]) \to \bB_2 \to \dotsb \to \bB_m \to \bA$
+og skv. ($\exists \to$)-reglu er $\vdash_{\cT'} \exists \by ( \exists \bx \bC \to \bC_{\bx}[\by]) \to \bB_2 \to \dotsb \to \bB_m \to \bA$
+en skv. tilbrigða setningu $\vdash_{\cT'} \exists \bx \bC \to \exists \by \bC_{\bx}[\by]$
+
+og þá er $\vdash_{\cT'} \exists y ( \exists \bx \bC \to \bC_{\bx}[\by])$ skv. ``forskeytaaðgerð''.
+En þá gefur \textbf{MP} að $\vdash_{\cT'} \bB_2 \to \dotsb \to \bB_m \to \bA$
+og þrepun gefur $\vdash_{\cT'} \bA$.
+\end{proof}
+
+\begin{setn}[Fylgisetn]
+
+Ef $\cT$ er samkvæm, þá er $\cT^*$ samkvæm.
+  
+\end{setn}
+
+\begin{skgr}
+  Kenning $\cT$ kallast fullkomin ef hún er samkvæm og fyrir sérhverja \emph{lokaða} yrðingu
+$\bA$ gildir $\vT \bA$ eða $\vT \lnot \bA$.
+\end{skgr}
+
+\begin{setn}[Linenbaums]
+ Sérhver samkvæm kenning hefur fullkomna einfalda útvíkkun. 
+\end{setn}
+
+\begin{proof}
+  Lítum á kenninguna $\cT$ sem mengi setninga sinna. Látum $\cT$ vera samkvæma kenningu
+  og $\mathbb{T}$ vera mengi allra samkvæmra kenninga $\cT'$ á málinu $\cL(\cT)$ þ.a.
+  $\cT \subset \cT'$. Röðum $\mathbb{T}$ með hlutmengja venzlum. Látum $\mathbb{A}$
+vera línulega raðað hlutmengi í $\mathbb{T}$. Þá er
+\[ \widetilde{\cT} := \bigcup_{\cT' \in \mathbb{A}} \cT' \in \mathbb{T} \]
+\end{proof}
+
+Ef $\widetilde{\cT}$ er ekki samkvæm, þá er til lokuð yrðing $\bA$ þ.a.
+$\bA$ og $\lnot \bA$ séu setningar í $\widetilde{\cT}$. Þar sem $\mathbb{A}$
+er línulega rðað, þá er til $\cT'$ í $\mathbb{A}$ þ.a.
+$\bA$ og $\lnot \bA$ séu stök í $\cT'$, sem er fráleitt. Svk. HS Zorns hefur $\mathbb{T}$
+hástak $\cT^*$. Þá er $\cT^*$ fullkomin. Látum $\bA$ vera lokaða yrðingu á málinu $\cL$.
+Þ.a. $\bA$ sé ekki setning í $\cT^*$. Þá er$\cT^*[\lnot \bA]$ skamkvæm,
+$\cT^* \subset \cT^*[\lnot \bA]$ svo að $\cT^* = \cT^*[\lnot \bA]$, þ.e.
+$\lnot \bA$ er í $\cT^*$.
+
+\begin{setn}
+ Fullkomin Hengin-kenning $\cT$ hefur líkan $M$ þ.a. að  fjöldatala
+$|M|$ sé $\leq \lambda$, $\lambda = \# \cL(\cT)$
+\end{setn}
+
+Fáum styrkta meginsetningu:
+
+\begin{setn}[Meginsetning]
+ Látum $\cT$ vera samkvæma kenningu á máli $\cL$ með stafróf
+$\cS$. Þá hefur $\cT$ llíkan $M$ þ.a. $\# |M| = \# \cS$. Ef
+$\cT$ er samsemdarkenning, þá hefur hún samsemdarlíkan $M$ þ.a.
+$\# |M| \leq \# |\cS|$.
+\end{setn}
+
+
+
+
+\begin{setn}
+  Látum $\mathcal{T}$ vera fullkomna Henkin-kenningu
+  með stafróf $\mathcal{S}$. Þá hefur $\mathcal{T}$ líkan M
+  þ.a. $|M| = \#\mathcal{S}$;
+ % ef hún er samsemdarkenning þá hefur hún samsemdalíkan $M$ þ.a. $|M| \leq \#\mathcal{S}$.
+
+  \begin{proof}
+    Aðeins er eftir að sanna fyrri fullyrðinguna.
+    Látum $|M|$ vera mengi allra ``lokaðra heita'' (þ.e. heiti án breyta) á málinu
+    $\mathcal{L}$. Fyrir sérhvert n-stætt fallatákn $\mathbf{f}$
+    látum við $\mathbf{f}_M$ vera fallið $|M|^{\alpha} \rightarrow |M|$
+    þ.a.
+
+    \[\mathbf{f}_M ( \mathbf{a}_1, \dotsc,\mathbf{a}_n ) := \mathbf{f} \mathbf{a}, \dotsc, \mathbf{a}_n ,\]
+    
+    og fyrir n-stætt umsagnartákn $\mathbf{p}$ látum við $\mathbf{p}_M$ veera mengi allra
+    n-unda $(\mathbf{a}_1, \dotsc, \\mathbf{a}_n)$ þ.a. 
+    \(\mathbf{a}_1, \dotsc, \mathbf{a}_n \)
+    þ.a. $\vdash_{\mathcal{T}} \mathbf{p} \mathbf{a}_1, \dotsc, \mathbf{a}_n$.
+    Okkur nægir að sýna að fyrir lokaða yrðingu $\mathbf{A}$ gildir
+    \[ \models_M \mathbf{A} \text{ þþaa } \vdash_{\mathcal{T}} \mathbf{A}; \]
+    því að fyrir frumsendur $\mathbf{A}$ í $\mathcal{T}$. 
+    Gildir $\vdash_{\mathcal{T}} \mathbf{A}'$; þar sem $\mathbf{A}'$ er lokun
+    $\mathbf{A}$; en af því leiðir $\models_M \mathbf{A}'$ þá er líka $\models_M \mathbf{A}$.
+    Svo að M er líkan fyrir $\mathcal{T}$. Þrepun yfir lengd yrðinga:
+    \begin{enumerate}[(1)]
+    \item Ef $\mathbf{A}$ er grunnyrðing, þá er þetta bein afleiðing af skilgr.
+    \item $\mathbf{A}$ er $\lnot \mathbf{B}$. Ef $\models_M \mathbf{A}$, þá er ekki
+      $\models_M \mathbf{B}$ og því ekki $\vdash_{\mathcal{T}} \mathbf{B}$ skv. þf.
+      þar sem $\mathcal{T}$ er fullkomin og $\mathbf{B}$ lokað er
+      $\vdash_{\mathcal{T}} \lnot \mathbf{B}$, þ.e. $\vdash_{\mathbf{A}}$. En ef
+      ekki $\models_{M} \mathbf{A}$, þá er $\models_M \mathbf{B}$ og því
+      $\vdash_{\mathcal{T}} \mathbf{B}$ skv. þf. En þar sem $\mathcal{T}$ er 
+      samkvæm er ekki $\vdash_{\mathcal{T}} \lnot \mathbf{B}$ og því ekki
+      $\vdash_{\mathcal{T}} A$.
+    \item $\mathbf{A}$ er $\mathbf{B} \vee \mathbf{C}$: Ef $\models_M \mathbf{A}$,
+      þá er annaðhvort $\models_M \mathbf{B}$ eða $\models_M \mathbf{C}$,
+      svo að $\vdash_{\mathcal{T}} \mathbf{B}$ eða $\vdash_{\mathcal{T}} \mathbf{C}$ skv. þf.
+      í báðum tilvikum er $\vdash_{\mathcal{T}} \mathbf{A}$ skv. sís.
+      Ef ekki $\models_M \mathbf{A}$, þá er hvorki $\models_M \mathbf{B}$
+      né $\models_M \mathbf{C}$ og því hvorki $\vdash_{\mathcal{T}}$ né 
+      $\vdash_{\mathcal{T}} \mathbf{C}$.
+      En $\mathcal{T}$ er fullkomin svo að $\vdash_{\mathcal{T}} \lnot \mathbf{B}$ 
+      og $\vdash_{\mathcal{T}} \lnot \mathbf{C}$ og þá ekki $\vdash_{\mathcal{T}} \mathbf{A}$ skv. sís.
+
+    \item $\mathbf{A}$ er $\forall \mathbf{x} \mathbf{B}$. Ef
+      $\mathbf{B}$ er lokað, þá fæst $\models_M \mathbf{A}$ þþaa $\models_M \mathbf{B}$ sem skv.
+      þf. gildi þþaa $\vdash_{\mathcal{T}} \mathbf{B}$ og það er jafngilt $\vdash_{\mathcal{T}} \mathbf{A}$A
+
+      G.r.f. að $\mathbf{B}$ sé ekki lokað, þá er $\mathbf{x}$ eina breytan sem er frjáls í $\mathbf{B}$.A
+
+      \begin{enumerate}[(a)]
+      \item  G.r.f. að $\models_M \mathbf{A}$ en  ekki $\vdash_{\mathcal{T}} \mathbf{A}$.
+        Skv. fullkomleika er $\vdash_{\mathcal{T}} \lnot \mathbf{A}$ og því
+        $\vdash_{\mathcal{T}} \exists \mathbf{x} \lnot \mathbf{B}$. Þar sem
+        $\mathcal{T}$ er hengin er til fasti $\mathbf{c}$ þa.a. 
+        $\vdash_{\mathcal{T}} \lnot \mathbf{B}_{\mathbf{x}} [\mathbf{c}]$.
+        En vegna $\models_M \forall \mathbf{x} \mathbf{B}$ svo að
+        $\models_M \mathbf{B}_{\mathbf{x}} [\mathbf{c}]$ fyrir öll
+        $\mathbf{c}$ í M.
+        Skv. þf er $\vdash_{\mathcal{T}} \mathbf{B}_{\mathbf{x}} [\mathbf{c}]$. 
+        Þetta er mótsögn, því að $\mathcal{T}$ er samkvæm.
+      \item  G.rf. að $\vdash_{\mathcal{T}} \mathbf{A}$ en ekki $\models_M \mathbf{A}$.
+        Vegna ekki $\models_M \forall \mathbf{x} \mathbf{B}$ er til úthlutun s
+        þ.a. ekki $\models_M \forall \mathbf{x} \mathbf{B} (s)$ og því til $\mathbf{c}$ úr
+        $|M|$ þ.a. ekki $\models_M \mathbf{B}_{\mathbf{x}} ( s_{\mathbf{x}}[\mathbf{c}])$;
+        en það jafngildir $\models_M \mathbf{B}_{\mathbf{x}}[\mathbf{c}]$. En 
+        $\vdash_{\mathcal{T}} \forall \mathbf{x} \mathbf{B}$ og því
+        $\vdash_{\mathcal{T}} \mathbf{B}_{\mathbf{x}} [\mathbf{c}]$ og því
+        $\models_M \mathbf{B}_{\mathbf{x}} [\mathbf{c}]$ skv. þf. 
+
+        Þetta er mótsögn. Því sést:
+        Ef $\vdash_{\mathcal{T}} \mathbf{A}$, þá $\vdash_{\mathcal{T}} \mathbf{A}$,
+        þá $\models_M \mathbf{A}$.
+      \end{enumerate}
+    \end{enumerate}
+    \end{proof}
+\end{setn}
+
+\begin{setn}[Löwenheim-Skolem-setningin]
+Ef kenning fyrstu stéttar hefur teljanlegt stafróf,
+þá hefur hún teljanlegt líkan.
+\end{setn}
+
+\begin{skgr}
+  \begin{enumerate}[(1)]
+  \item  Segjum að kenning $\mathcal{T}$ sé \emphs{hluti}
+    af kenningu $\mathcal{T}'$ ef $\mathcal{T}$ og $\mathcal{T}'$ hafa
+    sama mál og sérhver eiginleg frumsenda í $\mathcal{T}$ er frumsenda 
+    í $\mathcal{T}'$
+  \item Segjum að kenning $\mathcal{T}$ sé \emphs{endanleg frumsenduð}
+    ef fjöldi eiginlegra frumsenda í $\mathcal{T}$ er endanleg.
+  \end{enumerate}
+\end{skgr}
+
+\begin{ath}
+ Hér teljum við \textbf{Eq 1} og \textbf{Eq 2} til rökfrumsenda fyrir
+ samsemdarkenningar.
+\end{ath}
+
+\begin{setn}[Þjöppunarsetning]
+  Yrðin í kenningu $\mathcal{T}$ er sönn í $\mathcal{T}$ ef (þ.e. sönn
+  í sérhverju líkani fyrir $\mathcal{T}$ ) þþaa
+  hún sé sönn í endanlega frumsenduðum hlut af $\mathcal{T}$.
+  Sama gildir fyrir samsemdarkenningu
+\end{setn}
+
+\begin{proof}
+  Höfum $\mathcal{T} \models \mathbf{A}$ þþaa $\vdash_{\mathcal{T}} \mathbf{A}$
+  skv. fullkomleika setningu. En í sönnun $\mathbf{A}$ eru aðeins endalega
+  margar eiginlegar frumsendur notaðar, svo að $\vdash_{\mathcal{T}} \mathbf{A}$
+  jafngildir því að til sé endanlega frumsendaður hluti $\mathcal{T}_{1}$
+  af $\mathcal{T}$ þ.a. $\vdash_{\mathcal{T}_1} \mathbf{A}$, en það jafngildir
+  $\mathcal{T}_1 \models \mathbf{A}$
+\end{proof}
+\begin{setn}[Fylgisetn]
+  Kenning $\mathcal{T}$ hefur líkan þþaa sérhver endanlega
+  frumsendaður hluti af $\mathcal{T}$ hafi líkan.
+  
+  Samsemdarkenning hefur samsemdarlíkan þþaa sérhver endanlega frumsendaður
+  hluti af $\mathcal{T}$ hafi samsemdarlíkan
+\end{setn}
+
+\begin{proof}
+  Notum þjöppunarsetningu á yrðingu $\mathbf{A}$ af gerðinni
+  $\mathbf{B} \wedge \lnot \mathbf{B}$. Kenning hefu líkan þþaa
+  hún sé samkvæm þþaa ekki gildir $\vdash_{\mathcal{T}} \mathbf{B} \wedge \lnot \mathbf{B}$
+  sérhver endanlega frumsendaður hluti af $\mathcal{T}$ hafi líkan.
+\end{proof}
+
+\begin{daemi}
+  Notum þetta á kenningu $\mathcal{F}$ fyrir svið (stundum kallaðir kroppar);
+  hún hefur svo fasta '$0$' og '$1$' og tvö tvístæð fallatákn $+$ og $\cdot$, er samsemdar
+  kenning og hefur eiginlegar frumsendur.
+
+
+  Látum $\mc{F}$ vera samsemdarkenning með föstum '$0$', '$1$',
+ tvístæðum fallatáknum '$+$' og '$\cdot$' og eftirfarandi frumsendum:
+
+ \begin{enumerate}[\textbf{F\arabic*}]
+ \item  $' x + (y + z) = (x+y) + z'$
+ \item '$x + 0 = x$'
+ \item '$\forall x \exists y ( x+ y = 0)$'
+ \item '$x+y = y +x$'
+ \item '$(x \cdot y ) \cdot z = x \cdot (y \cdot z)$'
+ \item '$x \cdot 1 = x$'
+ \item '$x \neq 0 \to \exists y (x \cdot y = 1)$'
+ \item '$x \cdot y = y \cdot x$'
+ \item '$x \cdot (y + z) = x \cdot y + x \cdot z$'
+ \item '$0 \neq 1$'
+ \end{enumerate}
+
+Samsemdarlíkan fyrir $\mc{F}$ eru \emphs{svið} (kroppar).
+
+Látum $\bA_n$ vera yrðinguna '$1+1+ \dotsb + 1 = 0$', þar sem $1$ kemur fyrir
+n-sinnum. Látum $\mc{F}$ vera kenninguna sem fæst með því að bæta við $\mc{F}$
+frumsendunum
+\[ \lnot \bA_2, \dotsc, \lnot \bA_{n -1} = \bA_n \]
+
+fyrir $n \geq 2$. Samsemdar líkan fyrir $\mc{F}$ eru svið með kennitölu n.
+Kennitala sviðs er alltaf frumtala, svo að $\mc{F}(n)$ er samkvæm \emph{þþaa}
+n sé frumtala. Látum $\mc{F}(0)$ vera kenninguna sem fæst með að bæta við $\mc{F}$
+öllum frumsendunum $\lnot \bA_n$ fyrir $n \geq 2$. \emph{Skv.} þjöppunarsetningunni
+er $\bA$ sönn á sérhverjum endanlega frumsenduðum hluta $\cT_1$ í $\mc{F}(0)$.
+Látum $n_0$ vera stærra en öll $n$ þ.a. $\lnot \bA_n$ sé frumsenda í $\cT_1$.
+
+Þá er $\bA$ sönn í $\mc{F}(n)$ fyrir öll $n \geq n_0$,
+þ.a. $\bA$ er sönn í öllum svið með kennitölu $\geq n_0$.
+
+
+\end{daemi}
+
+Afleiðing: Enginn endanlega frumsendaður hluti af $\mc{F}(0)$ er jafngildur $\mc{F}(0)$
+
+Sýnum að ekki er til einföld útvíkkun $\mathcal{T}$ á $\mc{F}$ þ.a.
+samsemdar líkön $\mc{T}$ séu nákvæmlega öll endanleg svið. G.r.f. að
+slík kenning sé til. Látum $\mb{B}_n$ vera yrðingin sem segir að til séu
+$n$ ólík stök, t.d. er $\mb{B}_{3}$ yrðingin
+\[\exists x \exists y \exists z ( x \neq y \wedge x \neq z \wedge y \neq z)\]
+
+ef við bætum öllum $\mb{B}_n$ við $\cT$ sem nýjum frumsendum, þá getur kenningin
+$\cT'$ sem þannig fæst ekki haft líkan. Þar með er til endanlega frumsendaður hluti
+$\cT''$ af $\cT'$ sem hefur ekkert líkan.
+
+Látum $n_0$ vera stærra en öll $n$ þ.a. $\mb{B}_n$ sé eiginleg frumsenda í
+$\cT''$ og K vera endanlegt svið þ.a. $\#K \geq n_0$. Þá er K líkan fyrir
+$\cT''$ sem er mótsögn.
+
+\begin{daemi}
+  Látum $\cL$ vera mál með jafnaðarmerki, föstum '0', '1',
+  falla táknum $'+'$ og $'\cdot'$ og tvístæðu umsagnartákni $<$.
+  Þá er rauntalnasviðið $\R$ mynstur fyri $\cL$ með augljósum hætti.
+  Látum $\cT$ vera mengi allra yrðinga á $\cL$ sem eru sannar í $\R$.
+  Þá er $\cT$ kenning sem hefur teljanlegt stafróf og því teljanlegt líkan.
+
+  Svo að $\cT$ gefur ekki fullkomna lýsingu á $\R$.
+
+  Látum nú $\cL^{*}$ vera málið sem fæst með því að bæta við $\cL$ fasta 
+  $\mb{r}_x$ fyrir sérhverja rauntölu $x$ og lítum á $\R$
+  sem mynstur fyrir $\cL^*$  með því að 
+  $(\mb{r}_x)_{\R} = x$. Látum $\cT^*$ vera mengi allra
+  yrðinga í $\cL^*$ sem eru sannar í $\R$.
+  Þá er $\R$ líkan fyrir $\cT^*$. Bætum fasta $\mb{c}$ við 
+  $\cL^*$ og frumsendunum $\mb{r}_x < \mb{c}$ f. öll
+  $x \in \R$; fáum þá kenningu $\cT^{**}$ sýnum að hún hefur líkan:
+  Látum $x_1, \dotsc, x_n \in \R$ veljum $y > x_1, \dotsc, x_n$
+  og setjum $\mb{c}_{\R} = y$
+
+
+  Þá fæst líkan fyrir $\cT^*$ að viðbættum fumsendu
+  $\mb{r}_{x_k} < r < \mb{c}$ fyrir $k = 1, \dotsc, n$; nefnilega 
+  $\R$ sjálft!
+
+  En þá hefur $\cT^{**}$ líkan ${}^* \R$ skv. þjöppunarsetningu. Þetta er 
+  svið þ.a. allar setningar í $\cT^*$ eru sannar í ${}^* \R$; það inniheldur
+  $\R$ sem hlutsvið (öllu heldur einsmóta eintak, nefninlega 
+  $\set{ (\mb{r}_x)_{{}^* \R}: x \in \R}$ og til er tala 
+  $y$ í ${}^* \R$, nefninlega $y := \mb{c}_{{}^* \R}$,
+  þ.a. $x < y$ fyrir öll $x$ úr $\R$, því ${}^* \R$ er
+  \emphs{óarkímedískt raðsvið} (og þá er $0 < \1{y} < x$ f. öll $x \in R$
+\end{daemi}
+
+
+\begin{setn}[Tarski]
+  Látum $\cT$ vera samsemdarkenningu með stafrófi $\mc{S}$ 
+  og $\lambda$  vera fjöldatölu þ.a. $\lambda \geq \# \mc{S}$.
+  Ef $\cT$ hefur óendanlegt samsemdarlíkan, þá hefur það samsemdarlíkan með fjölda
+  tölu $\lambda$.
+\end{setn}
+
+\begin{proof}
+  Búum til nýja kenningu $\cT'$ með því að bæta mengi $C$ af nýjum
+  föstum við $\cT$, þar sem $\# C = \lambda$, og hverja tvo ólíka
+  fasta $\bc$ og $\bc'$ úr $C$ nýrri frumsendu $\bc \neq \bc'$.
+  Sýnum að $\cT'$ hafi samsemdarlíkan.
+
+  Skv. þjöppunarsetningu nægir að sýna að sérhver endanlega frumsendaður
+  hluti af $\cT'$ hafi samsemdarlíkan. Látum $\bc_1, \dotsc, \bc_n$ vera
+  fastana sem koma fyrir í nýjum
+  frumsendum í $\cT_1'$ og $M$ vera óendanlegt samsemdarlíkan fyri $\cT$
+  og $a_1, \dotsc, a_n$ 
+vera ólík stök í $|M|$; gerum $M$ að mynztri fyrir $\cT_1'$ með því að láta
+  $\bc_{k,M}$ vera $a_k$ og $\bc_M$ vera hvað sem er ef $\bc$ er í
+  $C \setminus \set{\bc_1, \dotsc, \bc_n}$. Þá er $M$ samsemdarlíkan fyrir
+  $\cT_1'$.
+
+  Fjöldatala stafrófs $\cT'$ er í hæsta $\lambda + \lambda = \lambda$,
+  svo að að getum valið $M$ með $\# |M| \leq \lambda$; en
+  $\bc_M \neq \bc_M'$ f. öll $\bc, \bc'$ ílík í $C$. Svo að 
+  $\# |M| \geq \lambda$ því er $\# |M| = \lambda$
+  
+  
+\end{proof}
+
+\begin{ath}
+  Fyrir fjöldatölur $\lambda, \mu$A þ.a. $\mu \leq \lambda$, $\lambda$ óendanlegt
+  $\mu \neq 0$, er 
+  \[ \mu + \lambda = \mu X = X \]
+\end{ath}
+
+
+\chapter{IV}
+
+
+\section{Rakin föll}
+
+í þessum kafla er ``tala'' náttúruleg tala, ``fall'' er vörpun
+$\N^{n} \to \N$, ``venzl'' er hlutmengi í $\N^{n}$. Leyfum okkur að nota
+rökfræði tákn í yfirmálinu.
+
+Kennifall n-stæðra vensla $R$ er 
+$c_R: \N^n \to \N$,
+
+\[ c_R (x_1, \dotsc, x_n) := \bcondef 0 & \Ef R(x_1, \dotsc,x_n) \\ 1 & \Ef \lnot R(x_1,\dotsc,x_n).\\ \econdef \]
+
+(Skrifum $R(x_1,\dotsc, x_n)$ í stað $(x_1, \dotsc, x_n) \in R$.)
+
+\begin{skgr}
+  \emphs{Rakin föll} eru skilgrein með þrepun þannig:
+
+  \begin{enumerate}[R\arabic*]
+  \item  Eftirfarandi föll eru rakin:
+    \begin{enumerate}[(a)]
+    \item \emphs{Núllfallið} Z þ.a. $Z(x) = 0$
+    \item \emphs{Eftirfarafallið} $N(x) = x+1$
+    \item Ofanvörpun $I_i^n(x_1, \dotsc, x_n) := x_i$
+    \end{enumerate}
+  \item Ef $G,H_1, \dotsc, H_n$ eru rakin föll, þ'er fallið
+    $F$ þ.a.
+    \[ F(x_1,\dotsc,x_n) = G(H_1(x_1,\dotsc,x_n), \dotsc, H_n(x_1,\dotsc,x_n))\]
+    rakið fall.
+  \item Ef $G,H$ eru rakin föll og $F$ er skilgreint
+    \begin{align*}
+      F(x_1, \dotsc, x_n,0) & := G(x_1, \dotsc,x_n),\\
+      F(x_1, \dotsc,x_n, yH) & := H(x_1, \dotsc, x_n, y, F(x_1, \dotsc, x_n, y))
+    \end{align*}
+    rakið fall.
+  \item Ef $G$ er rakið fall, þ.a. $\forall x_1, \dotsc, \forall x_n  \exists y (G(x_1, \dotsc, x_n,y) = 0)$
+    þá er fallið $F$ þ.a. 
+    \[ F(x_1, \dotsc, x_n) := \mu y G(x_1, \dotsc, x_n,y) = 0)\]
+    þar sem $\mu y(G(x_1,\dotsc,x_n,y) = 0)$ er minnsta $y$ þ.a.
+    $G(x_1,\dotsc,x_n,y) = 0$ er rakið.
+  \end{enumerate}
+
+ Fall sem fæst með því að nota eingöngu $R_1, R_2, R_3$ 
+ kallast \emphs{frumstætt rakið fall}.
+
+ Við segjum að venzl $R$ séu rakin ef kennifallið 
+ $c_R$ er rakið. Ef \[\forall x_1, \dotsc, \forall x_n  \exists y R(x_1, \dotsc, x_n,y)\]
+ þá skrifum við
+ \[\mu y R (x_1, \dotsc, x_n,y) := \mu y (G_R(x_1,\dotsc,x_n,y) = 0)\]
+\end{skgr}
+
+
+\begin{setn}
+  \begin{enumerate}(1)
+  \item Ef $G: \N^n \to \N$ er [frumstætt9 rakið fall,
+    $i_1, \dotsc, i_k \in \set{1, \dotsc, n}$ og $F$ er gefið með
+    \[ F(x_1, \dotsc,x_n) = G(x_{i_1}, \dotsc x_{i_k})\]
+    þá er $F$ [frumstætt] rakið fall.
+  \item Núllfallið $Z^n(x_1,\dotsc,x_n) = 0)$ er frumstætt rakið fall.
+  \item Fyrir $k \in \N$ er fastafallið $K^n_k$ þ.a.
+    $K^n_k ( \xxn) = k$ frumstætt rakið fall.
+  \item í R4 má taka $n=0$ ef $H$ er [frumstætt] rakið fall,
+    $k \in \N$ og $F: \N \to \N$ er skilgreint með
+    \[ F(0) = k,\]
+    \[ F(y+1) = H(y,F(y)) \]
+    þá er $F$ [frumstætt] rakið fall.
+  \end{enumerate}
+\end{setn}
+
+
+\begin{proof}
+  \begin{enumerate}[(1)]
+  \item Höfum $F(\xxn) = G(I^n_{i_1} (\xxn), \dotsc, I^n_{i_k}(\xxn))$
+  \item $Z^n(\xxn) = Z(I^n_1 ( \xxn ))$.
+  \item $K^n_0 (\xxn) = Z^(\xxn)$ og
+    $K^n_{k+1} (\xxn) = N(K^n_k (\xxn))$.
+  \item Skv. R3 er $G: N^2 \to \N$ þ.a.
+    \[ G(x_1, 0) = K^1_k (x_1), \]
+    \[ G(x_1, y +1) = H(I^2_2 (x_1, y), G(x_1,y))\]
+  \end{enumerate}
+  [frumstætt] rakið fall, og $F(y) = G(y,y)$
+\end{proof}
+
+
+\begin{setn}[og skilgreining]
+  Eftirfarandi föll eru frumstæð rakin föll.
+  \begin{enumerate}[(1)]
+  \item $A(x,y) := x+y$.
+  \item $M(x,y) := x \cdot y$.
+  \item $V(x,y) := x ^ y$.
+  \item $ \delta (x) := \bcondef x-1 & \Ef x > 0, \\ 0 & \Ef x = 0. \econdef$
+  \item $ x-y := \bcondef x-y & \Ef x \geq y, \\ 0 & \Ef x < y. \econdef$
+  \item $ |x-y| := \bcondef x-y & \Ef x \geq y, \\ y - x & \Ef x < y. \econdef$
+  \item $ sg(x) := \bcondef 0 & \Ef x = 0 , \\ 1 & \Ef x > 0. \econdef$
+  \item $ \overline{sg}(x) := \bcondef 1 & \Ef x = 0 , \\ 0 &  \Ef x > 0. \econdef$
+  \item $x!$.
+  \item $\min(\xxn)$.
+  \item $\max(\xxn)$.
+  \item $rm(x,y) = \text{ afgangur þegar x er deilt í y}$.
+  \item $qf(x,y) = \text{ kvóti þegar x er deilt í y}$.
+  \end{enumerate}
+\end{setn}
+
+\begin{proof}
+  \begin{enumerate}[(1)]
+  \item 
+    \begin{gather*}
+    A(x,0) = I^1_1(x),\\
+    A(x,y+1) = N(A(x,y))
+    \end{gather*}
+  \item 
+    \begin{gather*}
+    M(x,0) = Z(x),\\
+    M(x,y+1) = A(M(x,y),x)
+    \end{gather*}
+  \item 
+    \begin{gather*}
+    V(x,0) = K^1_1(x),\\
+    V(x,y+1) = M(V(x,y),x)
+    \end{gather*}
+  \item 
+    \begin{gather*}
+    \delta(0) = 0,\\
+    \delta(y+1) = y
+    \end{gather*}
+  \item 
+    \begin{gather*}
+    x - 0 = x,\\
+    x - (y+1) = \delta(x-y)
+    \end{gather*}
+
+  \item 
+    \begin{gather*}
+    |x - y| = A(x-y,y-x),\\
+    \end{gather*}
+
+  \item 
+    \begin{gather*}
+    sg(0) = 0,\\
+    sg(y+1) = K^1_1(y)
+    \end{gather*}
+  \item 
+    \begin{gather*}
+    \overline{sg}(x) = 1 - sg(x)
+    \end{gather*}
+  \item
+    \begin{gather*}
+      0! = 1 = K^1_1(x),\\
+      (y+1)! = y! \cdot (y+1) = M(y!,y+1)
+    \end{gather*}
+  \item 
+    \begin{gather*}
+      \min(x,y) = x - (x-y), \\
+      \min(\xxn, x_{n+1}) = \min( \min( \xxn), x_{n+1})
+    \end{gather*}
+  \item 
+    \begin{gather*}
+      \max(x,y) = y + (x-y), \\
+      \max(\xxn, x_{n+1}) = \max( \max( \xxn), x_{n+1})
+    \end{gather*}
+  \item 
+    \begin{gather*}
+    rm(x,0) = 0,\\
+    rm(x,y+1) = N(rm(x,y)) \cdot sg(|x-N(rm(x,y))|)
+    \end{gather*}
+  \item 
+    \begin{gather*}
+    qf(x,0) = 0,\\
+    qf(x,y+1) = qf(x,y)) + \overline{sg}(|x-N(rm(x,y))|)
+    \end{gather*}
+  \end{enumerate}
+\end{proof}
+
+\begin{setn}
+  Ef $F$ er [frumstætt] rakið fall, þá eru eftirfarandi föll [frumstætt] rakin:
+  \begin{gather*}
+    \sum_{y < z} F(\xxn,y), ( =: G(\xxn,z)) \\
+    \sum_{y \leq z} F(\xxn,y),  \\
+    \prod_{y < z} F(\xxn,y),  \\
+    \prod_{y \leq z} F(\xxn,y),  \\
+  \end{gather*}
+\end{setn}
+
+\begin{proof}
+  \begin{gather*}
+    G(\xxn,0) = 0 \\
+    G(\xxn, z+1) = G(\xxn,z) + F(\xxn,z)\\
+    \vdots
+  \end{gather*}
+  o.s.frv.
+\end{proof}
+
+
+\begin{daemi}
+  Látum $t(0) = 1$ og $t(x)$ vera fjöldi deila
+  tölunnar $x$ ef $x \geq 1$. Þá er
+  $t$ frumstætt rakið, því að
+  \[t(x) = \sum_{y \leq x} \overline{sg}(rm(y,x))\]
+\end{daemi}
+
+\begin{skgr}
+  Setjum
+ \[\mu y_{y< z} R(\xxn,y) := \bcondef \text{ minnsta $y$ þ.a. $y < z$ og $R(\xxn,y)$} & \Ef \text{ slíkt y er til} \\ z & \text{ annars}. \econdef\]
+ \[ \forall y_{y<z} R(\xxn,y): \leftrightarrow \forall y ( y < z \rightarrow R(\xxn,y)),\]
+ \[ \forall y_{y<z} R(\xxn,y): \leftrightarrow \exists y ( y < z \wedge R(\xxn,y));\]
+ hliðstætt fyrir $\mu y_{y \leq z}, \forall y_{y\leq z}, \exists y _{y \leq z}$.
+\end{skgr}
+
+\begin{setn}
+  Venzl sem fást úr [frumstætt] röknum venzlum með því að nota rökvirkjana
+  '$\lnot$', '$\vee$' og takmarkaða magnara  eru [frumstætt] rakin.
+  Föll sem fást úr [frumstæðum] röknum föllum með virkjunum
+  $\mu y_{y < z}$ og $\mu y_{y \leq z}$ eru [frumstætt] rakin.
+\end{setn}
+
+\begin{proof}
+  \begin{gather*}
+    C_{\lnot R} (\xxn) = 1 - C_R(\xxn). \\
+    C_{R_1 \vee R_2} (\xxn) = C_{R_1} (\xxn) \cdot C_{R_2}(\xxn)
+  \end{gather*}
+  Ef $\theta(\xxn,y): \leftrightarrow \exists y_{y < z} R(\xxn,y)$ þá er
+  \[ C_R(\xxn) = \prod_{y<z} C_R(\xxn, y)\]
+  $\exists y_{y\leq z}$ er jafngilt $\exists y_{y <  z+1}$, $\forall y_{y\ < z}$
+  er jafngilt $\lnot \exists y_{y <  z}$ og
+  \[\mu y_{y <  z} R(\xxn, y) = \sum_{y<z} (\prod_{u \leq y} C_R (\xxn, u))\]
+  Því að $ \prod_{u < y}C_R(\xxn,u)$ er 1 f. öll $y$ þ.a. $R(\xxn,u)$ sé rangt.
+
+  Fyrir öll $u$, en verður $0$ um leið og til er $u \leq y$ þ.a. $R(\xxn,u)$
+  sé rétt. Svo að $\sum_{y<z} \prod_{u \leq y} C_R(\xxn,u)$ er földi allra staka
+  frá $0$ upp í $y-1$
+  þar sem $y < z$ er fyrsta $y$ þ.a. $R(\xxn, y)$ sé rétt, ef slíkt $y$ er til 
+  en jafnt $z$ ef slíkst $y$ er ekki til.
+\end{proof}
+
+
+\begin{setn}
+  Venzlin $x = y$, $x < y$, $x \leq y$ , $x > y$, $x \geq y$, $x | y$, $x \equiv y \text{ (mod } z)$.
+  og $Pr(x)$ eru frumstæði rakin, þar sem $Pr(x)$ þyðir að $x$ sé frumtala.
+  \begin{proof}
+    \begin{gather*}
+      C_=(x,y) = sg(|x-y|),\\
+      C_<(x,y) = \overline{sg}(y \dda x),\\
+      x \leq y \leftrightarrow x < y \vee x = y\\
+      C_|(x,y) = sg(rm(x,y)),\\
+      x \equiv y (mod z) \leftrightarrow z | |x-y|\\
+      C_{Pr} (x) = sg(|t(x)-2|)\\
+    \end{gather*}
+    því að $p$ er prímtala þþaa fjöldi talna sem gengur upp í $p$ sé $2$.
+  \end{proof}
+\end{setn}
+
+\begin{daemi}
+  \begin{enumerate}[(1)]
+  \item Látup $p_x$ vera $(x+1)$-stu frumtöluna í vaxandi röð. Þá
+    er $p_x$ frumstætt rakið fall, því að
+    \begin{gather*}
+      p_0 = 2,\\
+      p_{x+1} = \mu y_{y \leq (p_x)!+1} (p_x < y \wedge Pr(y)).
+    \end{gather*}
+    sérhverja nátt. tölu $x\geq 1$ má skrifa með
+    nákv. einum hætti sem margfeldi
+    \[ x = p_0^{v_0(x)} p_1^{v_1(x)} p_2^{v_2(x)} \dotsb \]
+    þar sem $v_k(x) \in \N$ o(g $v_k(x) = 0$ f. öll nógu stór k);
+    setjum til þæginda
+    $v_k(x) := 0$. Sérhvert fall $v_k(x)$ er frumstætt rakið, því að
+    \[ v_j(x) = \mu y_{y < x}(p_j^y | x \wedge \lnot p_j^{y+1} | x).\]
+  \end{enumerate}
+\end{daemi}
+
+\begin{setn}
+ Látum $G_1, \dotsc, G_k$ vera [frumstætt] rakin föll og $R_1, \dotsc, R_k$ vera
+ [frumstæð] rakin þ.a. fyrir sérhvert $(\xxn)$ sé nákvæmlega eitt
+ af $R_1(\xxn), \dotsc, R_k(\xxn)$ satt. Þá er fallið $F$ þ.a.
+ \[ F(\xxn) := \bcondef G_1(\xxn) & \Ef R_1(\xxn)\\ \vdots & \vdots \\ G_k(\xxn) & \Ef R_k(\xxn) \econdef \]
+ er frumstætt rakið fall.
+ \begin{proof}
+   \[F = G_1 \cdot C_{\lnot R_1} + \dotsb + G_k \cdot C_{\lnot R_k} \]
+ \end{proof}
+\end{setn}
+
+Oft eru föll $f$ skilgreind með þrepun þ.a.
+í skgr. á $f(y+1)$ eru öll gildi $f(0), \dotsc, f(y)$
+notuð. Setjum
+\[ f^{\#}(\xxn,y) = \prod_{u < y}p_n^{f(\xxn,u)} \]
+Getum reiknað $f$ útfrá $f^{\#}$ með
+\[ f(\xxn,y) = v_y (f^{\#}(\xxn,y+1)) \]
+
+\begin{setn}
+  Ef $H$ er [frumstætt] rakið fall og f fullnægi
+  \[ f(\xxn, y) = H(\xxn,y, f^{\#}(\xxn,y))\]
+  þá er f [frumstætt] rakið fall.
+\end{setn}
+
+\begin{proof}
+  $f^{\#}$ er [frumstætt] rakið, því að
+  \begin{align*}
+    f^{\#}(\xxn,0) = 1& ,\\
+    f^{\#}(\xxn,y+1) &= f^{\#}(\xxn,y) \cdot p_y^{f(\xxn,y)}\\
+    &= f^{\#}(\xxn,y) \cdot p_y^{H(\xxn,y,f^{\#}(\xxn,y)))}\\
+  \end{align*}
+  þar með er $f(\xxn,y) = v_y(f^{\#}(\xxn,y+1))$ það líka.
+\end{proof}
+
+\begin{daemi}
+  Fibonaci-runan er skilgreind með 
+  $f(0) = 1, f(1) = 1$ og \[f(k+2) = f(k)+ f(k+1)\].
+  Höfum:
+  %\[f(k) = \overline{sg}(k) + \overline{sg}(|k-1|) + (v_{k-1}(f^{\#}(k))+v_{k-2}(f^{\#}(k))) \cdot sg(k \dda 1)  = H(k, f^{\#} (k)) \] % svona hjá tandra
+  \[f(k) = \overline{sg}(k) + \overline{sg}(|k-1|) + (v_{k-1}(f^{\#}(k))+v_{k-2}(f^{\#}(k))) \cdot sg(k \dda 2)  = H(k, f^{\#} (k)) \]
+
+  þar sem  
+  \[ H(y,z) =  \overline{sg}(y) + \overline{sg}(|y-1|) + (v_{y-1}(z) + v_{y-2}(z))\cdot sg(y \dda 1)\]
+  er frumstætt rakið fall, svo að $f$ er frumstætt.
+\end{daemi}
+
+\begin{setn}[Hjálparsetning]
+  Fallið $Q: \N^2 \to \N, Q(x,y) = (x+y)^2 +x + 1$ er eintækt.
+  \begin{proof}
+    G.r.f. að $Q(x,y) = Q(s,t)$. Ef $x+y < s+t$, þá er
+     \[ Q(x,y) \leq (x+y +1)^2 \leq (s+t)^2 < Q(s,t),\]
+     sem er mótsögn, eins ef $s+t < x+y$. Því er $x+y = s+t$,
+     en þá fæst að $x = s$ og þá $y = t$.
+  \end{proof}
+\end{setn}
+
+\begin{setn}
+  Til er ákveðið frumstætt rakið fall $\beta: \N^2 \to \N$
+  þ.a. $\beta (a,i) \leq a \dda 1$ og þ.a. fyrir öll $a_0, \dotsc, a_{n-1}$ er til
+  tala $a$ þ.a.
+  \[\beta(a,i) = a_i \]
+  fyrir öll $i$ þ.a. $0 \leq i < n$
+  \begin{proof}
+    Setjum $Q(x,y) := (x+y)^2 + x +1$ og
+    \[ \beta(a,i) = \mu x_{x \leq a - 1} \exists y_{y<a} \exists z_{z<a} (a = Q(y,z) \wedge 1 + (Q(x,i)+1) \cdot z | y ) \]
+    Látum $a_0, \dotsc, a_{n-1}$ vera fegin. Fáum
+    \[ c:= \max (Q(a_0,0) + 1, \dotsc, Q(a_{n-1},n-1) +1 ) \]
+    
+    Setjum $ z := c!$. Fyrir $j < l < c$ eru tölurnar
+    $1 +jz$ og $1 + lz$ ósamþátta, því að sameiginlegur frumþáttur
+    $p$ gengur upp í $(1+lz) - (1+jz) = (l-j)z$, en $l-j < c$, svo að
+    $l-j | z$ og því $p|z$, sem er fráleitt (þá fengist $p | 1$). Skv.
+    kínversku leifasetningunni er til tala $y$ þ.a. fyrir $j = =1, \dotsc, c-1$
+    gildi $1+jz|y$ þþaa $j$ sé ein af tölum $Q(a_i,i)+1, i \in \set{0,\dotsc,n-1}$.
+    Setjum $a := Q(y,z)$. Þá er $a_i < y < a$ og $ z < a$.
+
+    Skv. HS fæst: Til að sýna að $\beta(a,i) = a_i$ fyrir $i = 0, \dotsc, n-1$
+    nægir að sýna að $a_i$ sé minnsta tala $x$ þ.a.
+    $1+(Q(x,i)+1)\cdot z$ gangi upp í $y$. En ef $x < a_i$,
+    þá er $Q(x,i) < Q(a_i,1) < c$ og $Q(x,i)$ er
+    ekki ein af tölum $Q(a_j,i)$, þ.a. $1 + (Q(x,i)+1)\cdot z$
+    gengur ekki upp í $y$.
+  \end{proof}
+\end{setn}
+
+\begin{skgr}
+  Köllum $\beta$ Gödel-fallið.
+
+\end{skgr}
+
+\begin{ath}
+  
+  Vegna $\beta(a,i) \leq a - 1$ er 
+  \[\beta(0,i) = 0\]
+  og fyrir $a \neq 0$ er $\beta(a,i) < a$.
+\end{ath}
+
+\begin{ath}
+  Reynir notar í þessum kafla að ofan táknið $\dot{-}$,
+  en ég hef táknað það með $-$. Það ætti þó að laga þetta.
+\end{ath}
+
+
+\section{Framsetning í $\mathcal{N}$}
+
+Rifjum upp að $\cN$ er samsemdarkenningin með fasta '$0$', einstætt
+fallatákn '$S$', tvö tvístæð fallatákn '$+$' og '$\cdot$' og
+eitt tvístætt umsagnartákn '$<$' (auk '$=$') og eftirfarandi eiginlegum
+frumsendum:
+
+\begin{enumerate}[label=\textbf{N\arabic*}]
+\item  \( Sx \neq 0\)
+\item  $ Sx = Sy \rightarrow x = y$.
+\item  $ x + 0 = x$.
+\item  $ x + Sy = S(x+y)$.
+\item  $ x \cdot 0 = 0$.
+\item  $ x \cdot Sy = (x \cdot y) + x$.
+\item  $ \lnot (x < 0)$.
+\item  $ x < Sy \leftrightarrow x < y \vee x = y$.
+\item  $ x < y \vee x = y \vee x > y$.
+\end{enumerate}
+
+Heitin '$0$', '$S0$', '$SS0$', $\dotsc$ o.s.frv. kallast
+tölutákn látum $\mb{k}_n$ vera tölutáknið sem hefur nkvl. $n$ '$S$'.
+
+\begin{skgr}
+  Látum $\cT$ vera kenningu með sama máli og $\cN$. Við segjum
+  að yrðingin $\bA$ ásamt ólíkum breytum 
+  $\bx_1, \dotsc, \bx_n ,\mathbf{y}$ sé framsetning á n-stæðu fallinu
+ $F$ í $\cT$ ef fyrir öll $a_1, \dotsc, a_n$ í $\N$ gildir
+ \[ \vdash_{\cT} \bA_{\bx_1, \dotsc, \bx_n} [ \bk_{a_1}, \dotsc, \bk_{a_n}] \leftrightarrow y = \bk_b \]
+ þar sem $ b = F( a_1, \dotsc, a_n)$. Segjum að $F$ sé framsetjanlegt í
+ $\cT$ ef slík framsetning er til.
+
+ Segjum að yrðing $\bA$ ásamt ólíkum breytum $\bxxn$ sé framsetning í $\cT$
+ á n-stæðum venzlum $P$ ef f. öll $\aan$ úr $\N$ gildi
+ \begin{enumerate}[(i)]
+ \item  ef $P(\aan)$, þá $\vdash_{\cT} \bA_{\bxxn}[\bk_{a_1}, \dotsc, \bk_{a_n}]$;
+ \item  ef $\lnot P(\aan)$, þá $\vdash_{\cT} \lnot \bA_{\bxxn}[\bk_{a_1}, \dotsc, \bk_{a_n}]$
+ \end{enumerate}
+ segum þá að $P$ sé \emphs{framsetjanlegt} í $\cT$.
+
+ Segjum að heiti $\ba$ ásamt ólíkum breytum $\bxxn$ sé framsetning á 
+ n-stæðu falli $F$ í $\cT$ ef f. öll $\aan$ í $\N$
+ gildir:
+ \[ \vdash_{\cT} \ba_{\bxxn}[\bk_{a_1}, \dotsc, \bk_{a_n}] = \bk_b \]
+ þar sem $b = F(\aan)$
+\end{skgr}
+
+\begin{ath}
+  Ef heitið $\ba$ ásamt $\bxxn$ er framsetning á $F$ í $\cT$ og
+  $\by$ er ný breyta, þá er yrðingin $\by = \ba$ ásamt
+  $\bxxn, \by$ framsetning á $F$ í $\cT$.
+\end{ath}
+
+\begin{daemi}
+  \begin{enumerate}[(1)]
+  \item  Yrðingin '$ x = y$' ásamt '$x$', '$y$' er framsetning á 
+    venzlum $=$ í $\cN$. Til að sanna það þarf að sýna:
+    \begin{enumerate}[(i)]
+    \item  ef $m = n$, þá er $\bk_m = \bk_n$
+    \item  ef $m \neq n$, þá er $\bk_m \neq \bk_n$
+    \end{enumerate}
+
+    Staðhæfing (i) fæst úr $\mathbf{EQ}_1$ með innsetningu.
+    Til að sýna (ii) má gera ráð fyrir að $m > n$.
+    Notum þrepun yfir $n$. Ef $n = 0$, fæst þetta úr \textbf{N1}.
+    Látum þá $n > 0$. Með innsetningu í \textbf{N2} fæst
+    \[ \vdash_{\cN} \bk_m = \bk_n \rightarrow \bk_{m-1} = \bk_{n-1}.\]
+    Skv. þf. er $\vdash_{\cN} \bk_{m-1} \neq \bk_{n-1} $ og þá
+    $\vdash_{\cN} \bk_m \neq k_n$ skv. sís.
+  \item Heitið '$0$' ásamt '$x$' er framsetning á núllfallinu
+    $Z: \N \to \N$, því að $\vdash_{\cN} 0 = 0$ og
+    $0_x [\bk_a]$ er '$0$'.
+  \item Heitið '$Sx$' ásamt '$x$' er framsetning á eftrifara fallinu
+    $N(x) = x + 1$ í $\cN$; það þýðir að
+    \[ \vdash_{\cN} S \bk_n = \bk_{n+1}.\]
+    En $S\bk_n = \bk_{n+1}$, svo að þetta fæst úr
+    $\mathbf{EQ}_1$ með innsetningu.
+  \item Heitið '$x_i$' ásamt '$x_1$',$\dotsc$,'$x_n$' er
+    framsetning á ofanvarpinu $I^n_i$. Ef
+    $\bA$ er $'x_i'$, þá er $\bA_{\bxxn}[\bk_{a_1}, \dotsc, \bk_{a_n}]$
+    heitið $\bk_{a_i}$ og 
+    \[ \vdash_{\cN} \bk_{a_i} = \bk_{a_i} \]
+    skv. \textbf{EQ1}
+  \item Heitið $'x+y'$ ásamt $'x', 'y'$ er framsetning í $\cN$ á
+    samlagningunni $\N^2 \to \N$,
+    $(x,y) \mapsto x+y$. Til að sanna það þarf að sýna að
+    \[ \vdash_{\cN} \bk_m + \bk_n = \bk_{m+n} \]
+    Þrepum yfir $n$. Fyrir $ n =0$ er þetta
+    \[ \vdash_{\cN} \bk_m + 0 = \bk_{m} ,\]
+    sem fæst úr \textbf{N3} með innsetningu.
+    G.r.f. að $\vdash_{\cN} \bk_m + \bk_n = \bk_{m+n}$
+    Fyrir fast tiltekið $n$ (og öll $m$). Skv.
+    setningu um samsendarkenningar
+    \[ \vdash_{\cN} S(\bk_m + \bk_n) = S \bk_{m+n}\]
+    þ.e.
+
+    \[ \vdash_{\cN} S(\bk_m + \bk_n) = \bk_{m+n+1}\]
+    skv. N4 er
+    \[ \vdash_{\cN} S(\bk_m + \bk_n) = \bk_{m} + \bk_{n+1}\]
+    svo að
+    \[ \vdash_{\cN} \bk_m + \bk_{n+1} = \bk_{m+n+1}.\]
+    Eins sést að tilteki '$x\cdot y$' ásamt $'x'$, '$y$' er
+    framsetning  á margfölduninni $\N^2 \to \N$ í $\cN$.
+  \item  Yrðingin $'x < y'$ ásamt '$x$' og '$y$' er
+    framsetning í $\cN$ á venzlunum $<$ í $\N^2$. Sýna þarf:
+    \begin{enumerate}[(i)]
+    \item  Ef $m < n$ ,þá er $\vdash_{\cN} \bk_m < \bk_n$
+    \item  Ef $m \geq n$ ,þá er $\vdash_{\cN} \lnot (\bk_m < \bk_n)$ 
+    \end{enumerate}
+    Fyrir $n = 0$ gildir (i) sjálfkrafa og (ii) fæst úr \textbf{N7}.
+    G.r.f að (i) og (ii) gildi fyrir tiltekið $n$. skv. \textbf{N8}
+    fæst
+    \[ \vdash_{\cN} \bk_m < \bk_{n+1} \leftrightarrow (\bk_m < \bk_n \vee \bk_m = \bk_n) (^*) \]
+    Gerum fyrst ráð fyrir að $m < n+1$. Ef $m<n$ þá er $\vdash_{\cN} \bk_m < \bk_n$
+    skv. þf. en ef $ m = n$, þá er $\vdash_{\cN} \bk_m = \bk_n$.
+
+    Í báðum tilvikum gefur $(^*)$ okkur að $\vdash_{\cN} \bk_m < \bk_{n+1}$.
+    Gerum næst ráð fyrir að $m \geq n+1$. Þá er $m \geq n$
+    því $\vdash_{\cN} \lnot (\bk_m < \bk_n)$ skv. þf. og 
+    $m \neq n$ og því $\vdash_{\cN} \lnot (\bk_m < \bk_{n+1})$
+    skv. $(^*)$ og \emph{sís}.
+  \end{enumerate}
+\end{daemi}
+
+\begin{setn}
+  Venzl P eru framsetjanleg í $\cN$ þþaa kennifallið $C_P$ sé framsetjanlegt í $\cN$
+\end{setn}
+
+\begin{proof}
+  Gerum fyrst r.f. að $\bA$ ásamt $\bxxn$ sé framsetning á $P$ í $\cN$
+  látum $\bB$ vera yrðinguna
+  \[ ( \bA \wedge \by = \bk_0) \vee (\lnot \bA \wedge \by = \bk_1)\]
+  Þar sem $\by$ er ný breyta. sýnum að $\bB$
+  ásamt $\bxxn, \by$ er framsetning á $C_P$.
+  G.r.f. að $C_P (\aan) = 0$. Þá er $P(\aan)$
+  og því $\vdash_{\cN} \bA_{\bxxn} [\bk_{a_1}, \dotsc,\bk_{a_n}]$; af því og \emph{sís}
+  fæst
+  \[ \vdash_{\cN} \bB_{\bxxn} [ \bk_{a_1}, \dotsc,\bk_{a_n} ] \leftrightarrow \by = \bk_0 \]
+  Samskonar rök ef $C_P (\aan) = 1$.
+
+  Gerum næst r.f. að $\bA$ ásamt $\bxxn, y$ sé framsetning á $C_P$. Sýnum að
+  $\bA_{\by}[0]$ ásamt $\bxxn$ er framsetning á $P$.
+  \begin{enumerate}[(i)]
+  \item Ef $P(\aan)$, þá er $C_P(\aan) = 0$ og því
+    \[\vdash_{\cN} \bA_{\bxxn}[\bk_{a_1}, \dotsc,\bk_{a_n}] \leftrightarrow \by = \bk_0 \]
+    Setjum $\bk_0$ inn fyrir $\by$. Vegna $\vdash_{\cN} \bk_0 = \bk_0$
+    fæst \[\vdash_{\cN} ( \bA_{\by}[0] )_{\bxxn}[\bk_{a_1}, \dotsc,\bk_{a_n}]\]
+  \item Ef $\lnot P(\aan)$ þá er $C_P ( \aan) = 1$
+    og \[\vdash_{\cN} \bA_{\bxxn} [ \bk_{a_1}, \dotsc,\bk_{a_n}] \leftrightarrow \by = \bk_1.\]
+    Setjum $\bk_0$ inn fyrir $\by$, vegna $\vdash_{\cN} k_0 = k_1$, fæst
+    \[ \vdash_{\cN} \lnot (\bA_{\by}[0])_{\bxxn} [\bk_{a_1}, \dotsc,\bk_{a_n}]\]
+  \end{enumerate}
+\end{proof}
+
+
+
+\[\vdots\]
+
+Viljum sanna:
+
+\begin{setn}[Framsetningarsetning]
+Öll rakin föll eru framsetjanleg í $\cN$.
+\end{setn}
+
+Höfum séð að $N, Z, I_k^n$ eru framsetjanleg. Þurfum að sýna að 
+föll sem eru búin til úr framsetjanlegum föllum með reglunum 
+R2, R3 og R4 séu framsetjanleg. Gerum það í röð af hjálpar setningum.
+
+\begin{setn}[HS1]
+ Ef $G, H_1, \dotsc, H_k$ eru framsetjanleg og F er skilgrein með
+ \[ F(\aan) = G(H_1(\aan), \dotsc, H_k(\aan)) \]
+ þá er F framsetjanlegt.
+\end{setn}
+\begin{proof}
+  Látum $\bxxn, \byyk, \bz$ vera ólíkar breytur, $\bA_i$ vera
+þ.a. $\bA_i$ ásamt $\bxxn, \by_i$ sé framsetning á $H_i$ og
+$\bB$ þa $\bB$ ásamt $\byyk, \bz$ sé framsetning á $\bG$. Látum $\bC$
+vera 
+\[ \exists \by_1, \dotsc, \exists \by_k ( \bA_1 \wedge \dotsb \wedge \bA_k \wedge \bB )\]
+
+Þá er $\bC$ ásamt $\bxxn, \bz$ framsetning á $F$.
+
+Látum $F(\aan) = C$. Setjum $b_i := H_i (\aan)$.
+Þá er $G(b_1, \dotsc,b_k) = c$. Látum $\bA'$ vera $(\bA_i)_{\bxxn}[\bkaan]$
+
+og $\bC'$ vera $\bC_{\bxxn}[\bkaan]$. Þá er \[ \vN \bA_i' \leftrightarrow \by_i = \bk_{b_i} \]
+
+Skv. jafngildissetningu fæst
+\[\vN \bC' \leftrightarrow  \exists \by_1, \dotsc, \exists \by_k ( \bA_1 \wedge \dotsb \wedge \bA_k \wedge \bB )\]
+en skv. setningu um samsemdarkenningar er
+
+\[ \vN \bC' \leftrightarrow \bB_{\byyk} [\bk_{b_1}, \dotsc \bk_{b_k}] \]
+
+en
+\[ \vN \bB_{\byyk} [\bk_{b_1}, \dotsc \bk_{b_k}] \leftrightarrow \bz = \bk_c \]
+svo að \[ \vN \bC' \leftrightarrow z = \bk_c\]
+
+\end{proof}
+
+
+\begin{setn}[HS2]
+ \[ \vN \bA_{\bx}[\bk_0] \wedge \dotsb \wedge \bA_{\bx}[\bk_{n-1}] \wedge \bx < \bk_n \to \bA \]
+
+ \begin{proof}
+   Þrepun yfir n...
+ \end{proof}
+\end{setn}
+
+\begin{setn}[HS3]
+  Ef $\vN \lnot \bA_{\bx}[\bk_i]$ fyrir öll $i < n$ og $\cN \bA_{\bx}[\bk_n]$,
+  þá \[ \vN \bA \wedge \forall \by ( \by < \bx  \to \lnot \bA_{\bx}[\by]) \leftrightarrow \bx = \bk_n \]
+
+ \begin{proof}
+...
+ \end{proof}
+\end{setn}
+
+\begin{setn}[HS4]
+ Ef $G$ er framsetjanlegt í $\cN$ og fullnægir $\forall x_1 \dotsc \forall x_n \exists y ( G(\xxn,y) = 0)$
+ og $F(\aan) = \mu \times (G(\aan,x) = 0)$, þá er $F$ framsetjanlegt í $\cN$.
+ \begin{proof}
+   Látum $\bA$ ásamt $\bxxn, \by, \bz$ vera framsetningu á $G$ í $\cN$. 
+   Látum $\bw$ vera nýja breytu og $\bB$ vera 
+   \[ \bA_{\bz}[0] \wedge \forall \bw ( \bw < \by \to \lnot \bA_{\by, \bz}[\bw,0])\]
+
+   Sýnum að $\bB$ ásamt $\bxxn, \by$ er framsetning á $F$ í $\cN$.
+   Látum $F(\aan)  = b$ og setjum $c_i = G(\aan, i)$.
+   Látum $\bA'$ og $\bB'$ fástum úr $\bA$ og $\bB$ með því að setja $\bkaan$ inn
+   fyrir $\bxxn$. $\vN \bA_{\by}' [\bk_i] \leftrightarrow \bz = \bk_{c_i}$
+   Ef $i < b$, þá er $c_i \neq 0$ og þá $\vN \bk_0 \neq \bk_{c_i}$ og þar með
+   
+   (1) $\vN \lnot \bA_{\by,\bz}'[\bk_i,0]$ ef $i < b$.
+
+   Vegna $c_b = 0$ er $\vN \bk_0 = \bk_{c_b}$ og því
+
+   (2) $\vN \lnot \bA_{\by,\bz}'[\bk_b,0]$.
+
+   Af (1) og (2) og \emph{HS3} fæst
+   $\vN \bB' \leftrightarrow y = \bk_b$.
+   sem sýna átti.
+ \end{proof}
+\end{setn}
+
+(Höfum nú afgreitt R2 og R4)
+\begin{setn}[HS5]
+  Ef n-stæður venzlin $R_1, R_2$ eru framsetjanleg, þá eru venzlin $R_1 \wedge R_2$ (þ.e. $R_1 \cap R_2$ ) framsetjanleg.
+  \begin{proof}
+    Látum $\bA$ ásamt $\bxxn$ vera framsetningu á $R_i$ , $i = 1,2$. 
+
+    Ef $(R_1 \wedge R_2)(\aan)$, þá gildir $R_1(\aan)$ og $R_2(\aan)$. og því
+   \[ \vN (\bA_i)_{\bxxn}[\bkaan], \text{ fyrir } i = 1,2\]
+   og því
+   \[ \vN (\bA_1 \wedge \bA_2)_{\bxxn}[\bkaan]\]
+   Ef $\lnot (R_1 \wedge R_2)(\aan)$, þá er annað hvort $\lnot R_1(\aan)$ eða $\lnot R_2(\aan)$. Í fyrra
+   tilvikinu er $\vN \lnot (\bA_1)_{\bxxn}[\bkaan]$ og því $\vN \lnot (\bA_1 \wedge \bA_2)_{\bxxn}[\bkaan]$.
+  \end{proof}
+\end{setn}
+
+
+
+
+\begin{setn}[HS6]
+  Látum venzlin $\cR(\xxn,y)$ vera framsetjanleg i $\cN$ og
+  \[\cS(\xxn,y): \leftrightarrow \exists y_{y < z} R(\xxn, y)\]
+  þá eru venslin $\cS$ framsetjanleg í $\cN$.
+\end{setn}
+
+
+\begin{proof}
+Látum $\bA$ ásamt $\bxxn, \by$ vera framsetningu á $\cR$ í$\cN$ og $\mb{w}$
+vera nýja breytu og $\bB$ vera 
+\[ \exists \by (\by < \mb{w} \wedge \bA) \]
+
+Sýnum að $\bB$ ásamt $\bxxn, \by$ er framsetning á $\cS$ í $\cN$.
+G.r.f að $\bB(\aan, c)$. Þá er ti b þ.a $b < c$ og $\cR(\aan, b)$;
+þá er $\vN \bk_b < \bk_c$ og $\vN \bA_{\bxxn, \by} [\bkaan, \bk_b] $
+því
+  \[\vdash_{\cN} \bk_b < \bk_c \wedge \bA_{\bxxn} [ \bk_{a_1},
+  \dotsc,\bk_{a_n},\bk_b] .\] Af innsetningarsetningu leiðir að
+  \[\vdash_{\cN} \exists y ( y < \bk_b \wedge \bA_{\bxxn} [ \bk_{a_1},
+  \dotsc,\bk_{a_n}])\] þ.e.
+ 
+  \[\vdash_{\cN} \bB_{\bxxn,\mb{w}} [ \bk_{a_1},
+  \dotsc,\bk_{a_n},\bk_b] .\]
+
+  G.r.f. að $\lnot S(\aan,c)$. Þá gildir $\lnot R(\aan, i)$ fyrir öll
+  $i = 1, \dotsc, c-1$.
+
+  Og því að
+  \[\vdash_{\cN} \lnot \bA_{\bxxn,\by} [ \bk_{a_1},
+  \dotsc,\bk_{a_n},\bk_i]\] fyrir öll $i = 1, \dotsc, c-1$.  Ef $\bC$
+  er \(\vdash_{\cN}\bA_{\bxxn} [ \bk_{a_1}, \dotsc,\bk_{a_n}]\) má
+  skrifa þetta
+  \[\vdash_{\cN} \lnot \bC_{y} [ \bk_{i}] , i = 0, \dotsc, c-1 \]
+
+  skv. HS2 er
+
+  \[\vdash_{\cN} \lnot (y < \bk_c \wedge \bC)\]
+
+  Skv. \textbf{Ath} fæst
+
+  \[ \vdash_{\cN} \forall y \lnot (y < \bk_c \wedge \bC) \] þ.e.
+
+  \[ \vdash_{\cN} \lnot \exists y (y < \bk_c \wedge \bC) \]
+
+  og það þýðir:
+
+  \[ \vdash_{\cN} \lnot \bB_{\bxxn} [\bkaan, \bk_c] \]
+\end{proof}
+
+
+\begin{setn}[HS7]
+  Gödelfallið $\beta$ er framsetjanlegt í $\cN$.
+\end{setn}
+\begin{proof}
+  Munum að
+  \[ \beta(a,i) = \mu x_{\bx \leq \dot{-} 1} \exists y_{y<a} \exists z_{z < a}\]
+
+\[\vdots\]
+
+Ljóst er að $Q$.
+\[\vdots\]
+
+eru framsetjanleg í $\cN$ og þá er $\beta(a,i) = \mu x R(x,i)$
+framsetjanlegt í $\cN$.
+\end{proof}
+
+\begin{setn}[HS8]
+
+Látum $G,H$ vera framsetjanlegt í $\cN$, og $F$ vera skilgreint með
+\begin{gather*}
+  F(\xxn,0) = G( \xxn)\\
+  F(\xxn, y+1) = H(\xxn,F(\xxn,y))
+\end{gather*}
+þá er $F$ framsetjanlegt í $\cN$.
+\end{setn}
+
+\begin{proof}
+  Látum $\bA$ ásamt $\bxxn, \by$ vera framsetningu á $G$ í $\cN$
+  og $\bC$ ásamt $\bxxn,\by,\bz,\bv$ vera framsetningu á Gödelfallinnu $\beta$
+  í $\cN$. Látum $\bD$ vera
+
+  \begin{gather*}
+    \exists \mb{u} [ \exists \mb{w} ( \bB_{\mb{u},\mb{y},\mb{z}} [
+    \mb{u}, 0, \mb{w}] \wedge \bA_y [w]) \wedge
+    \bB_{\mb{u},\mb{y},\mb{z}}[\mb{u},\mb{y},\mb{z}]\\ \wedge
+    \exists \mb{w} (\mb{w} < \by \rightarrow \exists \mb{t} \exists \mb{s} ( \bB_{\mb{y},\mb{z}}[\mb{w};\mb{t}] \wedge \bB_{\mb{y},\mb{z}}[S\mb{w}, \mb{s}] \wedge C_{\mb{u},\mb{y},\mb{z}}[\mb{w}, \mb{t}, \mb{s}]]]]
+  \end{gather*}
+
+  Viljum sýna að $\bD$ ásamt $\bxxn, \by, \bz $ sé framsetning á $F$ í $\cN$
+  þ.e.: Ef $F(\aan,b) = c$ þá er
+  \[\vdash_{\cN} \bD_{\bxxn,\by} [\bkaan, \bk_b] \leftrightarrow \bz = \bk_c\]
+  Við gefum óformlega sönnun og látum lesanda eftir að þýða yfir í $\cN$.
+  Með því að nota $\bA, \bB$ og $\bC$ sem yrðingar um Föllin
+  $G, \beta, H$ og skrifa $'z'$ fyrir $\bz$ sést að 
+  yrðingin $\bD_{\bxxn,y}[\bkaan,\bk_b]$ þýðir að eftirfarandi skilyrðum sé fullnægt.
+  \begin{enumerate}[(i)]
+  \item Til er w þ.a. 
+    \[ \beta(u,0) = w \]
+    og \[G(\aan) = w\]
+  \item $\beta(u,b) = z$
+
+  \item fyrir öll $w < b$ eru til $t$ og $s$ þ.a.
+
+    \begin{gather*}
+      t = \beta(u,w), s = \beta(u,w+1)\\
+      s = H(\aan,w,t)
+    \end{gather*}
+  \end{enumerate}
+
+  Með þí að setja $d_i = \beta(u,i)$ sést að þetta segir eftirfarandi:
+
+  \[ (*) \bcondef d_0 = C(\aan) \\ d_{i+1} = H(\aan,i,d_i) \text{ fyrir } i < 0
+  \\ d_b = z \econdef \]
+  En af því sést að $d_i = F(\aan,i)$ og þá $z = F(\aan,b) = c$.
+  Öfugt ef $z := F(\aan,b)$ og skilgreinum $d_i := F(\aan,i)$,
+  þá fullnægja $k_i$-in $(*)$. Látum u vera
+  $\beta(u,i) = d_i$ fyrir $i = 0, \dotsc,b$, þá er skilyrði (i)-(iii) fullnægt.
+
+\end{proof}
+Þar með er aðal setningin sönnuð!
+
+\chapter{Ófullkomleikasetningar}
+
+\section{Gödel-tölusetning}
+
+Látum $\beta$ vera Gödel-fallið. Fyrir sérhverja 
+n-un ($\aan$) táknum við með
+\[< \aan > \]
+
+minnstu tölu $a$ þ.a. $\beta(a,0) = n$ og 
+$\beta(a,i) = a_i$ fyrir $i = 1, \dotsc, n$. Köllum
+$<\aan>$ \emphs{runutölu} $n$-undarinnar
+$(\aan)$. Leyfum $n=0$ og höfum $<> = 0$.
+
+Fyrir fast $n$ er 
+\[ F(\aan) := < \aan>\]
+rakið fallið því að
+\[< \aan> = \mu x(\beta(x,0) = n \wedge \beta(x,1) = a_1 \wedge \dotsb \wedge \beta(x,n) = a_n )\]
+
+Setjum líka
+
+\begin{gather*}
+  ln(a) = \beta(a,0) \text{   (líka skrifaðl lh)} \\
+  (a)_i = \beta(a,i+1)
+\end{gather*}
+(Vegna $\beta(a,i) \leq a \dda -1$ sést:
+Ef $a \neq < >$, þá er $ln(a) < a$ og $(a)_i < a$.)
+Ef $a = < a_0 \dotsc, a_{n-1}$, þá er
+\begin{gather*}
+  n = ln(a)\\
+  (a)_i = a_i \text{ fyrir } i = 0, \dotsc, n-1
+\end{gather*}
+
+Látum Seq vera mengi allra rauntalna. Það er rakin einstæð venzl vegna
+\[Seq(a) \leftrightarrow \forall x_{x < a} ( ln(x) \neq ln(a) \vee \exists i_{i < ln(a)} ((x)_i = (a)_i))\].
+
+Látum nú $\cT$ vera kenningu fyrstu stéttar með mál $\cL$.
+
+Komum okkur saman um eftirfarandi:
+
+\begin{enumerate}[(1)]
+\item Breytunum í $\cL$ hefur verið raðað í ákveðna röð
+  \[ \bz_0, \bz_1, \bz_2, \dotsc\]
+  Úthlutum breytunni $\bz_i$ tölunni $2i$; köllum $2i$
+  \emphs{tákntölu} breytunnar $\bz_i$ og skrifum
+ 
+  \[\tau(\bz_i) = 2i\]
+\item Sérhverju öðru táknu $\bv$ í $\cL$ hefur verið úthlutað
+  tiltekinni oddatölu $\tau(\bv)$ þ.a. ólík tákn fái ólíkar tölur.
+  Köllum $\tau(\bv)$ tákntölu táknsins $\bv$.
+\item Eftirfarandi föll eru rakin:
+  \begin{itemize}
+  \item \[\phi(x,n): \leftrightarrow x \text{ er tákntala n-stæðs fallatákns  í } \cL\]
+  \item \[\omega(x,n): \leftrightarrow x \text{ er tákntala n-stæðs umsagnartákns í } \cL\]
+  \end{itemize}
+
+  \begin{ath}
+   T.d. má setja 
+   \[ \tau{\lnot} := 3, \tau(v) := 5, \tau(\forall) := 7 \]
+   Ef við getum raðað fyrir hvert n n-stæða fallatáknunum í röði
+   \[\mb{f}_0^n, \mb{f}_1^n, \dotsc \]
+   (endanlega eða óendanlega), þá má setja
+   \[ \tau(\mb{f}_k^n) := 1 + 8\cdot 2^n 3^k \]
+   Eins ef raða má n-stæðu umsagnartáknum í röð
+   \[\mb{p}_0^n, \mb{p}_1^n, \dotsc \]
+   þá má setja
+   \[ \tau(\mb{p}_k^n) :=3 + 8\cdot 2^n 3^k \]
+
+   Næst úthlutum við sérhverju heiti eða
+   yrðingu $\bu$ úr $\cL$ náttúrulegri tölu
+   sem við skrifum:
+   \[ \god{\bu}, \]
+   sem við köllum \emphs{Gödel-tölu} $\bu$
+   með þrepun.
+  \end{ath}
+\end{enumerate}
+
+
+\begin{setn}[Gödel-tölusetning]
+  \begin{enumerate}[(1)]
+  \item  Ef $\bx$ er breyta, sem við lítum á sem heiti, þ.e.
+    runu af lengf 1, þá er Gödel-talan
+    \[ \god{\bx} =  \braket{\tau(\bx)} \]
+  \item Ef $\mb{f}$ er n-stætt fallatákn og
+    $\baan$ eru heiti, þá er
+    \[\god{\mb{f} \baan} = \braket{\tau(\mb{f}), \god{\ba_1}, \dotsc, \god{\ba_n}}\]
+  \item Ef $\mb{p}$ er n-stætt umsagnartákn, og $\baan$ eru heiti, þá er
+    \[\god{\mb{p} \baan} = \braket{\tau(\mb{p}), \god{\ba_1}, \dotsc, \god{\ba_n}}\]
+  \item 
+    Ef $\bA$ er yrðing, þá er
+    \[\god{\lnot \bA} = \braket{\tau(\lnot),\god{\bA}}\]
+  \item Ef $\bA$ og $\bB$ eru yrðingar, þá er
+    \[\god{\vee \bA \bB} = \braket{\tau(\vee),\god{\bA},\god{\bB}}\]
+  \item 
+    Ef $\bA$ er yrðing, þá er
+    \[\god{\forall \bx \bA} = \braket{\tau(\forall),\god{\bx},\god{\bA}}\]
+  \end{enumerate}
+  Þarsem föllin $\braket{\aan}$ eru reiknanleg getum við reiknað
+  $\god{\mb{n}}$ ef tákntölur allra tákna eru gefnar. Getum ákvarðað
+  hvort gefin tala $a$ er Gödel-talal heitis eða yrðingar. Þetta má sjá með
+  þrepun yfir $a$.
+  
+  Athugum fyrst hvort a er runu tala $\neq \braket{}$; það getum við, því að
+  $Seq$ er rakið og því reiknanlegt.
+
+  Ef a er ekki runutala, þá er a ekki Gödel-tala heitis né yrðingar.  Ef a er
+  runutala, þá
+  finnum við tölurnar $a_0, \aan$ þ.a. $a = \braket{a_0, \aan}$
+  sem við getum af því að $lh$ og $ a \vdash (a)$; [hérna gæti staðið 
+  $a \to (a)$, sé það ekki.] eru reiknanleg.
+  Athugum hvort eitt af eftirfarandi gildir:
+  \begin{enumerate}[(1)]
+  \item  $\ba_0$ er jöfn tala.
+  \item $\ba_0$ er tákntala n-stæðs fallatákns og $\aan$
+    Gödel-tölur heita; þetta er unnt skv. þf, því að
+    $a_T < a$ og fallið $\phi(x,n)$ er reiknanlegt.
+  \item $a_0$ er tákntala n-stæðs umsagnar tákns og
+    $\aan$ eru Gödel-tölur heita
+  \item $a_0 = \tau(\lnot)$, $n = 1$ og $a_n$ er Gödel-tala yrðingar.
+  \item $a_0 = \tau(\vee)$, $n=2$ og $a_1, a_2$ eru Gödel-tölur yrðinga.
+
+  \item $a_0 = \tau(\forall)$, $n = 2$, $a_1$ er jöfn tala og 
+    $a_2$ er Gödel-tala yrðingar.
+
+    
+  \end{enumerate}
+    Ef einu af þessum skilyrðum er fullnægt, þá er a Gödel-tala heitis eða
+    yrðingar, annars ekki.
+\end{setn}
+
+\begin{skgr}
+ 
+  Látum $\cT$ vera kenningu fyrstu stéttar á máli $\cL$. Táknum með
+ \[\Thm_{\cT}\]
+ megi allra Gödel-talna allara setninga í $\cT$.
+ Segjum að $\cT$ sé \emphs{ákvarðanleg} ef $\Thm_{\cT}$
+ er rakið.
+\end{skgr}
+
+Skilgreinum nokkur venzl og föll; af skilgreiningunum sést
+að þau eru rakin.
+\begin{enumerate}[(1)]
+\item \[Var(a) \leftrightarrow a = \braket{(a)_0} \wedge \exists y_{y \leq a} ((a)_0 = 2y)\]
+  \emph{Ath}. $Var(a)$ þýðir að $a = \god{\bx}$ fyrir einhverja
+  \emph{breytu} $\bx$
+\item \[Term(a) \leftrightarrow a = Var(a) \vee [Seq(a) \wedge \phi((a)_0, lh(a) \dda 1) \wedge \forall u_{u < lh(a) \dda 1} Term((a)_{n+1}) ]\]
+  \emph{Ath}. $Term(a)$ þýðir annaðhvort að  $a = \god{\bx}$ fyrir einhverja
+  \emph{breytu} $\bx$, eða að $a$ sé runu tala $a = \braket{x_0, \xxn}$
+  þar sem $x_0$ er tákntala n-stæðs fallatákns og $\xxn$ eru Göde-tölur heita;
+  m.ö.o. $Term(a)$ þýðir að til sé $\ba$ þ.a. $a = \god{\ba}$. Term er rakið,
+  því að í skilgr. koma aðeins fyrir $Term(b)$ með $b<a$.
+\item  \[Afor(a) \leftrightarrow Seq(a) \wedge \omega((a)_0, lh(a) \dda 1) \wedge \forall u_{u < lh(a) \dda 1} Term((a)_{n+1}) \]
+  \emph{Ath}. $Afor(a)$ þýðir að $a$ er Gödel-tala grunnyrðingar.
+
+\item 
+  \begin{gather*}
+    For(a) \leftrightarrow Afor(a) \vee [Seq(a) \wedge lh(a) = 2 \wedge (a)_0 = \tau(\lnot) \wedge For((a)_1) ]\\
+    \vee [Seq(a) \wedge lh(a) = 3 \wedge (a)_0 = \tau(\vee) \wedge For((a)_1) \wedge For((a)_2) ]\\
+    \vee [Seq(a) \wedge lh(a) = 3 \wedge (a)_0 = \tau(\forall) \wedge Var((a)_1) \wedge For((a)_2) ]\\
+  \end{gather*}
+  \emph{Ath}. $For(a)$ þýðir að að sé gödel tala yrðingar.
+\item 
+
+\[ Sub(a,b,c) \bcondef
+c & \Ef Var(a) = b\\
+\braket{(a)_0, Sub((a)_1,b,c)} & \Ef a = \braket{(a)_0,(a)_1}\\
+\braket{(a)_0, Sub((a)_1,b,c),Sub((a)_2,b,c)} & \Ef a = \braket{(a)_0,(a)_1,(a)_2} \Og (a)_0 \neq \tau(\forall)\\
+\braket{(a)_0,(a)_1,Sub((a)_2,b,c)} & \Ef a = \braket{\tau(\forall),(a)_1,(a)_2} \Og (a)_1 \neq b\\
+a & \text{annars}
+ \econdef \]
+
+\emph{Ath}. 
+$Sub(\god{\ba},\god{\bx},\god{\bb}) = \god{\ba_{\bX} [\bb]}$
+og
+$Sub(\god{\bA},\god{\bx},\god{\ba}) = \god{\bA_{\bX} [\ba]}$
+$\bx$ er bretya, $\ba, \bb$ eru heiti og $\bA$ yrðing.
+
+\item 
+\[Fr(a,b) \leftrightarrow \bcondef a = b & \Ef Var(a),\\
+Fr((a)_1,b) & \Ef a = \braket{(a)_0, (a)_1},\\
+Fr((a)_1,b) \vee Fr((a)_2,b) & \Ef a = \braket{(a)_0, (a)_1,(a)_2} \wedge (a)_0 \neq \tau(\forall),\\
+Fr((a)_2,b) \wedge (a)_1 = b & \text{annars}
+\econdef
+\]
+
+\emph{Ath.} $Fr(\god{\bA},\god{\bx})$ þýðir að $\bx$ komi fyrir frjálst í $\bA$.
+
+\item 
+
+\[
+Subtl(a,b,c) \leftrightarrow \bcondef
+Subtl((a)_1,b,c) & \Ef a = \braket{(a)_0, (a)_1}\\
+Subtl((a)_1,b,c) \wedge Subtl((a)_2,b,c) & \Ef a = \braket{(a)_0, (a)_1, (a)_2} \\
+& \wedge (a)_0 \neq \tau(\forall)\\
+Subtl((a)_2,b,c) \wedge  \lnot Fr((a)_2,b) \vee \lnot Fr(c,(a)_1) & \Ef a = \braket{\tau(\forall), (a)_1, (a)_2}\\
+& \wedge (a)_1 \neq b,\\
+0 = 0 & \text{annars}
+\econdef
+\]
+
+\emph{Ath}. $Subtl(\god{\bA}, \god{\bx}, \god{\ba})$ þýði að
+$\bA$ sé innsetjanlegt fyrir $\bx$ í $\bA$.
+
+\item 
+
+\[
+Ax_1(a) \leftrightarrow \exists x_{x < a} (For(x) \wedge a = \braket{\tau(\vee), \braket{\tau(\lnot),\braket{\tau(\vee),x,x}},x})
+\]
+
+\emph{Ath}. $Ax_1(a)$ þýðir að $a$ sé Gödel-tala frumsendu af gerðinni
+\[ \bA \vee \bA \to \bA\] í pólskum rithætti. $\vee \lnot \vee \bA \bA \bA$
+
+\item 
+\[
+Ax_2(a) \leftrightarrow \exists x_{x < a} \exists y_{y < a} (For(x) \wedge For(y) \wedge
+ a = \braket{\tau(\vee), \braket{\tau(\lnot),x} \braket{\tau(\vee),y,x}})
+\]
+
+\item 
+  \begin{gather*}
+    Ax_3(a) \leftrightarrow \exists x_{x < a} \exists y_{y < a} \exists z_{z < a} (For(x) \wedge For(y) \wedge For(z)\\
+    \wedge a = \braket{\tau(\vee), \braket{\tau(\lnot),\braket{\tau(\vee), \braket{\tau(\lnot),x},y}},\\
+      \braket{\tau(\vee), \braket{\tau(\lnot), \braket{\tau(\vee),z,x}}, \braket{\tau(\vee),y,z}}})
+\end{gather*}
+
+\begin{ath}
+  Frumsenda af gerð \textbf{F3} er svona í Pólskum rithætti:
+   \[ \vee \lnot \vee \lnot \bA \bB \vee \lnot \vee \bC \bA \vee \bB \bC \]
+\end{ath}
+
+
+\item 
+  \begin{gather*}
+    Ax_4(a) \leftrightarrow \exists x_{x < a} \exists y_{y < a} \exists z_{z < a}\\
+    ( Var(x) \wedge For(y) \wedge Term(z) \wedge Subtl(y,x,z) \wedge\\
+    a = \braket{\tau(\vee),\braket{\tau(\lnot), \braket{ \tau(\forall),x,y}}, Sub(y,x,z)}
+    )
+\end{gather*}
+
+\item 
+  \begin{gather*}
+    Ax_5(a) \leftrightarrow \exists x_{x < a} \exists y_{y < a} \exists z_{z < a}\\
+    ( Var(x) \wedge For(y) \wedge For(z) \wedge \lnot Fr(y,x) 
+    \wedge a = \braket{\tau(\vee), \braket{\tau(\lnot),\\
+        \braket{\tau(\forall),x, \braket{\tau(\vee),y,z}}}, \braket{\tau(\vee),y, \braket{\tau(\forall),x,z}}}).
+\end{gather*}
+
+\item  
+\[ Eq_1(a) \leftrightarrow \exists_{x < a} (Var(x) \wedge a = \braket{\tau(=),x,x} \]
+
+\item 
+  \begin{gather*}
+    Eq_5(a) \leftrightarrow \exists x_{x < a} \exists y_{y < a} \exists z_{z < a} \exists z_{u < a}\\
+    (Var(x) \wedge Var(y) \wedge Var(u) \wedge Var(z) \wedge Afor(u) \\
+    \wedge a = \braket{\tau(\vee),\braket{\tau(\lnot),\braket{\tau(=),x,y}},\\
+      \braket{\tau(\vee), \braket{\tau(\lnot),Sub(u,z,x),Sub(u,z,y)}}}).
+  \end{gather*}
+
+
+
+\item 
+
+\[LAx(a) \leftrightarrow Ax_1(a) \vee Ax_2(a)  Ax_3(a) \vee Ax_4(a) \vee Ax_5(a) \vee Eq_1(a) \vee Eq_2(a) \]
+
+\begin{ath}
+  $LAx(a)$ þýðir að a er Gödel-tala rökfrumsendu eða samsendarfrumsendu.
+
+\end{ath}
+
+
+
+\begin{skgr}
+  Táknum með $PAx_{\cT}$ mengi allra Gödel-talna allra
+  \emphs{eiginlegra} frumsenda kenningarinnar $\cT$.
+  Við segjum að $\cT$ sé \emphs{frumsenduð (á rakinn hátt)}
+  ef $PAx_{\cT}$ er rakið hlutmengi í $\N$
+\end{skgr}
+
+\begin{ath}
+  Endanlega frumsenduð kenning er frumsenduð. Sér í 
+  lagi er $\cN$ frumsenduð.
+\end{ath}
+
+
+\item 
+
+\[Ax(a) \leftrightarrow LAx(a) \vee PAx(a) \]
+
+\item 
+\[Mp(a,b,c) \leftrightarrow (b)_0 = \tau(\vee) \wedge ((b)_1)_0 = \tau(\lnot) \wedge ((b)_1)_1 = a \wedge (b)_2 = c\]
+
+[Athugum að hérna erum við í grunninn að decode-a runu röktákna
+yfir í fall, þ.e. Mp(a,b,c) er runa tákna í pólskum þ.e.
+$(b)_0 = \vee$, etc., held ég.]
+\begin{ath}
+
+$Mp(\god{\bA}, \god{\bB},\god{\bC})$ þýðir að $\bC$ er afleiðing af
+$\bA$ og $\bB$ skv. \textbf{MP}
+
+\end{ath}
+
+\item 
+
+\[Gen(a,b) \leftrightarrow \exists x_{x < b} (Var(x) \wedge (b)_0 = \tau(\forall) \wedge (b)_1 = x \wedge (b)_2 = a \]
+
+\begin{ath}
+  $Gen(\god{\bA},\god{\bB})$ þýðir að $\bB$ er afleiðing af $\bA$
+skv. \textbf{ALM}.
+
+úthlutum runu $\bA_1, \dotsc,\bA_n$ af yrðingum runutölunni
+$\braket{\god{\bA_1}, \dotsc,\god{\bA_n}}$.
+
+\end{ath}
+
+\item 
+  \begin{gather*}
+    Prf_{\cT} (a) \leftrightarrow Seq(a) \wedge lh(a) \neq 0 \\
+    \wedge \forall i_{i < lh(a)} [ (Ax(a)_i) \vee \exists j_{j < i} \exists k_{k < i}\\
+    (Mp((a)_j,(a)_k,(a_i)) \vee Gen((a)_j,(a)_i)) \wedge For((a_i))]
+  \end{gather*}
+
+\item  
+\[\cP r_{\cT} (a,b) \leftrightarrow Prf_{\cT}(b) \wedge a = (b)_{lh \dda 1} \]
+ 
+\begin{ath}
+  $\cP r_{\cT}(\god{\bA},b)$ þýðir að $b$ sé Gödel-tala sönnunar á $\bA$ í $\cT$.
+\end{ath}
+
+Höfum þá:
+
+\begin{setn}
+  \[Thm_{\cT} (a) \leftrightarrow \exists x Pr_{\cT} (a,x) \]
+\end{setn}
+
+\begin{skgr}
+  Venzl $P$ kallast \emphs{uppteljanleg á rakinn hátt} ef til eru
+  talna venzl Q þ.a.
+  \[ P(\xxn) \leftrightarrow \exists y Q(\xxn) \]
+\end{skgr}
+
+\begin{setn}[Fylgisetning]
+  Ef $\cT$ er frumsenduð kenning, þá er mengið
+  $Thm_{\cT}$ uppteljanlegt á rakinn hátt.
+\end{setn}
+
+Fyrir kenningu sem er útvíkunn á 
+$\cN$ skilgreinum við sérstaklega:
+
+\item
+  \begin{gather*}
+    Num(0) = \braket{\tau(0)}\\
+    Num(a+1) = \braket{\tau(s), Num(a)}
+  \end{gather*}
+
+  \begin{ath}
+    \[Num(a) = \god{\bk_a} \]
+  \end{ath}
+
+\end{enumerate}
+
+
+\section{Ófullkomleikasetningar}
+
+
+\begin{setn}[Kyrrapunktssetning]
+  Látum $\cT$ vera útvíkkun á
+  $\cN$ og $\bB$ vera yrðingu sem hefur nákvæmlega
+  eina frjálsa breytu $\bx$. Þá er til lokuð yrðing
+  $\bC$ þannig að
+
+  \[\vdash_{\cT} \bC \leftrightarrow \bB_{\bx} [\bk_{\god{\bC}}] \]
+
+  Setningin segir að við getum fundið
+  $\bC$ þannig að $\bB_{\bx}[\bk_{\bC}] = \bC$ s.s.
+  Kyrrapunkt.
+  
+\end{setn}
+
+
+\begin{proof}
+  Setjum
+  \[D(u) := Sub(u, \god{\bx},Num(u)). \]
+  Ef $\bA$ er yrðing, þá er
+  \[D(\bA) := \god{\bA_{\bx}[\bk_{\god{\bA}}]}. \]
+
+  Nú er $D$ rakið fall og hefur framsetningu $\bD$
+  ásamt $\bx,\by$ í $\cN$ og
+  þá líka $\cT$. Látum $\mb{E}$ vera
+  \[ \forall \by (\bD \rightarrow \bB_{\bx}[\by]). \]
+
+  Setjum $m:= [\mb{E}]$ og $\bC$ vera $\mb{E}_{\bx}[\bk_m]$. Setjum $q:= \god{\bC}$.
+  Þá er
+  \[ D(m) = D(\god{\mb{E}}) = \god{\bE_x[\bk_{\god{\bE}}]} = \god{\bC} = q .\]
+  og
+  \[ \vdash_{\cT} \bD_{\bx}[\bk_m] \leftrightarrow \by = \bk_q \]
+
+  Viljum sýna að $\vdash_{\cT} \bC \leftrightarrow \bB_{\bx} [\bk_{q}] $
+  
+  Ef $\vdash_{\cT}$, þá
+
+  \[\vdash_{\cT} \forall \by ( \by = \bk_q \rightarrow \bB_{\bx}[\by])\]
+
+  og því $\vdash_{\cT} \bB_{\bx}[\bk_q]$ skv. afleiðslusetningu.
+
+  Ef $\vdash_{\cT} \bB_{\bx}[\bk_q]$ þá gildir
+  
+  \[\vdash_{\cT} \forall \by ( \by = \bk_q \rightarrow \bB_{\bx}[\by])\]
+  og því
+  \[ \forall \by ( \bD_{x}[\bk_m] \rightarrow \bB_x[y]) \]
+  þ.e. $\vdash_{\cT} \bC$ skv. jafngildissetningu.
+
+\end{proof}
+
+
+\begin{skgr}
+  Útvíkkun $\cT$ kenningarinnar $\cN$
+  kallast $\omega$-samkvæm ef fyrir sérhverja yrðingu 
+  $\bA$ gildir:
+  
+  Ef $\vdash_{\cT} \lnot \bA_{\bx}[\bk_n]$ fyrir öll $n$ úr $\N$
+  þá gildir ekki $\vdash_{\cT} \exists \bx \bA$.
+\end{skgr}
+
+\begin{ath}
+  \begin{enumerate}[(1)]
+  \item Ef $\N$ ($\cN$) er útvíkkun fyrir $\cT$, þá er $\cT$ samkvæm.
+
+  \item Ef $\cT$ er $\omega$-samkvæm, þá er hún samkvæm.
+  \end{enumerate}
+\end{ath}
+
+Ef $\cT$ er útvíkkun á $\cN$, $\cT$ frumsendanleg, þá eru venzlin
+$Pr_{\cT}$ rakin og því framsetjanleg.
+Látum $\mb{P}$ asamt $\bx, \by$ vera framsetningu á 
+$Pr_{\cT}$ og látum $\bB$ vera $\forall y \lnot \mb{P}$.
+Skv. kyrrapunktssetningu er til lokuð yrðing $\mb{G}$ þ.a.
+\[\vdash_{\cT} \mb{G} \leftrightarrow \forall \by \lnot \mb{P}_{\bx}[\bk_{\god{\mb{G}}}]\]
+Yrðingin $\mb{G}$ segir að ekki er til tala y sem er
+Gödel-tala sönnunarinnar í $\cT$ á yrðingunni $\mb{G}$.
+Þ.e. $\mb{G}$ er í $\cT$  jafngild þeirri fullyrðingu að $\mb{G}$
+sé ekki sannanleg í $\cT$. Köllum $\bG$ Gödelyrðingu $\cT$.
+
+\begin{setn}[Ófullkomleikasetning Gödels.]
+  .
+  \begin{enumerate}
+  \item Ef $\cT$ er samkvæm, þá er ekki $\vdash_{\cT} \bG$.
+  \item Ef $\cT$ er $\omega$-samkvæm, þá er ekki $\vdash_{\cT} \lnot \bG$.
+  \end{enumerate}
+\end{setn}
+
+\begin{proof}
+  Setjum $q := \god{\bG}$.
+  \begin{enumerate}[(1)]
+  \item G.r.f. $\vdash_{\cT} \bG$. Látum $r$ vera Gödel-tölu sönnunar á
+    $\bG$ í $\cT$. Þá er $Pr_{\cT}(q,r)$ og því
+    $\vdash_{\cT} \mb{P} [\bk_q, \bk_r]$ og því
+    $\vdash_{\cT} \exists y \mb{P}_x [\bk_q]$ þ.e.
+    $\vdash_{\cT} \lnot \forall y \lnot \mb{P}_x[\bk_q]$ Þar með er
+    $\vdash_{\cT} \bG$ í mótsögn við að $\cT$ er samkvæm.
+
+
+  \item G.r.f að $\cT$ sé $\omega$-samkvæm og  $\vdash_{\cT} \lnot \bG$. Þar sem.
+    $\vdash_{\cT} \bG \leftrightarrow \forall \by \lnot \mb{P}_{\bx}[\bk_q]$ fæst
+    $\vdash_{\cT} \exists \by \mb{P}_x[\bk_q]$.
+    En $\cT$ er samkvæm svo að ekki gildir $\vdash_{\cT} \bG$, svo að
+    $\lnot Pr_{\cT}(q,n)$ f. öll $n$ og því
+    $\vdash_{\cT} \lnot \mb{P}_{\bx,\by}[\bk_q,\bk_n]$ f. öll $n$.
+    Vegna $\omega$-samkvæmi er $\vdash \exists \by \mb{P}_{\bx}[\bk_q]$, sem er mótsögn.
+
+  \end{enumerate}
+\end{proof}
+
+Þetta er lygara þversögnin. Hún segir að hún se ekki sannanleg.
+Ef hún er ekki sannanleg, þá er hún ekki sannanleg og því sannanleg, en
+ef hún er sannanleg þá er hún ekki sannanleg etc.
+
+
+%2014-11-20
+
+
+\begin{setn}[Fylgisetning]
+Frumsenduð $\omega$-samkvæm útvíkkun á $\cN$ er ekki fullkomin.
+\end{setn}
+
+\begin{skgr}
+  Köllum kenninguna $\cR$ með mál $\cL(\cN)$ þ.a. setningarnar í $\cR$
+  séu nákvæmlega þær yrðingar í $\cL(\cN)$ sem er sannar í $\N$
+  \emphs{sannan reikning}.
+\end{skgr}
+
+\begin{skgr}
+  Segjum að kenning sé \emphs{frumsendanleg} ef til er frumsenduð kenning sem
+  er jafngild henni.
+
+\end{skgr}
+
+\begin{setn}[Fylgisetning]
+ Sannur reikningur er ekki frumsendanlegur. 
+\end{setn}
+
+\begin{setn}[Hjálparsetning]
+Ef $\cT$ er samkvæm útvíkkun á $\cN$, þá er mengið $Thm_{\cT}$ (mengi allra Gödel-talna allra setninga í $\cT$)
+ekki framsetjanlegt í $\cT$.
+\end{setn}
+
+\begin{proof}
+  G.r.f. að $\bT$ ásamt $\bx$ sé framsetning á $Thm_{\cT}$ í $\cT$.
+  Látum $\bC$ vera yrðingu þ.a.
+  \[\vdash_{\cT} \bC \leftrightarrow \lnot \bT_{\bx}[\bk_{\god{\bC}}]. \]
+  Setjum $q:= \god{\bC}$. Nú er $\vdash_{\cT}$ annars væri
+  $q \not\in Thm_{\cT}$ og því $\vT \lnot \bT_{\bx}[\bk_q]$ af því að
+  $\bT$ ásamt $\bx$ er framsetning á $\thT$ í $\cT$,
+  og þá fæst $\vT \bC$. Þetta er í mótsögn við að
+  $\cT$ er samkvæm.
+
+\end{proof}
+Sér í lagi sést að $\thT$ er ekki rakið mengi.
+
+\begin{setn}[Church] Ef $\cT$ er samkvæm útvíkkun kenningarinnar $\cN$,
+  þá er $\cT$ ekki úrskurðanleg.
+\end{setn}
+\begin{skgr}
+  Kenning er fullkomin ef við getum sannað annað hvort
+ $A$ eða $\lnot A$.
+\end{skgr}
+
+\begin{skgr}
+  Að kenning $\cT$ sé \emphs{úrskurðanleg} þýðir að
+  Fyrir sérhverja yrðingu getum við gengið úr skugga um hvort
+  hún sé setning eða ekki í endanlega mörgum skrefum.
+  
+  Þ.e. $\Thm_{\cT}$ er rakið mengi.
+
+  Að kenning sé \emphs{Frumsendanleg} segir að við getum gengið úr skugga um í endanlega
+  mörgurm skrefum hvort e-ð sé frumsenda eða ekki.
+
+\end{skgr}
+\begin{setn}
+  Sannur reikningur er ekki úrskurðanlegur.
+\end{setn}
+
+Önnur afleiðing af HS:
+
+\begin{setn}[Óskilgreinanleikasetning Tarsky]
+  $Thm_{\cR}$ er ekki framsetjanlegt í $\cR$.
+  Þetta þýðir að ekki er til yrðing $\bA$ þ.a.
+  fyrir sérhverja yrðingu $\bB$ gildi:
+  \[ \models_{\cN} \bB \text{ þþaa } \vR \bA [\bk_{\god{\bB}}] \]
+\end{setn}
+
+þ.e. ``sannleika í reikningi er ekki unnt að skilgreina í reikningi.''
+
+Skyld setning, stundum kölluð Gödel-Tarsky setning:
+\begin{setn}[Gödel-Tarsky]
+ Í samkvæmri útvíkkun $\cT$ á $\cN$ er ekki til yrðing $\bT$
+ með nákvæmlega einni frjálsri breytu $\bx$ þ.a. fyrir allar
+ lokaðar yrðingar $\bA$ gildi:
+ \[ \vT \bA \leftrightarrow \bT_{\bx}[\bk_{\god{\bA}}]\]
+
+
+ því að skv. kyrrapunktssetningunni er til lokuð yrðing $\bA$ þ.a.
+ \[\vT \bA \leftrightarrow \lnot \bT_{\bx}[\bk_{\god{\bA}}]\]
+ og þá fengist $\bA \leftrightarrow \lnot \bA$
+ 
+\end{setn}
+
+\begin{innsk}
+  
+ [$\bT_{\bx}[\bk_{\god{\bA}}]$ þýðir að $\bT$ gildi um Gödel-tölu $\bA$.]
+
+ [$\leftrightarrow$ er lesið ``jafngilt'' ]
+
+ [Í $\cN$ $\bk_n$ er skammstöfun fyri nafnið á tölunni  $SS..SS0$, þar sem $S$ kemur $n$ sinnum fyrir.
+ Þetta er s.s. bara nafn fyrir náttúrulegu töluna n.]
+
+ [$\cN$ er kenning um náttúrulegar tölur. Mjög einföld, notum ekki Peano-reikning.]
+
+ [$\bT_{\bx}[a]$ segir að við skiptum út $a$ fyrir $\bx$ í yrðingunni $\bx$.]
+
+ Gödel yrðingin, $\bP$ er yrðing sem segir hvort e-ð sé setning:
+ \[ \vT \bG \leftrightarrow \forall \by \lnot \bP_{\bx} [\bk_{\god{\bG}}] \]
+ Segir að ekki er til $y$ þ.a. $x$ sé sönnun á yrðingunni $\bG$.
+ S.s. setning sem segir að ekki sé til sönnun á henni.
+
+ Gödel-talan er reiknanleg.
+
+ %$\bP_{\bx}[\bk_n]$ segir að $n$ sé Gödel-tala yrðingar $\by$
+
+ $Pr_{\cT}(x,y)$ segir að $y$ sé gödel tala sönnunar á $x$.
+\end{innsk}
+
+
+Af Church-setningu leiðir að  hrein rökfræði er ekki úrskurðanleg.
+
+\begin{setn}
+  Látum $\cT$ vera  vera hreina rökfræði (bara rökfrumsendur)
+  á máli $\cL(\cN)$ þ.e.
+  $\cT$ er kenning fyrstu stétta á málinu $\cL(\cN)$ sem hefur engar
+  eiginlegar frumsendur. Þá er $\cT$ ekki úrskurðanleg.
+\end{setn}
+
+\begin{innsk}
+  Getum það þó í Yrðingarökfræði. Við getum úrskurðað hvort e-ð sé
+  sísanna.
+  Getum það ekki þegar við bætum rökfræðinni við.
+  Ef við höfum yrðingu sem við vitum ekki hvort að sé setning eða
+  ekki.  Ef við getum sannað hana, þá vitum við að hún er setning, en
+  ef við getum ekki sannað hana, þá vitum við það ekki.
+\end{innsk}
+
+\begin{proof}
+  Látum $\mb{N}_k$ vera lokun frumsendunnar
+  $Nk$ í $\cN$, $k = 1, \dotsc, g$ og $\bC$ vera
+  $\N_1 \wedge \dotsb \wedge N_g$.
+  Þá hefur $\cN$ sömu setningar og $T[\bC]$.
+
+
+  Yrðinng $\bA$ er skv. afleiðslusetningu setning í
+  $T[\bC]$ þþaa $\vT \bC \to \bA$.
+  Setjum $q := \god{\bC}$ og skilgreinum rakið fall $f$ með:
+
+  \[ f(a) := \braket{\tau{\vee},\braket{\tau{\lnot},q},a} \]
+
+  þá er 
+  \[ Thm_{T[\bC]} (a) \leftrightarrow For(a) \wedge \thT(f(a)) \]
+  Ef $\thT$ væri rakið, þá væri $Thm_{T[\bC]}$ rakið og því
+  $\cN$ úrskurðanlegt í mótsögn við Church.
+
+\end{proof}
+
+\begin{skgr}
+  Skgr. á \emphs{úrskurðanleg} frá Reyni.
+  $Thm_{\cT}$ er mengi allra Gödel-talna allra setninga í $\cT$
+  $\cT$ er \emphs{úrskurðanleg} þþaa mengið $Thm_{\cT}$ sé rakið.
+  Getum s.s. úrskurðað hvort gefin yrðing sé setning eða ekki.
+\end{skgr}
+
+
+\begin{setn}
+  Venzl $P$ eru rakin þþaa  $P$ og $\lnot P$ séu uppteljanleg á
+  rakinn hátt.
+\end{setn}
+
+\begin{proof}
+  Ef venzlin $P$ eru rakin, þá  eru venzlin $P$ og $\lnot P$ bæði rakin
+  og þá eru þau uppteljanleg á rakinn hátt. Gerum þá ráð fyrir að
+  $P$ og $\lnot P$ séu bæði uppteljanleg. Þá eru til rakin venzl $Q$ og $R$ þ.a.
+  \begin{gather*}
+    P(\aan) \leftrightarrow \exists Q(\aan,x)\\
+    \lnot P(\aan) \leftrightarrow \exists R(\aan,x)
+  \end{gather*}
+  Fyrir $(\aan)$ er $P(\aan) \vee \lnot P(\aan)$
+  svo til er $x$ þ.a. $Q(\aan,x)\vee R(\aan,x)$
+
+  Þá má skilgreina rakið fall $F$ með
+  \begin{gather*}
+    F(\aan) := \mu x(Q(\aan,x)\vee R(\aan,x))
+  \end{gather*}
+  en þá er
+  \[ P(\aan) \leftrightarrow Q(\aan,F(\aan))\]
+
+  Ef $ Q(\aan,F(\aan))$ þá $\exists Q(\aan,x)$
+  
+  og þá $P(\aan)$; en ef $\lnot Q(\aan,F(\aan))$
+
+  þá $R(\aan,F(\aan))$ svo að $\exists x R(\aan,x)$
+
+  og þá $\lnot P(\aan)$
+\end{proof}
+
+\begin{setn}
+  Ef $\cT$ er frumsenduð og fullkomin útvíkkun á $\cN$, þá er $\cT$ úrskurðanleg.
+\end{setn}
+
+\begin{proof}
+  Skilgreinum rakin föll $F$ og $K$ með
+  \begin{gather*}
+    F(0,a) = a\\
+    F(n+1,a) = \braket{\tau(\forall),\god{\bz_n},F(n,a)}\\
+    K(a) = F(a+1, a)
+  \end{gather*}
+
+  Ef $a = \god{\bA}$, þá er
+  \[K(a) = \god{\forall \bz_a \forall\bz_{a-1} \dotsb \forall \bz_0 A }\]
+  Ef $\bz_i$ kemur fyrir í $\bA$, þá er
+  \[ i < \god{\bz_i} < \god{A} = a \]
+  svo að $\forall \bz_a \forall\bz_{a-1} \dotsb \forall \bz_0 A $ er 
+  lokuð yrðing, Skv. alhæfingu er hún setning þþaa $\bA$ sé setning.
+  Nú er $\cT$ fullkomin, svo að $\bA$ er \emph{ekki} setning
+  þþaa $ \vT \lnot \forall \bz_a \forall\bz_{a-1} \dotsb \forall \bz_0 A $
+  þess vegna gildir:
+  \[ \lnot Thm_{\cT}(a) \leftrightarrow \lnot For(a) \vee Thm_{\cT} (\braket{ \tau(\lnot), K(a)}) \]
+  þ.e 
+  \[ \lnot Thm_{\cT}(a) \leftrightarrow \exists y( \lnot For(a) \vee Pr_{\cT} (\braket{ \tau(\lnot), K(a)},y)). \]
+  svo að $\lnot Thm_{\cT} (a)$ er uppteljanlegt á rakinn hátt og
+  $Thm_{\cT} (a)$ er það líka; skv. setn. er $Thm_{\cT}$ rakið.
+\end{proof}
+
+\begin{setn}[Gödel-Rosser]
+Ef $\cT$ er frumsendanleg og samkvæm útvíkkun á $\cN$, þá er $\cT$ ekki fullkomin.
+\end{setn}
+
+\begin{proof}
+  Ef hún væri fullkomin, þá væri hún skv. síðustu setningu úrskurðanleg í mótsögn
+ við setningu Church.
+\end{proof}
+
+\begin{ath}
+  Höfum ekki beint á eina setningu sem er hvort sannanleg né afsannanleg.
+  En það má gera: Látum $\bE$ vera
+  \[\forall \by (\bP \rightarrow \bz (\mb{N} \rightarrow \exists \bu (\bu < \by \wedge \bP_{\bx,\by}[\bz,\bu])))\]
+  þar sem $\bP$ ásamt $\bx,\by$ er framsetning í $\cN$ á $Pr_{\cT}$
+
+  [$Pr_{\cT}(a,n)$ segir að $a$ sé gödel tala sönnunar á yrðingunni $n$.]
+
+  og $\mb{N}$  ásamt $\bx, \by$ er framsetning fallsins
+  \[ Neg(a) = \braket{\tau(\lnot),a}. \]
+
+  Skv. kyrrapunktssetningu er til lokuð yrðing $\bR$ þ.a.
+  \[ \vT \bR \leftrightarrow \bE_x [\bk_{\god{\bR}}] \]
+  sem við köllum \emphs{Rosser-yrðingu} fyrir $\cT$.
+  Í venjulegri túlkun segir hún:
+  
+  Ef $\bR$  hefur sönnun með Gödel-tölu $y$, þá hefur 
+  $\lnot \bR$  sönnun með Gödel-tölu minni en $y$. 
+  Sýna má að hvorki er unnt að sanna eða afsanna $\bR$ í $\cT$.
+\end{ath}
+
+[Ath $\cP\cA$ stendur fyrir Peano reikning.]
+
+Látum $\bP$ ásamt $\bx,\by$ vera framsetningu á 
+$Pr_{\cP\cA}$ í $\cN$ og þá líka á $\PA$.
+ og látum $\bT$ vera
+ \[ \exists \by \bP \]
+
+Við höfum $\vdash_{\PA} \bP_{\bx,\by} [\bk_a, \bk_b]$ ef $\cP r_{\PA}(a,b)$ og
+$\vdash_{\PA} \lnot \bP_{\bx,\by} [\bk_a, \bk_b]$ ef $\cP r_{\PA}(a,b)$.
+Skrifum til þæginda $\pg{\bA}$ í stað $\bk_{\god{\bA}}$
+
+[$\pg{\bA}$ er Gödeltala $\bA$ skrifuð  í $\PA$] 
+
+\begin{setn}[Hilbert-Bernays-Löb-afleiðsluskilyrði]
+  Höfum:
+\begin{enumerate}[label=\textbf{HBL\arabic*}]
+  \item Ef $\vdash_{\PA} \bA$, þá $\vP \bT_{x} [\pg{\bA}]$.
+  \item $\vP \bT_x [\pg{\bA \to \bB}] \to (\bT_x[\pg{\bA}] \to \bT_x[\pg{\bB}])$.
+  
+  \item $\vP \bT_{\bx}[\pg{\bA}] \to \bT_{\bx}[ \pg{\bT_x[\pg{\bA}]}]$.
+  \end{enumerate}
+\end{setn}
+
+\begin{ath}
+  Flestar bækur sanna ekki þessa setningu, en sleppa sönnuninni. Síðan hefur
+  reynst erfitt að finna sönnun á þessari setningu í neinni bók, og ein bók
+ segir ``erfitt er að finna sönnun á þessu, fremur en upprunalegu sönnunina''.
+\end{ath}
+
+\begin{proof}
+  Sönnum \textbf{HBL1}, \textbf{HBL2}, en ekki \textbf{HBL3}
+
+  Fyrir \textbf{HBL1} athugum við:  Ef $\vP \bA$, þá er
+  til sönnun á $\bA$ í $\PA$. Látum $m$ vera Gödel-tölu
+  þeirrar sönnunar. Þá $\cP r_{\PA}(\god{\bA},m)$ og því
+  $\vP \bP_{\bx,\by} [\bk_{\god{\bA}},\bk_m]$
+  En þá fæst $\vP \exists \by \bP_{\bx}[\bk_{\god{A}}]$, en þetta er akkúrat
+  $\bT[\pg{\bA}]$
+
+ [T af gödel-tölunni $\bA$, skrifaðri í $\PA$]
+ [HBL2 er e-rskonar modus ponens]
+
+ Fyrir \textbf{HBL2}. Það má skrifa
+ \[\vP \bT_x[\pg{\bA \to \bB}] \wedge \bT_{\bx}[\pg{\bA}] \to \bT_{\bx}[\pg{\bB}]\]
+
+
+ Gefum okkur að $\vP \bT_x[\pg{\bA \to \bB}]$ og
+ $\vP \bT_x[\pg{\bA}]$. Það þýðir að til eru sannanir á 
+ $\bA \to \bB$ og $\bA$ í $\PA$;
+ Látum $c,a$ vera Gödel-tölu þeirra sannana;
+ $c$ er Gödel-tala sönnunar $\bC_1, \dotsc, \bC_n$ á
+ $\bA \to \bB$ og $a$ er Gödel-tala sönnunar
+ $\bA_1, \dotsc, \bA_m$ á $\bA$. Þá er
+ $\bC_1, \dotsc, \bC_n,\bA_1, \dotsc, \bA_m, \bB$ sönnun á $\bB$ í $\PA$
+ svo að $c * a * \braket{\god{\bB}}$ er Gödel-tala sönnunar á $\bB$ í $\PA$,
+ Þar sem 
+ \begin{gather*}
+   a*b := \mu x (lh(x) = lh(a) + lh(b) \wedge\\
+   \forall i_{i < lh(a)} ((x_i) = (a_i)) \wedge i_{j< lh(b)} ((x)_{lh(a)+j} = (b)_i))
+ \end{gather*}
+
+þannig að 
+
+\[\braket{\aan} *  \braket{b_1, \dotsc, b_n} = \braket{\aan, b_1, \dotsc,b_n}.\]
+
+Svo að $(a,b) \mapsto a*b$ er rakið. Höfum
+\[ \cP r_{\PA} (\god{\bB}, c * a * \braket{\god{\bB}})\]
+svo að $\vP \exists \by \bP_{\bx}[\bk_{\god{\bB}}]$, þ.e. $\vP \bT_{\bx} [\pg{\bB}]$.
+\end{proof}
+
+
+Höfum aftur:
+
+Látum $\bP$ ásamt $\bx,\by$ vera framsetningu á 
+$Pr_{\cP\cA}$ í $\cN$ og þá líka á $\PA$.
+ og látum $\bT$ vera
+ \[ \exists \by \bP \]
+
+Skrifum til þæginda $\pg{\bA}$ í stað $\bk_{\god{\bA}}$
+
+\begin{setn}[Hilbert-Bernays-Löb-afleiðsluskilyrði]
+  Höfum:
+\begin{enumerate}[label=\textbf{HBL\arabic*}]
+  \item Ef $\vdash_{\PA} \bA$, þá $\vP \bT_{x} [\pg{\bA}]$.
+  \item $\vP \bT_x [\pg{\bA \to \bB}] \to (\bT_x[\pg{\bA}] \to \bT_x[\pg{\bB}])$.
+  
+  \item $\vP \bT_{\bx}[\pg{\bA}] \to \bT_{\bx}[ \pg{\bT_x[\pg{\bA}]}]$.
+  \end{enumerate}
+\end{setn}
+
+\begin{setn}[Löb]
+  Ef $ \vP \bT_{\bx}[\pg{\bA}] \to \bA$, þá $\vP \bA$
+  
+(þ.e. ef $\bA$ er afleiðing af því að hægt sé að sanna $\bA$, þá gildir $\bA$).
+\end{setn}
+
+\begin{proof}
+Skv. kyrrapunktssetningu er til lokuð yrðing $\bL$ þ.a.
+
+\begin{enumerate}[(1)]
+\item  $\vP \bL \leftrightarrow (\bT_{\bx} [\pg{\bL}] \to \bA).$
+
+þá er
+\item $\vP \bL \to (\bT_{\bx}[\pg{\bL} \to \bA)$.
+
+Skv. \emph{HBL1} er þá
+\item $\vP \bT_{\bx}[\pg{\bL \to (\bT_{\bx}[\pg{\bL}]\to \bA)}]$
+
+og skv. \emph{HBL2} er
+\item $\vP \bT_{\bx}[\bL] \to \bT_{\bx}[\pg{\bT_{\bx} [\pg{\bL}] \to \bA}]$
+
+Með \emph{HBL2} er
+\item $\vP \bT_{\bx}[\pg{\bT_{\bx}[\pg{\bL}] \to \bA}] \to (\bT_{\bx}[\pg{\bTx[\pg{\bL}]}] \to \bTx[\pg{\bA}])$
+
+af (4) og (5) fæst með gegnvirkni að
+
+\item  $\vP \bTx[\pg{\bL}] \to (\bTx[\pg{\bTx[\pg{\bL}]}] \to \bTx[\pg{\bA}])$
+
+Skv. \emph{HBL3}
+\item 
+ $\vP \bTx [\pg{\bL}] \to \bTx [\pg{\bTx[\pg{\bL}]}]$
+
+af (6) og (7) leiðir
+
+\item $\vP \bTx[\pg{\bL}] \to \bTx[\pg{\bA}]$
+
+Forsenda setningarinnar er
+
+\item $\vP \bTx[\pg{\bA}] \to \bA$
+
+af (8) og (9) fæst
+\item $\vP \bTx [\pg{\bL}] \to \bA$
+
+Af (1) og (10) leiðir
+\item $\vP \bL$
+
+með \emph{HBL1} fæst
+\item 
+ $\vP \bTx[\pg{\bL}]$
+\end{enumerate}
+Af (10) og (12) fæst:
+$\vP \bA$ með \textbf{MP}
+\end{proof}
+
+\begin{ath}
+  Þetta minnir á eftirfarandi röksemdarfærslu:
+  Löb-setningin segir eitthvað á þá leið:
+  ``Ef $\bA$ er sannanlegt þá A'' leiðir til $\bA$.
+
+  Látum $\bS$ vera
+
+  ``Ef þessi setning er sönn, þá er jólasveinninn til''.
+
+  m.ö.o er S
+
+  ``Ef S er sönn, þá er jólasveinninn til''.
+
+  Gefum okkur nú sem forsendu:
+
+  \begin{enumerate}[(1)]
+  \item  S er sönn
+
+    Þetta þýðir 
+
+
+  \item ``Ef S er sönn, þá er jólasveinninn til'' er sönn.
+
+    Af (2) leiðir:
+
+  \item Ef S er sönn, þá er jólasveininn til.
+
+    Af (1) og (2) leiðir
+  \item  Jólasveinninn er til
+
+   Hef sýnt að  (1) leiðir til (4), þ.e.
+
+ \item Ef S er sönn, þá er jólasveinninn til.
+
+   Úr því það sannað, þá er það satt, svo að
+ \item  ``Ef S er sönn, þá er jólasveinninn til'' er sönn
+
+   Því gildir
+ \item S er sönn.
+
+ Af (5) og (7) fæst með \textbf{MP}:
+ \item  Jólasveininn er til.
+  \end{enumerate}
+\end{ath}
+
+
+
+\section{Seinni ófullkomleikasetning Gödels}
+
+[$\vP$ þýðir eiginlega að hægt sé að sanna í $\PA$]
+
+
+\begin{setn}[Seinni ófullkomleikasetning Gödels]
+  Að því gefnu að $\PA$ sé samkvæm, þá er ekki
+
+  \[\vP \lnot \bTx[\pg{0 = S0}]\]
+\end{setn}
+\begin{proof}
+G.r.f. að við getum sannað það, þ.e.
+$\vP \lnot \bTx[\pg{0 = S0}]$
+
+Þá fæst $\vP \bTx[\pg{0 = S0}] \to 0 = S0$. [Því að þá er $\bTx[\pg{0 = S0}]$,
+og af rangri yrðing leiðir hvað sem er].
+
+Skv. setningu Löbs er þá $\vP 0 = S0$. En 
+nú er $\vP 0 \neq S0$, svo að þetta er í mótsögn
+við að $\PA$ sé samkvæm.
+  
+\end{proof}
+
+\begin{ath}
+  Líta má svo á að yrðingin $\lnot \bTx[\pg{0 = S0}]$ segir (í $\PA$) að $\PA$ sé samkvæm.
+  [Þetta er þýðing yfir í $\PA$ að $\PA$ sé samkvæm]. Seinni Gödel-setningin
+ segir þá að ef $\PA$ er samkvæm, þá getum við ekki sannað í $\PA$ að
+ $\PA$ sé samkvæm.
+\end{ath}
+
+Getum búið til yrðinguna \textbf{Con}
+
+\[ \forall \bx \forall \by \forall \bz \forall \bt \lnot (\bP \wedge \bP_{\bx,\by}[\bz,\bt] \wedge \bN_{\bx,\by}[\by,\bt]), \]
+
+$\by$ sö á $\bx$, $\bt$ sö á $\bz$
+%[Þetta þýðir að $\bP$ þýðir að $\by$ er gödel-tala sönnunar á $\bx$]
+
+$\bN$ ásamt $\bx,\by$ er framsetning á  
+\[ Neg(a) = \braket{\tau(\lnot),a} \]
+
+og $P$ er framsetning á Pr.
+
+þetta segir að ekki sé til sönnun í $\PA$ á yrðingu og neitun hennar. Þá er ljóst að
+\[ \vP \mathbf{Con} \to \lnot \bTx[\pg{0 = S0}] \]
+
+Svo af því leiðir að ekki gildir $\vP \mathbf{Con}$.
+
+
+
+
+
+
+\end{document}
